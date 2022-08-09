@@ -1,0 +1,11 @@
+.sectorBox1 {
+  max-width: fit-content;
+  padding: 20px;
+  border: 2px solid white;
+}
+
+.sectorBox2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
