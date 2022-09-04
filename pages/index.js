@@ -56,7 +56,7 @@ export default function Home() {
             repudiandae voluptate eum autem atque nesciunt, aspernatur fugiat
             dolore, magni explicabo beatae. Aperiam.
           </p>
-          <BarCharts sector={positiveSectorTrendSorted} series={positiveSectorTrendSortedData} fillColor='#07818F' />
+          <BarCharts sector={positiveSectorTrendSorted.map(sector => trendsData[sector]["name"])} series={positiveSectorTrendSortedData} fillColor='#07818F' />
         </section>
         <section>
           <h1 className="text-white text-[2rem] font-bold">
@@ -67,7 +67,7 @@ export default function Home() {
             officia optio numquam voluptatibus tenetur similique eveniet
             repudiandae voluptate eum autem atque nesciunt, aspernatur fugiat
             dolore, magni explicabo beatae. Aperiam.
-            <BarCharts sector={negativeSectorTrendSorted} series={negativeSectorTrendSortedData} fillColor='#DA127D' />
+            <BarCharts sector={negativeSectorTrendSorted.map(sector => trendsData[sector]["name"])} series={negativeSectorTrendSortedData} fillColor='#DA127D' />
           </p>
         </section>
         <h1 className="text-white text-[2rem] font-bold">
