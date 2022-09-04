@@ -1,11 +1,27 @@
+import dynamic from 'next/dynamic'
 import Head from 'next/head';
 import Image from 'next/image';
 import DetailCard from '../components/DetailCard';
+// import BarCharts from '../components/BarCharts';
 import Footer from '../components/Footer';
 import styles from '../styles/Home.module.css';
 import trendsData from '../data/Data_GT.json'
 
+const BarCharts = dynamic(() => import('../components/BarCharts'), { ssr: false });
+
 export default function Home() {
+
+  const positiveSectorTrendSorted = Object.keys(trendsData)
+                                          .filter(sector => trendsData[sector]["combined_trends_mean_change"] > 0.0)
+                                          .sort((a,b) => -(trendsData[a]["combined_trends_mean_change"] - trendsData[b]["combined_trends_mean_change"]))
+                                          
+  const positiveSectorTrendSortedData = positiveSectorTrendSorted.map(sector => trendsData[sector]["combined_trends_mean_change"])
+
+  const negativeSectorTrendSorted = Object.keys(trendsData)
+                                          .filter(sector => trendsData[sector]["combined_trends_mean_change"] < 0.0)
+                                          .sort((a,b) => -(trendsData[a]["combined_trends_mean_change"] - trendsData[b]["combined_trends_mean_change"]))
+                                          
+  const negativeSectorTrendSortedData = negativeSectorTrendSorted.map(sector => trendsData[sector]["combined_trends_mean_change"])
   return (
     // <div>
     //   <Head>
@@ -38,6 +54,19 @@ export default function Home() {
             repudiandae voluptate eum autem atque nesciunt, aspernatur fugiat
             dolore, magni explicabo beatae. Aperiam.
           </p>
+          <BarCharts sector={positiveSectorTrendSorted} series={positiveSectorTrendSortedData} fillColor='#07818F' />
+        </section>
+        <section>
+          <h1 className="text-white text-[2rem] font-bold">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </h1>
+          <p className="text-white text-[1.1rem]">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, ullam
+            officia optio numquam voluptatibus tenetur similique eveniet
+            repudiandae voluptate eum autem atque nesciunt, aspernatur fugiat
+            dolore, magni explicabo beatae. Aperiam.
+            <BarCharts sector={negativeSectorTrendSorted} series={negativeSectorTrendSortedData} fillColor='#DA127D' />
+          </p>
         </section>
         <h1 className="text-white text-[2rem] font-bold">
           Klik untuk melihat lebih detail
@@ -48,7 +77,7 @@ export default function Home() {
               return (
                 <>
                   <li>
-                    <DetailCard sector={k} trendsChange={trendsData[k]["combined_trends_mean_change"]}/>
+                    <DetailCard href="/keuangan" sector={k} trendsChange={trendsData[k]["combined_trends_mean_change"]}/>
                   </li>
                 </>
               )
