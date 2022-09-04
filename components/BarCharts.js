@@ -23,12 +23,22 @@ class BarCharts extends Component {
         },
           xaxis: {
             categories: props.sector || [],
+            labels: {
+                style: {
+                    colors: "#FFFFFF",
+                }
+            }
           },
           yaxis: {
             labels: {
                 style: {
                     colors: "#FFFFFF",
                 }
+            }
+          },
+          legend: {
+            labels: {
+              colors: "#FFFFFF",
             }
           },
           fill: {

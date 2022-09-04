@@ -7,6 +7,7 @@ import DetailCard from "../../components/DetailCard";
 import Footer from "../../components/Footer";
 import styles from "../../styles/Home.module.css";
 import trendsData from "../../data/Data_GT.json";
+import Link from "next/link";
 
 const BarCharts = dynamic(() => import("../../components/BarCharts"), {
   ssr: false,
@@ -15,74 +16,18 @@ const LineCharts = dynamic(() => import("../../components/LineCharts"), {
   ssr: false,
 });
 
-export default function Sector() {
-  const router = useRouter()
-  const slug = router.query.slug
-  var selectedTrendsData = slug && trendsData[slug]
-
-  const positiveBrandTrendSorted = selectedTrendsData && Object.keys(
-    selectedTrendsData["brand_data"]
-  )
-    .filter((brand) => trendsData[slug]["brand_data"][brand] > 0.0)
-    .sort(
-      (a, b) =>
-        -(
-          trendsData[slug]["brand_data"][a] -
-          trendsData[slug]["brand_data"][b]
-        )
-    );
-
-  const positiveBrandTrendSortedData = positiveBrandTrendSorted?.map(
-    (brand) => trendsData[slug]["brand_data"][brand]
-  );
-
-  const negativeBrandTrendSorted = selectedTrendsData && Object.keys(
-    selectedTrendsData["brand_data"]
-  )
-    .filter((brand) => trendsData[slug]["brand_data"][brand] < 0.0)
-    .sort(
-      (a, b) =>
-        -(
-          trendsData[slug]["brand_data"][a] -
-          trendsData[slug]["brand_data"][b]
-        )
-    );
-
-  const negativeBrandTrendSortedData = negativeBrandTrendSorted?.map(
-    (brand) => trendsData[slug]["brand_data"][brand]
-  );
-
-  const positiveWordTrendSorted = selectedTrendsData && Object.keys(
-    selectedTrendsData["word_data"]
-  )
-    .filter((word) => trendsData[slug]["word_data"][word] > 0.0)
-    .sort(
-      (a, b) =>
-        -(
-          trendsData[slug]["word_data"][a] -
-          trendsData[slug]["word_data"][b]
-        )
-    );
-
-  const positiveWordTrendSortedData = positiveWordTrendSorted?.map(
-    (word) => trendsData[slug]["word_data"][word]
-  );
-
-  const negativeWordTrendSorted = selectedTrendsData && Object.keys(
-    selectedTrendsData["word_data"]
-  )
-    .filter((word) => trendsData[slug]["word_data"][word] < 0.0)
-    .sort(
-      (a, b) =>
-        -(
-          trendsData[slug]["word_data"][a] -
-          trendsData[slug]["word_data"][b]
-        )
-    );
-
-  const negativeWordTrendSortedData = negativeWordTrendSorted?.map(
-    (word) => trendsData[slug]["word_data"][word]
-  );
+function Sector({
+    slug,
+    selectedTrendsData,
+    positiveBrandTrendSorted,
+    positiveBrandTrendSortedData,
+    negativeBrandTrendSorted,
+    negativeBrandTrendSortedData,
+    positiveWordTrendSorted,
+    positiveWordTrendSortedData,
+    negativeWordTrendSorted,
+    negativeWordTrendSortedData,
+  }) {
 
   return (
     // <div>
@@ -95,8 +40,15 @@ export default function Sector() {
     // </div>
     <div className="min-h-screen flex items-center bg-[#222]">
       <div className="flex-1 max-w-7xl mx-auto p-10">
+        <section className="mb-8">
+          <Link href="/">
+            <p className="text-white text-[1.0rem] hover:cursor-pointer">
+              &#60; Back
+            </p>
+          </Link>
+        </section>
         <section>
-          <h1 className="text-white text-[2rem] font-bold">{trendsData[slug]?.name}</h1>
+          <h1 className="text-white text-[3rem] font-bold">{trendsData[slug]?.name}</h1>
           <p className="text-white text-[1.1rem]">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, ullam
             officia optio numquam voluptatibus tenetur similique eveniet
@@ -212,3 +164,99 @@ export default function Sector() {
     </div>
   );
 }
+
+export async function getStaticPaths() {
+    return {
+      paths: [],
+      fallback: 'blocking'
+    };
+  }
+
+export async function getStaticProps({ params }) {
+    const { slug } = params;
+    var selectedTrendsData = slug && trendsData[slug]
+  
+    const positiveBrandTrendSorted = selectedTrendsData && Object.keys(
+      selectedTrendsData["brand_data"]
+    )
+      .filter((brand) => trendsData[slug]["brand_data"][brand] > 0.0)
+      .sort(
+        (a, b) =>
+          -(
+            trendsData[slug]["brand_data"][a] -
+            trendsData[slug]["brand_data"][b]
+          )
+      );
+  
+    const positiveBrandTrendSortedData = positiveBrandTrendSorted?.map(
+      (brand) => trendsData[slug]["brand_data"][brand]
+    );
+  
+    const negativeBrandTrendSorted = selectedTrendsData && Object.keys(
+      selectedTrendsData["brand_data"]
+    )
+      .filter((brand) => trendsData[slug]["brand_data"][brand] < 0.0)
+      .sort(
+        (a, b) =>
+          -(
+            trendsData[slug]["brand_data"][a] -
+            trendsData[slug]["brand_data"][b]
+          )
+      );
+  
+    const negativeBrandTrendSortedData = negativeBrandTrendSorted?.map(
+      (brand) => trendsData[slug]["brand_data"][brand]
+    );
+  
+    const positiveWordTrendSorted = selectedTrendsData && Object.keys(
+      selectedTrendsData["word_data"]
+    )
+      .filter((word) => trendsData[slug]["word_data"][word] > 0.0)
+      .sort(
+        (a, b) =>
+          -(
+            trendsData[slug]["word_data"][a] -
+            trendsData[slug]["word_data"][b]
+          )
+      );
+  
+    const positiveWordTrendSortedData = positiveWordTrendSorted?.map(
+      (word) => trendsData[slug]["word_data"][word]
+    );
+  
+    const negativeWordTrendSorted = selectedTrendsData && Object.keys(
+      selectedTrendsData["word_data"]
+    )
+      .filter((word) => trendsData[slug]["word_data"][word] < 0.0)
+      .sort(
+        (a, b) =>
+          -(
+            trendsData[slug]["word_data"][a] -
+            trendsData[slug]["word_data"][b]
+          )
+      );
+  
+    const negativeWordTrendSortedData = negativeWordTrendSorted?.map(
+      (word) => trendsData[slug]["word_data"][word]
+    );
+  
+    // By returning { props: { posts } }, the Blog component
+    // will receive `posts` as a prop at build time
+    return {
+      props: {
+        slug,
+        selectedTrendsData,
+        positiveBrandTrendSorted,
+        positiveBrandTrendSortedData,
+        negativeBrandTrendSorted,
+        negativeBrandTrendSortedData,
+        positiveWordTrendSorted,
+        positiveWordTrendSortedData,
+        negativeWordTrendSorted,
+        negativeWordTrendSortedData,
+      },
+    }
+  }
+
+
+export default Sector;

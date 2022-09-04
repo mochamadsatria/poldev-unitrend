@@ -15,7 +15,12 @@ class LineCharts extends Component {
           size: 0
         },
         xaxis: {
-          categories: Array.from(new Array(52), (x, i) => i + 1)
+          categories: Array.from(new Array(52), (x, i) => i + 1),
+          labels: {
+            style: {
+                colors: "#FFFFFF",
+            }
+          }
         },
         yaxis: {
           labels: {
@@ -24,6 +29,12 @@ class LineCharts extends Component {
               }
           }
         },
+        legend: {
+          labels: {
+            colors: "#FFFFFF",
+          }
+        },
+        colors:['#07818F', '#DA127D']
       },
       series: [{
         name: "2021",
