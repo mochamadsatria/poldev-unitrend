@@ -3,6 +3,7 @@ import Image from 'next/image';
 import DetailCard from '../components/DetailCard';
 import Footer from '../components/Footer';
 import styles from '../styles/Home.module.css';
+import trendsData from '../data/Data_GT.json'
 
 export default function Home() {
   return (
@@ -42,8 +43,19 @@ export default function Home() {
           Klik untuk melihat lebih detail
         </h1>
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          <li>
-            <DetailCard />
+          {
+            Object.keys(trendsData).map((k) => {
+              return (
+                <>
+                  <li>
+                    <DetailCard sector={k} trendsChange={trendsData[k]["combined_trends_mean_change"]}/>
+                  </li>
+                </>
+              )
+            })
+          }
+          {/* <li>
+            <DetailCard sector = "India"/>
           </li>
           <li>
             <DetailCard />
@@ -65,7 +77,7 @@ export default function Home() {
           </li>
           <li>
             <DetailCard />
-          </li>
+          </li> */}
         </ul>
         <h1 className="text-white text-[2rem] font-bold">SDGs</h1>
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
