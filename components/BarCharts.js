@@ -30,9 +30,6 @@ class BarCharts extends Component {
         },
         yaxis: {
           labels: {
-            formatter: (value) => {
-              return Number(value).toFixed(2);
-            },
             style: {
               colors: '#FFFFFF',
             },
@@ -54,7 +51,11 @@ class BarCharts extends Component {
           enabledOnSeries: undefined,
           shared: true,
           followCursor: true,
-
+          y: {
+            formatter: (value) => {
+              return Number(value).toFixed(2);
+            },
+          },
           intersect: false,
           inverseOrder: false,
           custom: undefined,
