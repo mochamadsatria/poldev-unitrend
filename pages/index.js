@@ -35,7 +35,7 @@ export default function Home() {
     // </div>
     <div className="min-h-screen flex items-center bg-[#222]">
       <div className="flex-1 max-w-7xl mx-auto p-10">
-        <section>
+        <section className="my-16">
           <h1 className="text-white text-[2rem] font-bold">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </h1>
@@ -46,7 +46,7 @@ export default function Home() {
             dolore, magni explicabo beatae. Aperiam.
           </p>
         </section>
-        <section>
+        <section className="my-16">
           <h1 className="text-white text-[2rem] font-bold">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </h1>
@@ -58,7 +58,7 @@ export default function Home() {
           </p>
           <BarCharts sector={positiveSectorTrendSorted.map(sector => trendsData[sector]["name"])} series={positiveSectorTrendSortedData} fillColor='#07818F' />
         </section>
-        <section>
+        <section className="my-16">
           <h1 className="text-white text-[2rem] font-bold">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </h1>
