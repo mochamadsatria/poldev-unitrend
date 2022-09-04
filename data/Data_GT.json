@@ -1,5 +1,5 @@
 {
-    "Pariwisata": {
+    "pariwisata": {
         "brand_list": [
             "KAI Access",
             "Pegipegi",
@@ -236,10 +236,13 @@
             }
         },
         "word_trends_mean_change": 9.655955136603845,
-        "combined_trends_mean_change": 35.41374040839801
+        "combined_trends_mean_change": 35.41374040839801,
+        "slug": "pariwisata",
+        "name": "Pariwisata"
     },
-    "NEWS & ENTERTAINMENT": {
+    "news-entertainment": {
         "brand_list": [
+            "Net TV",
             "Detik.com",
             "Kompas",
             "Tempo",
@@ -248,12 +251,10 @@
             "iNews",
             "Mata Najwa",
             "Narasi",
-            "Tirto.id",
-            "Vidio.com",
-            "WeTV",
-            "Net TV"
+            "Tirto.id"
         ],
         "brand_data": {
+            "Net TV": -31.249999999999996,
             "Detik.com": -33.333333333333336,
             "Kompas": 14.285714285714283,
             "Tempo": -39.99999999999999,
@@ -262,10 +263,7 @@
             "iNews": 700.0,
             "Mata Najwa": 100.0,
             "Narasi": -9.090909090909092,
-            "Tirto.id": 0.0,
-            "Vidio.com": 0.0,
-            "WeTV": -70.0,
-            "Net TV": -31.249999999999996
+            "Tirto.id": 0.0
         },
         "word_list": [
             "Film komedi ",
@@ -377,7 +375,7 @@
                 "34": 35.25122554442602
             }
         },
-        "brand_trends_mean_change": -16.624506762331986,
+        "brand_trends_mean_change": -7.8981531586009295,
         "biannually_word_trends_mean": {
             "2021": {
                 "1": 30.38848201744851,
@@ -471,9 +469,11 @@
             }
         },
         "word_trends_mean_change": -12.3147287568614,
-        "combined_trends_mean_change": -14.469617759596694
+        "combined_trends_mean_change": -10.106440957731165,
+        "slug": "news-entertainment",
+        "name": "News & Entertainment"
     },
-    "Pertambangan": {
+    "pertambangan": {
         "brand_list": [
             "Freeport",
             "Bukit Asam",
@@ -696,10 +696,23 @@
             }
         },
         "word_trends_mean_change": 404.8010927327834,
-        "combined_trends_mean_change": 416.48420230814315
+        "combined_trends_mean_change": 416.48420230814315,
+        "slug": "pertambangan",
+        "name": "Pertambangan"
     },
-    "KECANTIKAN & FASHION": {
+    "kecantikan-fashion": {
         "brand_list": [
+            "Erigo",
+            "H&M",
+            "Uniqlo",
+            "3Second",
+            "The Executive",
+            "Zara",
+            "Chanel",
+            "Levis",
+            "Giordano",
+            "Dior",
+            "Cottonink",
             "Wardah",
             "Maybelline",
             "Somethinc",
@@ -711,20 +724,20 @@
             "Ms Glow",
             "Scarlet",
             "Vans",
-            "Converse",
-            "Erigo",
-            "H&M",
-            "Uniqlo",
-            "3Second",
-            "The Executive",
-            "Zara",
-            "Chanel",
-            "Levis",
-            "Giordano",
-            "Dior",
-            "Cottonink"
+            "Converse"
         ],
         "brand_data": {
+            "Erigo": -66.66666666666666,
+            "H&M": -19.99999999999999,
+            "Uniqlo": 16.666666666666682,
+            "3Second": 0.0,
+            "The Executive": 0.0,
+            "Zara": -14.285714285714294,
+            "Chanel": 0.0,
+            "Levis": -35.29411764705881,
+            "Giordano": -33.333333333333336,
+            "Dior": 21.052631578947356,
+            "Cottonink": 0.0,
             "Wardah": -12.765957446808516,
             "Maybelline": 0.0,
             "Somethinc": 0.0,
@@ -736,60 +749,49 @@
             "Ms Glow": -51.28205128205128,
             "Scarlet": -33.33333333333334,
             "Vans": 24.999999999999975,
-            "Converse": 0.0,
-            "Erigo": -66.66666666666666,
-            "H&M": -19.99999999999999,
-            "Uniqlo": 16.666666666666682,
-            "3Second": 0.0,
-            "The Executive": 0.0,
-            "Zara": -14.285714285714294,
-            "Chanel": 0.0,
-            "Levis": -35.29411764705881,
-            "Giordano": -33.333333333333336,
-            "Dior": 21.052631578947356,
-            "Cottonink": 0.0
+            "Converse": 0.0
         },
         "word_list": [
-            "Skincare",
-            "Pensil alis",
-            "Celana",
-            "Lipstick",
-            "Beauty Vlogger",
-            "Serum wajah",
             "Sepatu",
+            "Serum wajah",
             "Sepatu ",
             "Eye shadow",
             "Voucher",
             "Jaket",
             "Kaos",
+            "Kemeja",
             "Maskara",
             "Topi",
             "Eyeliner",
             "Makeup Korea",
             "Jeans",
-            "Kemeja",
-            "Blush on"
+            "Blush on",
+            "Lipstick",
+            "Beauty Vlogger",
+            "Skincare",
+            "Pensil alis",
+            "Celana"
         ],
         "word_data": {
-            "Skincare": 0.0,
-            "Pensil alis": 0.0,
-            "Celana": -3.225806451612908,
-            "Lipstick": 0.0,
-            "Beauty Vlogger": 0.0,
-            "Serum wajah": 0.0,
             "Sepatu": 16.666666666666654,
+            "Serum wajah": 0.0,
             "Sepatu ": 22.413793103448285,
             "Eye shadow": 0.0,
             "Voucher": -33.33333333333332,
             "Jaket": -6.250000000000001,
             "Kaos": 4.166666666666659,
+            "Kemeja": 0.0,
             "Maskara": 0.0,
             "Topi": 45.45454545454547,
             "Eyeliner": -50.0,
             "Makeup Korea": 0.0,
             "Jeans": 0.0,
-            "Kemeja": 0.0,
-            "Blush on": 0.0
+            "Blush on": 0.0,
+            "Lipstick": 0.0,
+            "Beauty Vlogger": 0.0,
+            "Skincare": 0.0,
+            "Pensil alis": 0.0,
+            "Celana": -3.225806451612908
         },
         "biannually_brand_trends_mean": {
             "2021": {
@@ -883,7 +885,7 @@
                 "34": 35.25122554442602
             }
         },
-        "brand_trends_mean_change": -16.317092979420227,
+        "brand_trends_mean_change": -16.317092979420238,
         "biannually_word_trends_mean": {
             "2021": {
                 "1": 30.38848201744851,
@@ -976,10 +978,12 @@
                 "34": 35.25122554442602
             }
         },
-        "word_trends_mean_change": 8.114025796903809,
-        "combined_trends_mean_change": -4.101533591258209
+        "word_trends_mean_change": 8.114025796903833,
+        "combined_trends_mean_change": -4.101533591258202,
+        "slug": "kecantikan-fashion",
+        "name": "Kecantikan & Fashion"
     },
-    "Transportasi": {
+    "transportasi": {
         "brand_list": [
             "Lion Air",
             "Garuda Indonesia",
@@ -1210,9 +1214,11 @@
             }
         },
         "word_trends_mean_change": 136.36363636363637,
-        "combined_trends_mean_change": 92.05166388488311
+        "combined_trends_mean_change": 92.05166388488311,
+        "slug": "transportasi",
+        "name": "Transportasi"
     },
-    "Keuangan": {
+    "keuangan": {
         "brand_list": [
             "Pluang",
             "Bibit",
@@ -1264,9 +1270,9 @@
             "Reksadana",
             "Cashback",
             "Syariah",
+            "Diskon",
             "Deposito",
             "QRIS",
-            "Diskon",
             "transaksi",
             "Investasi"
         ],
@@ -1279,9 +1285,9 @@
             "Reksadana": -50.0,
             "Cashback": 0.0,
             "Syariah": -11.76470588235294,
+            "Diskon": -16.666666666666675,
             "Deposito": 0.0,
             "QRIS": 200.00000000000003,
-            "Diskon": -16.666666666666675,
             "transaksi": 7.14285714285713,
             "Investasi": -12.499999999999993
         },
@@ -1471,9 +1477,11 @@
             }
         },
         "word_trends_mean_change": 0.24490615539683808,
-        "combined_trends_mean_change": -2.5316368581420585
+        "combined_trends_mean_change": -2.5316368581420585,
+        "slug": "keuangan",
+        "name": "Keuangan"
     },
-    "Marketplace": {
+    "marketplace": {
         "brand_list": [
             "Shopee",
             "Tokopedia",
@@ -1696,9 +1704,11 @@
             }
         },
         "word_trends_mean_change": -14.28571428571428,
-        "combined_trends_mean_change": -8.057470098739863
+        "combined_trends_mean_change": -8.057470098739863,
+        "slug": "marketplace",
+        "name": "Marketplace"
     },
-    "Kesehatan": {
+    "kesehatan": {
         "brand_list": [
             "BPJS",
             "Halodoc",
@@ -1983,9 +1993,11 @@
             }
         },
         "word_trends_mean_change": -1.1058647182936734,
-        "combined_trends_mean_change": -18.721705115625735
+        "combined_trends_mean_change": -18.721705115625735,
+        "slug": "kesehatan",
+        "name": "Kesehatan"
     },
-    "Phone and Broadband": {
+    "phone-broadband": {
         "brand_list": [
             "Samsung",
             "Iphone",
@@ -2013,30 +2025,30 @@
             "MNC Play": 0.0
         },
         "word_list": [
+            "Harga Wifi",
+            "Berlangganan Wifi",
+            "HP bekas",
             "Review HP",
             "Pasang Wifi",
             "HP Second",
             "Paket Wifi",
             "Reparasi HP",
-            "Promo Wifi",
             "Harga HP",
             "Kredit HP",
-            "Harga Wifi",
-            "Berlangganan Wifi",
-            "HP bekas"
+            "Promo Wifi"
         ],
         "word_data": {
+            "Harga Wifi": -50.0,
+            "Berlangganan Wifi": 0.0,
+            "HP bekas": -24.999999999999996,
             "Review HP": 0.0,
             "Pasang Wifi": 0.0,
             "HP Second": 0.0,
             "Paket Wifi": -100.0,
             "Reparasi HP": 0.0,
-            "Promo Wifi": 0.0,
             "Harga HP": -25.000000000000004,
             "Kredit HP": -50.0,
-            "Harga Wifi": -50.0,
-            "Berlangganan Wifi": 0.0,
-            "HP bekas": -24.999999999999996
+            "Promo Wifi": 0.0
         },
         "biannually_brand_trends_mean": {
             "2021": {
@@ -2223,12 +2235,13 @@
                 "34": 35.25122554442602
             }
         },
-        "word_trends_mean_change": -26.747733226086304,
-        "combined_trends_mean_change": -18.45391082408949
+        "word_trends_mean_change": -26.747733226086275,
+        "combined_trends_mean_change": -18.453910824089476,
+        "slug": "phone-broadband",
+        "name": "Phone & Broadband"
     },
-    "WFH": {
+    "wfh": {
         "brand_list": [
-            "Tanpa brand",
             "Trello",
             "Google Meet",
             "Zoom",
@@ -2237,7 +2250,6 @@
             "Telegram"
         ],
         "brand_data": {
-            "Tanpa brand": 0.0,
             "Trello": 0.0,
             "Google Meet": -35.0,
             "Zoom": -41.86046511627907,
@@ -2359,7 +2371,7 @@
                 "34": 35.25122554442602
             }
         },
-        "brand_trends_mean_change": -17.060391631829518,
+        "brand_trends_mean_change": -17.060391631829535,
         "biannually_word_trends_mean": {
             "2021": {
                 "1": 30.38848201744851,
@@ -2453,90 +2465,90 @@
             }
         },
         "word_trends_mean_change": 0.0,
-        "combined_trends_mean_change": -8.530195815914759
+        "combined_trends_mean_change": -8.530195815914768,
+        "slug": "wfh",
+        "name": "WFH"
     },
-    "Food&Drink": {
+    "food-drink": {
         "brand_list": [
+            "Oreo",
+            "Kacang Garuda",
+            "Coca Cola",
+            "Gacoan",
+            "Indomie",
+            "Mc Donald",
+            "Frisian Flag",
+            "Dancow",
+            "Rumah Makan Padang",
             "Sosro",
             "Mie Sedap",
             "Burger King",
             "Silver Queen",
-            "Starbuck",
             "KFC",
             "Tango",
+            "Starbuck",
             "Chatime",
-            "Bobatime",
-            "Oreo",
-            "Kacang Garuda",
-            "Gacoan",
-            "Indomie",
-            "Coca Cola",
-            "Mc Donald",
-            "Frisian Flag",
-            "Dancow",
-            "Rumah Makan Padang"
+            "Bobatime"
         ],
         "brand_data": {
+            "Oreo": 0.0,
+            "Kacang Garuda": 0.0,
+            "Coca Cola": 19.999999999999993,
+            "Gacoan": 100.0,
+            "Indomie": 0.0,
+            "Mc Donald": 0.0,
+            "Frisian Flag": -19.999999999999982,
+            "Dancow": 14.285714285714285,
+            "Rumah Makan Padang": 0.0,
             "Sosro": 0.0,
             "Mie Sedap": 0.0,
             "Burger King": 0.0,
             "Silver Queen": 0.0,
-            "Starbuck": 50.0,
             "KFC": 50.0,
             "Tango": 0.0,
+            "Starbuck": 50.0,
             "Chatime": 0.0,
-            "Bobatime": 0.0,
-            "Oreo": 0.0,
-            "Kacang Garuda": 0.0,
-            "Gacoan": 100.0,
-            "Indomie": 0.0,
-            "Coca Cola": 19.999999999999993,
-            "Mc Donald": 0.0,
-            "Frisian Flag": -19.999999999999982,
-            "Dancow": 14.285714285714285,
-            "Rumah Makan Padang": 0.0
+            "Bobatime": 0.0
         },
         "word_list": [
+            "Susu lansia",
+            "Kopi",
             "Rendang",
+            "Mie rebus",
+            "Ayam",
+            "Wafer",
+            "Burger",
+            "Biskuit",
             "Mie Pedas",
             "Susu anak",
-            "Wafer",
             "Minuman",
-            "Biskuit",
+            "Ice Cream ",
             "Snack",
-            "Harga",
             "Coklat",
             "Mie Goreng",
             "Ayam Pop",
             "The",
-            "Ice Cream ",
-            "Susu lansia",
-            "Kopi",
-            "Mie rebus",
-            "Ayam",
-            "Snacak",
-            "Burger"
+            "Snacak"
         ],
         "word_data": {
+            "Susu lansia": -100.0,
+            "Kopi": 1.7543859649122753,
             "Rendang": 0.0,
+            "Mie rebus": 0.0,
+            "Ayam": -9.615384615384617,
+            "Wafer": 0.0,
+            "Burger": 14.285714285714283,
+            "Biskuit": 66.66666666666666,
             "Mie Pedas": 0.0,
             "Susu anak": 20.000000000000014,
-            "Wafer": 0.0,
             "Minuman": 5.882352941176472,
-            "Biskuit": 66.66666666666666,
+            "Ice Cream ": 0.0,
             "Snack": 41.1764705882353,
-            "Harga": 0.0,
             "Coklat": 12.12121212121214,
             "Mie Goreng": 24.999999999999996,
             "Ayam Pop": 0.0,
             "The": 1.7857142857142945,
-            "Ice Cream ": 0.0,
-            "Susu lansia": -100.0,
-            "Kopi": 1.7543859649122753,
-            "Mie rebus": 0.0,
-            "Ayam": -9.615384615384617,
-            "Snacak": 0.0,
-            "Burger": 14.285714285714283
+            "Snacak": 0.0
         },
         "biannually_brand_trends_mean": {
             "2021": {
@@ -2630,7 +2642,7 @@
                 "34": 35.25122554442602
             }
         },
-        "brand_trends_mean_change": 36.71836900704605,
+        "brand_trends_mean_change": 36.71836900704596,
         "biannually_word_trends_mean": {
             "2021": {
                 "1": 30.38848201744851,
@@ -2723,13 +2735,17 @@
                 "34": 35.25122554442602
             }
         },
-        "word_trends_mean_change": 0.6850882938382041,
-        "combined_trends_mean_change": 18.701728650442128
+        "word_trends_mean_change": 1.5411644851498265,
+        "combined_trends_mean_change": 19.129766746097893,
+        "slug": "food-drink",
+        "name": "Food & Drink"
     },
-    "TV, Movies, & Games": {
+    "tv-movies-games": {
         "brand_list": [
             "Mobile Legend",
             "PUBG",
+            "Vidio.com",
+            "WeTV",
             "Playstation",
             "Netflix",
             "Hotstar",
@@ -2742,6 +2758,8 @@
         "brand_data": {
             "Mobile Legend": -39.999999999999986,
             "PUBG": -57.142857142857146,
+            "Vidio.com": 0.0,
+            "WeTV": -70.0,
             "Playstation": 0.0,
             "Netflix": -2.50000000000001,
             "Hotstar": 0.0,
@@ -2754,19 +2772,19 @@
         "word_list": [
             "Layla",
             "Beatrix",
-            "Horror",
             "PES",
             "Nana",
             "Fim Series",
             "Film Indonesia",
+            "Horror",
             "Franco",
             "Marvel",
             "Komedi",
             "Disney",
             "Drakor",
             "FIFA",
-            "Top up Skin",
             "Harga Skin",
+            "Top up Skin",
             "Lancelot",
             "Streaming",
             "Harga skin"
@@ -2774,19 +2792,19 @@
         "word_data": {
             "Layla": 0.0,
             "Beatrix": 0.0,
-            "Horror": 0.0,
             "PES": -9.09090909090909,
             "Nana": 0.0,
             "Fim Series": 0.0,
             "Film Indonesia": -4.545454545454552,
+            "Horror": 0.0,
             "Franco": 0.0,
             "Marvel": 0.0,
             "Komedi": 0.0,
             "Disney": 100.0,
             "Drakor": -20.000000000000007,
             "FIFA": 33.33333333333333,
-            "Top up Skin": 0.0,
             "Harga Skin": -50.0,
+            "Top up Skin": 0.0,
             "Lancelot": 0.0,
             "Streaming": -18.75,
             "Harga skin": -50.0
@@ -2883,7 +2901,7 @@
                 "34": 35.25122554442602
             }
         },
-        "brand_trends_mean_change": -28.641642736807942,
+        "brand_trends_mean_change": -31.160867676160326,
         "biannually_word_trends_mean": {
             "2021": {
                 "1": 30.38848201744851,
@@ -2977,9 +2995,11 @@
             }
         },
         "word_trends_mean_change": -8.146734285126824,
-        "combined_trends_mean_change": -18.394188510967382
+        "combined_trends_mean_change": -19.653800980643574,
+        "slug": "tv-movies-games",
+        "name": "TV, Movies, & Games"
     },
-    "Automotive": {
+    "automotive": {
         "brand_list": [
             "Piaggio",
             "Honda (Mobil)",
@@ -3007,6 +3027,7 @@
             "Kredit Motor",
             "Kredit Mobil",
             "City",
+            "Harga",
             "Mio",
             "Fazzio",
             "Gear 125",
@@ -3043,6 +3064,7 @@
             "Kredit Motor": 0.0,
             "Kredit Mobil": 0.0,
             "City": 94.44444444444447,
+            "Harga": 0.0,
             "Mio": 33.33333333333335,
             "Fazzio": 0.0,
             "Gear 125": 0.0,
@@ -3259,12 +3281,18 @@
                 "34": 35.25122554442602
             }
         },
-        "word_trends_mean_change": 23.24463099584035,
-        "combined_trends_mean_change": 16.393492356379905
+        "word_trends_mean_change": 8.113320462079033,
+        "combined_trends_mean_change": 8.827837089499248,
+        "slug": "automotive",
+        "name": "Automotive"
     },
-    "Hobbies&Craft": {
-        "brand_list": [],
-        "brand_data": {},
+    "hobbies-craft": {
+        "brand_list": [
+            "Tanpa brand"
+        ],
+        "brand_data": {
+            "Tanpa brand": 0.0
+        },
         "word_list": [
             "Golf",
             "Basket",
@@ -3481,20 +3509,22 @@
             }
         },
         "word_trends_mean_change": -3.211352712654747,
-        "combined_trends_mean_change": -1.6056763563273735
+        "combined_trends_mean_change": -1.6056763563273735,
+        "slug": "hobbies-craft",
+        "name": "Hobbies & Craft"
     },
-    "Food Delivery": {
+    "food-delivery": {
         "brand_list": [
-            "Shopee Food",
             "Grab Food",
             "Goofood",
-            "Maxim Food"
+            "Maxim Food",
+            "Shopee Food"
         ],
         "brand_data": {
-            "Shopee Food": -41.66666666666667,
             "Grab Food": 0.0,
             "Goofood": 0.0,
-            "Maxim Food": 0.0
+            "Maxim Food": 0.0,
+            "Shopee Food": -41.66666666666667
         },
         "word_list": [
             "Take away",
@@ -3690,14 +3720,13 @@
             }
         },
         "word_trends_mean_change": 0.0,
-        "combined_trends_mean_change": -15.931140404907245
+        "combined_trends_mean_change": -15.931140404907245,
+        "slug": "food-delivery",
+        "name": "Food Delivery"
     },
-    "Consumer Electronic": {
+    "consumer-electronic": {
         "brand_list": [
             "Miyako",
-            "Panasonic",
-            "Sharp",
-            "LG",
             "Canon",
             "Nikon",
             "Sony",
@@ -3705,13 +3734,13 @@
             "Lenovo",
             "Asus",
             "Acer",
-            "Sanken"
+            "Sanken",
+            "Panasonic",
+            "Sharp",
+            "LG"
         ],
         "brand_data": {
             "Miyako": 0.0,
-            "Panasonic": -13.043478260869561,
-            "Sharp": 0.0,
-            "LG": -28.947368421052623,
             "Canon": -5.2631578947368505,
             "Nikon": 0.0,
             "Sony": -19.999999999999982,
@@ -3719,31 +3748,34 @@
             "Lenovo": -23.529411764705866,
             "Asus": -21.212121212121218,
             "Acer": -23.07692307692307,
-            "Sanken": 0.0
+            "Sanken": 0.0,
+            "Panasonic": -13.043478260869561,
+            "Sharp": 0.0,
+            "LG": -28.947368421052623
         },
         "word_list": [
             "TV",
             "Dispenser",
             "Kulkas",
+            "Laptop",
             "Mesin Cuci",
             "Setrika",
             "Magicom",
             "Mesin cuci",
             "Kompor Gas",
-            "Kamera",
-            "Laptop"
+            "Kamera"
         ],
         "word_data": {
             "TV": -9.523809523809518,
             "Dispenser": 0.0,
             "Kulkas": -5.263157894736849,
+            "Laptop": -5.128205128205127,
             "Mesin Cuci": 0.0,
             "Setrika": 0.0,
             "Magicom": 0.0,
             "Mesin cuci": 0.0,
             "Kompor Gas": -24.999999999999996,
-            "Kamera": 0.0,
-            "Laptop": -5.128205128205127
+            "Kamera": 0.0
         },
         "biannually_brand_trends_mean": {
             "2021": {
@@ -3930,10 +3962,12 @@
                 "34": 35.25122554442602
             }
         },
-        "word_trends_mean_change": -6.02576072120076,
-        "combined_trends_mean_change": -11.60783184082306
+        "word_trends_mean_change": -6.025760721200779,
+        "combined_trends_mean_change": -11.60783184082307,
+        "slug": "consumer-electronic",
+        "name": "Consumer Electronic"
     },
-    "Property": {
+    "property": {
         "brand_list": [
             "(Hanya Word)"
         ],
@@ -4160,6 +4194,8 @@
             }
         },
         "word_trends_mean_change": 4.737310723841263,
-        "combined_trends_mean_change": 2.3686553619206316
+        "combined_trends_mean_change": 2.3686553619206316,
+        "slug": "property",
+        "name": "Property"
     }
 }

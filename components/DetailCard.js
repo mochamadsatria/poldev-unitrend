@@ -1,12 +1,13 @@
+import Link from 'next/link'
 import arrowUp from '../public/arrow-up.svg';
 import arrowDown from '../public/arrow-down.svg';
 import Image from 'next/image';
 
 export default function DetailCard(props) {
   return (
-    <a href={props.href}>
+    <Link href={props.href}>
       <div className="border-2 p-5 hover:cursor-pointer">
-        <div className="text-center font-medium text-[1.8rem] text-white">
+        <div className="text-center text-white text-[1.1rem]">
           {props.sector ? props.sector : "Pariwisata"}
         </div>
         <div className="flex justify-center items-center">
@@ -20,11 +21,11 @@ export default function DetailCard(props) {
           {
             props.trendsChange > 0.0
             ? <span className="mx-1 text-[3rem] font-bold text-[#07818F]">{props.trendsChange ? props.trendsChange.toFixed(1) : "0.0%"}%</span>
-            : <span className="mx-1 text-[3rem] font-bold text-[#DA127D]">{props.trendsChange ? props.trendsChange.toFixed(1) : "0.0%"}%</span>
+            : <span className="mx-1 text-[3rem] font-bold text-[#DA127D]">{props.trendsChange ? -1*props.trendsChange.toFixed(1) : "0.0%"}%</span>
           }
           {/* <span className="mx-1 text-[3rem] font-bold text-[#07818F]">{props.trendsChange ? props.trendsChange.toFixed(1) : "0.0%"}</span> */}
         </div>
       </div>
-    </a>
+    </Link>
   );
 }

@@ -22,6 +22,8 @@ export default function Home() {
                                           .sort((a,b) => -(trendsData[a]["combined_trends_mean_change"] - trendsData[b]["combined_trends_mean_change"]))
                                           
   const negativeSectorTrendSortedData = negativeSectorTrendSorted.map(sector => trendsData[sector]["combined_trends_mean_change"])
+
+  const trendsDataSorted = Object.keys(trendsData).sort((a,b) => -(trendsData[a]["combined_trends_mean_change"] - trendsData[b]["combined_trends_mean_change"]))
   return (
     // <div>
     //   <Head>
@@ -73,11 +75,11 @@ export default function Home() {
         </h1>
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {
-            Object.keys(trendsData).map((k) => {
+            trendsDataSorted.map((k) => {
               return (
                 <>
                   <li>
-                    <DetailCard href="/keuangan" sector={k} trendsChange={trendsData[k]["combined_trends_mean_change"]}/>
+                    <DetailCard href={`/sector/${encodeURIComponent(k)}`} sector={trendsData[k]["name"]} trendsChange={trendsData[k]["combined_trends_mean_change"]}/>
                   </li>
                 </>
               )
@@ -108,7 +110,7 @@ export default function Home() {
             <DetailCard />
           </li> */}
         </ul>
-        <h1 className="text-white text-[2rem] font-bold">SDGs</h1>
+        {/* <h1 className="text-white text-[2rem] font-bold">SDGs</h1>
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           <li>
             <DetailCard />
@@ -134,7 +136,7 @@ export default function Home() {
           <li>
             <DetailCard />
           </li>
-        </ul>
+        </ul> */}
         <hr className="mt-10 border-[#555]" />
         <Footer />
       </div>

@@ -22,7 +22,7 @@ class BarCharts extends Component {
             show: false,
         },
           xaxis: {
-            categories: props.sector,
+            categories: props.sector || [],
           },
           yaxis: {
             labels: {
@@ -56,7 +56,7 @@ class BarCharts extends Component {
         },
         series: [{
             name: '%-Change',
-            data: props.series
+            data: props.series || [],
         }],
       }
     }
