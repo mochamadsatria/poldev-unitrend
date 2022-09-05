@@ -6,7 +6,7 @@ import DetailCard from '../../components/DetailCard';
 // import BarCharts from '../components/BarCharts';
 import Footer from '../../components/Footer';
 import styles from '../../styles/Home.module.css';
-import trendsData from '../../data/Data_GT.json';
+import trendsData from '../../data/Data_SDGs.json';
 import Link from 'next/link';
 
 const BarCharts = dynamic(() => import('../../components/BarCharts'), {
@@ -19,10 +19,6 @@ const LineCharts = dynamic(() => import('../../components/LineCharts'), {
 function Sector({
   slug,
   selectedTrendsData,
-  positiveBrandTrendSorted,
-  positiveBrandTrendSortedData,
-  negativeBrandTrendSorted,
-  negativeBrandTrendSortedData,
   positiveWordTrendSorted,
   positiveWordTrendSortedData,
   negativeWordTrendSorted,
@@ -82,15 +78,7 @@ function Sector({
             }
           />
         </section>
-        <section className="my-16 columns-2">
-          <div className="flex flex-col items-center justify-center border border-solid border-white p-8">
-            <p className="text-white text-[1.1rem]">Brand searches are up by</p>
-            <h2 className="text-white text-[2rem] font-bold">
-              {selectedTrendsData &&
-                selectedTrendsData['brand_trends_mean_change'].toFixed(1)}
-              %
-            </h2>
-          </div>
+        <section className="my-16 columns-1">
           <div className="flex flex-col items-center justify-center border border-solid border-white p-8">
             <p className="text-white text-[1.1rem]">
               Generic searches are up by
@@ -101,39 +89,6 @@ function Sector({
               %
             </h2>
           </div>
-        </section>
-        <section className="my-16">
-          <h1 className="text-white text-[3rem] font-bold">Brand</h1>
-          <h1 className="text-white text-[2rem] font-bold">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </h1>
-          <p className="text-white text-[1.1rem]">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, ullam
-            officia optio numquam voluptatibus tenetur similique eveniet
-            repudiandae voluptate eum autem atque nesciunt, aspernatur fugiat
-            dolore, magni explicabo beatae. Aperiam.
-          </p>
-          <BarCharts
-            sector={positiveBrandTrendSorted}
-            series={positiveBrandTrendSortedData}
-            fillColor="#07818F"
-          />
-        </section>
-        <section className="my-16">
-          <h1 className="text-white text-[2rem] font-bold">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </h1>
-          <p className="text-white text-[1.1rem]">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, ullam
-            officia optio numquam voluptatibus tenetur similique eveniet
-            repudiandae voluptate eum autem atque nesciunt, aspernatur fugiat
-            dolore, magni explicabo beatae. Aperiam.
-            <BarCharts
-              sector={negativeBrandTrendSorted}
-              series={negativeBrandTrendSortedData}
-              fillColor="#DA127D"
-            />
-          </p>
         </section>
         <section className="my-16">
           <h1 className="text-white text-[3rem] font-bold">Generic Words</h1>
@@ -186,38 +141,6 @@ export async function getStaticProps({ params }) {
   const { slug } = params;
   var selectedTrendsData = slug && trendsData[slug];
 
-  const positiveBrandTrendSorted =
-    selectedTrendsData &&
-    Object.keys(selectedTrendsData['brand_data'])
-      .filter((brand) => trendsData[slug]['brand_data'][brand] > 0.0)
-      .sort(
-        (a, b) =>
-          -(
-            trendsData[slug]['brand_data'][a] -
-            trendsData[slug]['brand_data'][b]
-          )
-      );
-
-  const positiveBrandTrendSortedData = positiveBrandTrendSorted?.map(
-    (brand) => trendsData[slug]['brand_data'][brand]
-  );
-
-  const negativeBrandTrendSorted =
-    selectedTrendsData &&
-    Object.keys(selectedTrendsData['brand_data'])
-      .filter((brand) => trendsData[slug]['brand_data'][brand] < 0.0)
-      .sort(
-        (a, b) =>
-          -(
-            trendsData[slug]['brand_data'][a] -
-            trendsData[slug]['brand_data'][b]
-          )
-      );
-
-  const negativeBrandTrendSortedData = negativeBrandTrendSorted?.map(
-    (brand) => trendsData[slug]['brand_data'][brand]
-  );
-
   const positiveWordTrendSorted =
     selectedTrendsData &&
     Object.keys(selectedTrendsData['word_data'])
@@ -250,10 +173,6 @@ export async function getStaticProps({ params }) {
     props: {
       slug,
       selectedTrendsData,
-      positiveBrandTrendSorted,
-      positiveBrandTrendSortedData,
-      negativeBrandTrendSorted,
-      negativeBrandTrendSortedData,
       positiveWordTrendSorted,
       positiveWordTrendSortedData,
       negativeWordTrendSorted,
