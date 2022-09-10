@@ -23,13 +23,19 @@ export default function Footer() {
         </div>
         <div className="p-4">
           <h3 className="font-bold text-lg">Kontak Kami</h3>
-          <ul className="mt-9 font-light text-sm">
-            <li>email@ugm.ac.id</li>
-            <li>
+          <div className="mt-9 font-light text-sm">
+            <div className="flex items-center mb-4">
+              <span className="material-icons mr-5">email</span>
+              <a className="underline" href="mailto:tes@mail.com">
+                email@ugm.ac.id
+              </a>
+            </div>
+            <div className="flex items-center">
+              <span className="material-icons mr-5">location_on</span>
               Jl. Sisingamangaraja No.4, RT.2/RW.1, Selong, Kec. Kby. Baru, Kota
               Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12110
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
         <div className="px-4 text-sm font-light">
           © 2022 Poldev UGM. All rights reserved
