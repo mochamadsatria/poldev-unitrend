@@ -33,20 +33,20 @@ function Sector({
     //   </Head>
     //   <h1>Hello World</h1>
     // </div>
-    <div className="min-h-screen flex items-center bg-[#222]">
+    <div className="min-h-screen bg-white">
       <div className="flex-1 max-w-7xl mx-auto p-10">
         <section className="my-16">
           <Link href="/">
-            <p className="text-white text-[1.0rem] hover:cursor-pointer">
+            <p className="text-black text-[1.0rem] hover:cursor-pointer">
               &#60; Back
             </p>
           </Link>
         </section>
         <section className="my-16">
-          <h1 className="text-white text-[4rem] font-bold">
+          <h1 className="text-black text-[4rem] font-bold">
             {trendsData[slug]?.name}
           </h1>
-          <p className="text-white text-[1.1rem]">
+          <p className="text-black text-[1.1rem]">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, ullam
             officia optio numquam voluptatibus tenetur similique eveniet
             repudiandae voluptate eum autem atque nesciunt, aspernatur fugiat
@@ -54,10 +54,10 @@ function Sector({
           </p>
         </section>
         <section className="my-16">
-          <h1 className="text-white text-[2rem] font-bold">
+          <h1 className="text-black text-[2rem] font-bold">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </h1>
-          <p className="text-white text-[1.1rem]">
+          <p className="text-black text-[1.1rem]">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, ullam
             officia optio numquam voluptatibus tenetur similique eveniet
             repudiandae voluptate eum autem atque nesciunt, aspernatur fugiat
@@ -79,11 +79,11 @@ function Sector({
           />
         </section>
         <section className="my-16 columns-1">
-          <div className="flex flex-col items-center justify-center border border-solid border-white p-8">
-            <p className="text-white text-[1.1rem]">
+          <div className="flex flex-col items-center justify-center border border-solid border-black p-8">
+            <p className="text-black text-[1.1rem]">
               Generic searches are up by
             </p>
-            <h2 className="text-white text-[2rem] font-bold">
+            <h2 className="text-black text-[2rem] font-bold">
               {selectedTrendsData &&
                 selectedTrendsData['word_trends_mean_change'].toFixed(1)}
               %
@@ -91,11 +91,11 @@ function Sector({
           </div>
         </section>
         <section className="my-16">
-          <h1 className="text-white text-[3rem] font-bold">Generic Words</h1>
-          <h1 className="text-white text-[2rem] font-bold">
+          <h1 className="text-black text-[3rem] font-bold">Generic Words</h1>
+          <h1 className="text-black text-[2rem] font-bold">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </h1>
-          <p className="text-white text-[1.1rem]">
+          <p className="text-black text-[1.1rem]">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, ullam
             officia optio numquam voluptatibus tenetur similique eveniet
             repudiandae voluptate eum autem atque nesciunt, aspernatur fugiat
@@ -108,10 +108,10 @@ function Sector({
           />
         </section>
         <section className="my-16">
-          <h1 className="text-white text-[2rem] font-bold">
+          <h1 className="text-black text-[2rem] font-bold">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </h1>
-          <p className="text-white text-[1.1rem]">
+          <p className="text-black text-[1.1rem]">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, ullam
             officia optio numquam voluptatibus tenetur similique eveniet
             repudiandae voluptate eum autem atque nesciunt, aspernatur fugiat
@@ -123,9 +123,9 @@ function Sector({
             />
           </p>
         </section>
-        <hr className="mt-10 border-[#555]" />
-        <Footer />
+        {/* <hr className="mt-10 border-[#555]" /> */}
       </div>
+      <Footer />
     </div>
   );
 }

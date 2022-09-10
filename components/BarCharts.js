@@ -21,30 +21,40 @@ class BarCharts extends Component {
           show: false,
         },
         xaxis: {
+          axisBorder: { color: '#000000' },
+          axisTicks: {
+            show: true,
+            borderType: 'solid',
+            color: '#000000',
+            height: 6,
+            offsetX: 0,
+            offsetY: 0,
+          },
           categories: props.sector || [],
           labels: {
             style: {
-              colors: '#FFFFFF',
+              colors: '#000000',
             },
           },
         },
         yaxis: {
+          axisBorder: { color: '#000000' },
           labels: {
             style: {
-              colors: '#FFFFFF',
+              colors: '#000000',
             },
           },
         },
         legend: {
           labels: {
-            colors: '#FFFFFF',
+            colors: '#000000',
           },
         },
         fill: {
           colors: props.fillColor,
         },
         theme: {
-          palette: 'dark', // upto palette10
+          palette: 'light', // upto palette10
         },
         tooltip: {
           enabled: true,

@@ -1,31 +1,60 @@
-import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import Image from 'next/image';
 import DetailCard from '../components/DetailCard';
 // import BarCharts from '../components/BarCharts';
 import Footer from '../components/Footer';
 import styles from '../styles/Home.module.css';
-import trendsData from '../data/Data_GT.json'
-import trendsDataSDGs from '../data/Data_SDGs.json'
+import trendsData from '../data/Data_GT.json';
+import trendsDataSDGs from '../data/Data_SDGs.json';
 
-const BarCharts = dynamic(() => import('../components/BarCharts'), { ssr: false });
+const BarCharts = dynamic(() => import('../components/BarCharts'), {
+  ssr: false,
+});
 
 export default function Home() {
-
   const positiveSectorTrendSorted = Object.keys(trendsData)
-                                          .filter(sector => trendsData[sector]["combined_trends_mean_change"] > 0.0)
-                                          .sort((a,b) => -(trendsData[a]["combined_trends_mean_change"] - trendsData[b]["combined_trends_mean_change"]))
-                                          
-  const positiveSectorTrendSortedData = positiveSectorTrendSorted.map(sector => trendsData[sector]["combined_trends_mean_change"])
+    .filter((sector) => trendsData[sector]['combined_trends_mean_change'] > 0.0)
+    .sort(
+      (a, b) =>
+        -(
+          trendsData[a]['combined_trends_mean_change'] -
+          trendsData[b]['combined_trends_mean_change']
+        )
+    );
+
+  const positiveSectorTrendSortedData = positiveSectorTrendSorted.map(
+    (sector) => trendsData[sector]['combined_trends_mean_change']
+  );
 
   const negativeSectorTrendSorted = Object.keys(trendsData)
-                                          .filter(sector => trendsData[sector]["combined_trends_mean_change"] < 0.0)
-                                          .sort((a,b) => -(trendsData[a]["combined_trends_mean_change"] - trendsData[b]["combined_trends_mean_change"]))
-                                          
-  const negativeSectorTrendSortedData = negativeSectorTrendSorted.map(sector => trendsData[sector]["combined_trends_mean_change"])
+    .filter((sector) => trendsData[sector]['combined_trends_mean_change'] < 0.0)
+    .sort(
+      (a, b) =>
+        -(
+          trendsData[a]['combined_trends_mean_change'] -
+          trendsData[b]['combined_trends_mean_change']
+        )
+    );
 
-  const trendsDataSorted = Object.keys(trendsData).sort((a,b) => -(trendsData[a]["combined_trends_mean_change"] - trendsData[b]["combined_trends_mean_change"]))
-  const trendsDataSDGsSorted = Object.keys(trendsDataSDGs).sort((a,b) => -(trendsDataSDGs[a]["combined_trends_mean_change"] - trendsDataSDGs[b]["combined_trends_mean_change"]))
+  const negativeSectorTrendSortedData = negativeSectorTrendSorted.map(
+    (sector) => trendsData[sector]['combined_trends_mean_change']
+  );
+
+  const trendsDataSorted = Object.keys(trendsData).sort(
+    (a, b) =>
+      -(
+        trendsData[a]['combined_trends_mean_change'] -
+        trendsData[b]['combined_trends_mean_change']
+      )
+  );
+  const trendsDataSDGsSorted = Object.keys(trendsDataSDGs).sort(
+    (a, b) =>
+      -(
+        trendsDataSDGs[a]['combined_trends_mean_change'] -
+        trendsDataSDGs[b]['combined_trends_mean_change']
+      )
+  );
 
   return (
     // <div>
@@ -36,13 +65,13 @@ export default function Home() {
     //   </Head>
     //   <h1>Hello World</h1>
     // </div>
-    <div className="min-h-screen flex items-center bg-[#222]">
+    <div className="min-h-screen bg-white">
       <div className="flex-1 max-w-7xl mx-auto p-10">
         <section className="my-16">
-          <h1 className="text-white text-[2rem] font-bold">
+          <h1 className="text-black text-[2rem] font-bold">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </h1>
-          <p className="text-white text-[1.1rem]">
+          <p className="text-black text-[1.1rem]">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, ullam
             officia optio numquam voluptatibus tenetur similique eveniet
             repudiandae voluptate eum autem atque nesciunt, aspernatur fugiat
@@ -50,44 +79,58 @@ export default function Home() {
           </p>
         </section>
         <section className="my-16">
-          <h1 className="text-white text-[2rem] font-bold">
+          <h1 className="text-black text-[2rem] font-bold">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </h1>
-          <p className="text-white text-[1.1rem]">
+          <p className="text-black text-[1.1rem]">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, ullam
             officia optio numquam voluptatibus tenetur similique eveniet
             repudiandae voluptate eum autem atque nesciunt, aspernatur fugiat
             dolore, magni explicabo beatae. Aperiam.
           </p>
-          <BarCharts sector={positiveSectorTrendSorted.map(sector => trendsData[sector]["name"])} series={positiveSectorTrendSortedData} fillColor='#07818F' />
+          <BarCharts
+            sector={positiveSectorTrendSorted.map(
+              (sector) => trendsData[sector]['name']
+            )}
+            series={positiveSectorTrendSortedData}
+            fillColor="#07818F"
+          />
         </section>
         <section className="my-16">
-          <h1 className="text-white text-[2rem] font-bold">
+          <h1 className="text-black text-[2rem] font-bold">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </h1>
-          <p className="text-white text-[1.1rem]">
+          <p className="text-black text-[1.1rem]">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, ullam
             officia optio numquam voluptatibus tenetur similique eveniet
             repudiandae voluptate eum autem atque nesciunt, aspernatur fugiat
             dolore, magni explicabo beatae. Aperiam.
-            <BarCharts sector={negativeSectorTrendSorted.map(sector => trendsData[sector]["name"])} series={negativeSectorTrendSortedData} fillColor='#DA127D' />
+            <BarCharts
+              sector={negativeSectorTrendSorted.map(
+                (sector) => trendsData[sector]['name']
+              )}
+              series={negativeSectorTrendSortedData}
+              fillColor="#DA127D"
+            />
           </p>
         </section>
-        <h1 className="text-white text-[2rem] font-bold">
+        <h1 className="text-black text-[2rem] font-bold">
           Klik untuk melihat lebih detail
         </h1>
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {
-            trendsDataSorted.map((k, index) => {
-              return (
-                <>
-                  <li key={index}>
-                    <DetailCard href={`/sector/${encodeURIComponent(k)}`} sector={trendsData[k]["name"]} trendsChange={trendsData[k]["combined_trends_mean_change"]}/>
-                  </li>
-                </>
-              )
-            })
-          }
+          {trendsDataSorted.map((k, index) => {
+            return (
+              <>
+                <li key={index}>
+                  <DetailCard
+                    href={`/sector/${encodeURIComponent(k)}`}
+                    sector={trendsData[k]['name']}
+                    trendsChange={trendsData[k]['combined_trends_mean_change']}
+                  />
+                </li>
+              </>
+            );
+          })}
           {/* <li>
             <DetailCard sector = "India"/>
           </li>
@@ -113,23 +156,27 @@ export default function Home() {
             <DetailCard />
           </li> */}
         </ul>
-        <h1 className="text-white text-[2rem] font-bold">SDGs</h1>
+        <h1 className="text-black text-[2rem] font-bold">SDGs</h1>
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-        {
-            trendsDataSDGsSorted.map((k, index) => {
-              return (
-                <>
-                  <li key={index}>
-                    <DetailCard href={`/sdgs/${encodeURIComponent(k)}`} sector={trendsDataSDGs[k]["name"]} trendsChange={trendsDataSDGs[k]["combined_trends_mean_change"]}/>
-                  </li>
-                </>
-              )
-            })
-          }
+          {trendsDataSDGsSorted.map((k, index) => {
+            return (
+              <>
+                <li key={index}>
+                  <DetailCard
+                    href={`/sdgs/${encodeURIComponent(k)}`}
+                    sector={trendsDataSDGs[k]['name']}
+                    trendsChange={
+                      trendsDataSDGs[k]['combined_trends_mean_change']
+                    }
+                  />
+                </li>
+              </>
+            );
+          })}
         </ul>
-        <hr className="mt-10 border-[#555]" />
-        <Footer />
+        {/* <hr className="mt-10 border-[#555]" /> */}
       </div>
+      <Footer />
     </div>
   );
 }
