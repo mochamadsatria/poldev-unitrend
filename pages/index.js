@@ -7,6 +7,10 @@ import Footer from '../components/Footer';
 import styles from '../styles/Home.module.css';
 import trendsData from '../data/Data_GT.json';
 import trendsDataSDGs from '../data/Data_SDGs.json';
+import SearchBar from '../components/SearchBar';
+import Navbar from '../components/Navbar';
+import SectorDropDown from '../components/SectorDropDown';
+import SectorButton from '../components/SectorButton';
 
 const BarCharts = dynamic(() => import('../components/BarCharts'), {
   ssr: false,
@@ -66,7 +70,37 @@ export default function Home() {
     //   <h1>Hello World</h1>
     // </div>
     <div className="min-h-screen bg-white">
+      {/* <SectorDropDown /> */}
+      <Navbar />
       <div className="flex-1 max-w-7xl mx-auto p-10">
+        <section className="my-16">
+          <h1 className="text-black text-[1.5rem] font-bold text-center max-w-2xl m-auto">
+            Ingin mengetahui topik apa yang banyak ditelusuri masyarakat pada
+            google pada setiap sektor? Yuk cari!
+          </h1>
+          <SearchBar />
+        </section>
+        <section className="my-16">
+          <h1 className="text-black text-[1.5rem] font-bold text-center max-w-2xl m-auto">
+            Topik Trending
+          </h1>
+          <div className="flex flex-wrap justify-center">
+            <SectorButton name="Kesehatan" />
+            <SectorButton name="Kesehatan" />
+            <SectorButton name="Kesehatan" />
+            <SectorButton name="Kesehatan" />
+            <SectorButton name="Kesehatan" />
+            <SectorButton name="Kesehatan" />
+            <SectorButton name="Kesehatan" />
+            <SectorButton name="Kesehatan" />
+            <SectorButton name="Kesehatan" />
+            <SectorButton name="Kesehatan" />
+            <SectorButton name="Kesehatan" />
+            <SectorButton name="Kesehatan" />
+            <SectorButton name="Kesehatan" />
+          </div>
+        </section>
+
         <section className="my-16">
           <h1 className="text-black text-[2rem] font-bold">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.

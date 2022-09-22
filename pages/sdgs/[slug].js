@@ -43,7 +43,7 @@ function Sector({
           </Link>
         </section>
         <section className="my-16">
-          <h1 className="text-black text-[4rem] font-bold">
+          <h1 className="text-black text-[3em] md:text-[4em] font-bold">
             {trendsData[slug]?.name}
           </h1>
           <p className="text-black text-[1.1rem]">

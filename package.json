@@ -9,7 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.2",
+    "@heroicons/react": "^2.0.11",
     "apexcharts": "^3.35.5",
+    "flowbite": "^1.5.3",
+    "flowbite-react": "^0.1.11",
+    "headlessui": "^0.0.0",
+    "heroicons": "^2.0.11",
     "next": "12.2.2",
     "react": "18.2.0",
     "react-apexcharts": "^1.4.0",
