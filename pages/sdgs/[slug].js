@@ -104,7 +104,7 @@ function Sector({
           <BarCharts
             sector={positiveWordTrendSorted}
             series={positiveWordTrendSortedData}
-            fillColor="#07818F"
+            fillColor="#07B0F8"
           />
         </section>
         <section className="my-16">
@@ -119,7 +119,7 @@ function Sector({
             <BarCharts
               sector={negativeWordTrendSorted}
               series={negativeWordTrendSortedData}
-              fillColor="#DA127D"
+              fillColor="#AB004A"
             />
           </p>
         </section>

@@ -54,7 +54,7 @@ class LineCharts extends Component {
             colors: '#000000',
           },
         },
-        colors: ['#07818F', '#DA127D'],
+        colors: ['#07B0F8', '#AB004A'],
       },
       series: [
         {

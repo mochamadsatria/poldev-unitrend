@@ -19,16 +19,16 @@ export default function DetailCard(props) {
             )}
           </div>
           {props.trendsChange > 0.0 ? (
-            <span className="mx-1 text-[3rem] font-bold text-[#07818F]">
+            <span className="mx-1 text-[3rem] font-bold text-[#07B0F8]">
               {props.trendsChange ? props.trendsChange.toFixed(1) : '0.0%'}%
             </span>
           ) : (
-            <span className="mx-1 text-[3rem] font-bold text-[#DA127D]">
+            <span className="mx-1 text-[3rem] font-bold text-[#AB004A]">
               {props.trendsChange ? -1 * props.trendsChange.toFixed(1) : '0.0%'}
               %
             </span>
           )}
-          {/* <span className="mx-1 text-[3rem] font-bold text-[#07818F]">{props.trendsChange ? props.trendsChange.toFixed(1) : "0.0%"}</span> */}
+          {/* <span className="mx-1 text-[3rem] font-bold text-[#07B0F8]">{props.trendsChange ? props.trendsChange.toFixed(1) : "0.0%"}</span> */}
         </div>
       </div>
     </Link>

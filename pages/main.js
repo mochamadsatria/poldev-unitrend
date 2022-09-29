@@ -12,7 +12,7 @@ function Main() {
           <p className="text-center">Travel</p>
           <div className={styles.sectorBox2}>
             <Image src={arrowUp} alt="Arrow Up" width="35px" height="35px" />
-            <span className="text-[#07818F] text-[3rem]">186%</span>
+            <span className="text-[#07B0F8] text-[3rem]">186%</span>
           </div>
         </div>
       </div>

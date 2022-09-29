@@ -127,7 +127,7 @@ export default function Home() {
               (sector) => trendsData[sector]['name']
             )}
             series={positiveSectorTrendSortedData}
-            fillColor="#07818F"
+            fillColor="#07B0F8"
           />
         </section>
         <section className="my-16">
@@ -144,7 +144,7 @@ export default function Home() {
                 (sector) => trendsData[sector]['name']
               )}
               series={negativeSectorTrendSortedData}
-              fillColor="#DA127D"
+              fillColor="#AB004A"
             />
           </p>
         </section>
