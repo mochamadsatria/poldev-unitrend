@@ -14,7 +14,7 @@ export default function about() {
           </section>
           <section className="text-justify flex flex-col">
             <h1 className="text-black text-[3em] md:text-[4em] font-bold">
-              FAQ
+              Our Teams
             </h1>
             <p className="text-black text-[1.1rem] indent-16">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis

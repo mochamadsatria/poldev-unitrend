@@ -7,6 +7,7 @@ import DetailCard from "../../components/DetailCard";
 import Footer from "../../components/Footer";
 import styles from "../../styles/Home.module.css";
 import trendsData from "../../data/Data_GT.json";
+import deskripsiData from "../../data/Deskripsi_GT.json";
 import Link from "next/link";
 
 const BarCharts = dynamic(() => import("../../components/BarCharts"), {
@@ -50,15 +51,12 @@ function Sector({
             </p>
           </Link>
         </section>
-        <section className="my-16">
+        <section className="text-justify my-16">
           <h1 className="text-black text-[3em] md:text-[4em] font-bold">
             {trendsData[slug]?.name}
           </h1>
           <p className="text-black text-[1.1rem] my-2">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, ullam
-            officia optio numquam voluptatibus tenetur similique eveniet
-            repudiandae voluptate eum autem atque nesciunt, aspernatur fugiat
-            dolore, magni explicabo beatae. Aperiam.
+            {deskripsiData[slug]}
           </p>
         </section>
         <section className="text-justify my-16">
@@ -66,11 +64,11 @@ function Sector({
             Bagaimana tren sektor {trendsData[slug]?.name} saat ini dibandingkan
             dengan tahun lalu?
           </h1>
-          <p className="text-black text-[1.1rem] my-2">
+          {/* <p className="text-black text-[1.1rem] my-2">
             Data ini berasal dari Google Trends, dan menunjukkan hasil tren
             rata-rata seluruh kata kunci, merek dan topik umum yang kami lacak
             di sektor {trendsData[slug]?.name}. Berikut hasilnya:
-          </p>
+          </p> */}
           <LineCharts
             trendsData2021={
               selectedTrendsData &&
@@ -119,11 +117,11 @@ function Sector({
                 Sektor {trendsData[slug]?.name} didominasi oleh merek berikut
                 ini
               </h1>
-              <p className="text-black text-[1.1rem] my-2">
+              {/* <p className="text-black text-[1.1rem] my-2">
                 Data ini diambil dari Google Trends, dan menunjukkan persentase
                 peningkatan dibandingkan periode yang sama pada tahun
                 sebelumnya.
-              </p>
+              </p> */}
               <p className="text-gray-400 text-[0.875rem]">
                 Membandingkan :{" "}
                 {`${lastYearDate.slice(
@@ -150,10 +148,10 @@ function Sector({
                 Merek-merek pada sektor {trendsData[slug]?.name} yang mengalami
                 penurunan adalah
               </h1>
-              <p className="text-black text-[1.1rem] my-2">
+              {/* <p className="text-black text-[1.1rem] my-2">
                 Data ini diambil dari Google Trends, dan menunjukkan persentase
                 penurunan dibandingkan periode yang sama pada tahun sebelumnya.
-              </p>
+              </p> */}
               <p className="text-gray-400 text-[0.875rem]">
                 Membandingkan :{" "}
                 {`${lastYearDate.slice(
@@ -183,10 +181,10 @@ function Sector({
             Topik umum sektor {trendsData[slug]?.name} yang mengalami kenaikan
             pencarian adalah
           </h1>
-          <p className="text-black text-[1.1rem] my-2">
+          {/* <p className="text-black text-[1.1rem] my-2">
             Data ini diambil dari Google Trends, dan menunjukkan persentase
             peningkatan dibandingkan periode yang sama pada tahun sebelumnya.
-          </p>
+          </p> */}
           <p className="text-gray-400 text-[0.875rem]">
             Membandingkan :{" "}
             {`${lastYearDate.slice(0, 10)} hingga ${lastYearDateNextWeek.slice(
@@ -213,10 +211,10 @@ function Sector({
             Topik umum sektor {trendsData[slug]?.name} yang mengalami penurunan
             adalah
           </h1>
-          <p className="text-black text-[1.1rem] my-2">
+          {/* <p className="text-black text-[1.1rem] my-2">
             Data ini diambil dari Google Trends, dan menunjukkan persentase
             penurunan dibandingkan periode yang sama pada tahun sebelumnya.
-          </p>
+          </p> */}
           <p className="text-gray-400 text-[0.875rem]">
             Membandingkan :{" "}
             {`${lastYearDate.slice(0, 10)} hingga ${lastYearDateNextWeek.slice(

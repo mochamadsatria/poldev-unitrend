@@ -6,7 +6,7 @@ import Image from 'next/image';
 export default function DetailCard(props) {
   return (
     <Link href={props.href}>
-      <div className="border-black border-2 p-5 hover:cursor-pointer">
+      <div className="border-black border-2 p-5 h-[10rem] hover:cursor-pointer flex flex-col justify-center">
         <div className="text-center text-black text-[1.1rem]">
           {props.sector ? props.sector : 'Pariwisata'}
         </div>

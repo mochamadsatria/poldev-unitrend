@@ -35,7 +35,7 @@ export default function Navbar() {
   return (
     <>
       <Transition
-        className="fixed top-0 left-0 right-0 bg-[#FFFFFF] px-[10%] z-20"
+        className="fixed top-0 left-0 right-0 bg-[#FFFFFF] px-[10%] z-20 pb-4"
         show={isShown}
         enter="transition-opacity duration-200"
         enterFrom="opacity-0"
@@ -60,7 +60,7 @@ export default function Navbar() {
               fill="#06283D"
             />
           </svg>
-          <div className="my-2">Semua Sektor</div>
+          {/* <div className="my-2">Semua Sektor</div> */}
           <hr className="border-1 mb-2 mt-1"></hr>
 
           <div className="flex flex-wrap">
@@ -86,7 +86,7 @@ export default function Navbar() {
             <div className="mx-5 cursor-pointer">
               <Link href="/about">About Us</Link>
             </div>
-            <div className="mx-5 flex items-center">
+            {/* <div className="mx-5 flex items-center">
               <div  className="hover:cursor-pointer mr-1 flex flex-row items-center" onClick={() => setIsShown(!isShown)}>
                 <span className="mr-1">
                 Sektor Data
@@ -100,13 +100,13 @@ export default function Navbar() {
                   <path d="M0 0l5 8 5-8H0z" fill="#06283D" />
                 </svg>
               </div>
-            </div>
+            </div> */}
             <div className="mx-5 cursor-pointer">
               <Link href="/teams">Our Teams</Link>
             </div>
           </div>
           <div className="flex items-center">
-            <div className="mr-1">Indonesia/ID</div>
+            <div className="mr-1">ID</div>
             <svg
               width={10}
               height={8}

@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
-import Image from 'next/image';
+import Image from 'next/future/image';
 import DetailCard from '../components/DetailCard';
 // import BarCharts from '../components/BarCharts';
 import Footer from '../components/Footer';
@@ -11,6 +11,7 @@ import SearchBar from '../components/SearchBar';
 import Navbar from '../components/Navbar';
 import SectorDropDown from '../components/SectorDropDown';
 import SectorButton from '../components/SectorButton';
+import heroImg from '../public/hero.jpg'
 
 const BarCharts = dynamic(() => import('../components/BarCharts'), {
   ssr: false,
@@ -77,7 +78,7 @@ export default function Home() {
       {/* <SectorDropDown /> */}
       {/* <Navbar /> */}
       <div className="flex-1 max-w-7xl mx-auto p-10">
-        <section className="my-16">
+        {/* <section className="my-16">
           <h1 className="text-black text-[1.5rem] font-bold text-center max-w-2xl m-auto">
             Ingin mengetahui topik apa yang banyak ditelusuri masyarakat pada
             google pada setiap sektor? Yuk cari!
@@ -100,18 +101,18 @@ export default function Home() {
                 );
               })}
           </div>
-        </section>
+        </section> */}
 
-        <section className="text-justify my-16">
-          <h1 className="text-black text-[2rem] font-bold">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </h1>
-          <p className="text-black text-[1.1rem] my-2">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, ullam
-            officia optio numquam voluptatibus tenetur similique eveniet
-            repudiandae voluptate eum autem atque nesciunt, aspernatur fugiat
-            dolore, magni explicabo beatae. Aperiam.
-          </p>
+        <section className="h-screen flex flex-row overflow-hidden justify-between items-center">
+          <div className='mr-4'>
+            <h1 className="text-black text-[3rem] font-bold">
+              Institute for Policy Development Data Center
+            </h1>
+            <p className="text-black text-[1.5rem] my-2">
+              Presenting Data for Better Policy
+            </p>
+          </div>
+          <Image src={heroImg} alt="Futuristic city" className='ml-4 w-[30vw] h-[auto]'></Image>
         </section>
         <section className="text-justify my-16">
           <h1 className="text-black text-[2rem] font-bold">
@@ -149,10 +150,10 @@ export default function Home() {
               fillColor="#F84F07"
             />
         </section>
-        <h1 className="text-black text-[1.5rem] font-semibold my-6">
+        <h1 className="text-black text-[1.5rem] font-semibold">
           Klik  untuk  mengetahui  rincian  data masing-masing sektor
         </h1>
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <ul className="my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {trendsDataSorted.map((k, index) => {
             return (
               <>
@@ -191,24 +192,29 @@ export default function Home() {
             <DetailCard />
           </li> */}
         </ul>
-        <h1 className="text-black text-[2rem] font-bold">SDGs</h1>
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {trendsDataSDGsSorted.map((k, index) => {
-            return (
-              <>
-                <li key={index}>
-                  <DetailCard
-                    href={`/sdgs/${encodeURIComponent(k)}`}
-                    sector={trendsDataSDGs[k]['name']}
-                    trendsChange={
-                      trendsDataSDGs[k]['combined_trends_mean_change']
-                    }
-                  />
-                </li>
-              </>
-            );
-          })}
-        </ul>
+        <section className="text-justify my-16">
+          <h1 className="text-black text-[2rem] font-bold"><i>Sustainable Development Goals</i></h1>
+          <p className="text-black text-[1.1rem] my-2">
+          SDGs (<i>Sustainable Development Goals</i>) adalah agenda 2030 yang merupakan kesepakatan pembangunan berkelanjutan berdasarkan hak asasi manusia dan kesetaraan. Poin umum dari pembangunan berkelanjutan, digunakan sebagai pedoman untuk melaksanakan pembangunan yang menjaga peningkatan kesejahteraan ekonomi masyarakat secara berkesinambungan, pembangunan yang menjaga keberlanjutan kehidupan sosial masyarakat, pembangunan yang menjaga kualitas lingkungan hidup serta pembangunan yang menjamin keadilan dan terlaksananya tata kelola yang mampu menjaga peningkatan kualitas hidup dari satu generasi ke generasi berikutnya. PolDev Data Center menyajikan keyword-keyword yang berelevansi tinggi terhadap beberapa poin SDGs.
+            </p>
+          <ul className="my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            {trendsDataSDGsSorted.map((k, index) => {
+              return (
+                <>
+                  <li key={index}>
+                    <DetailCard
+                      href={`/sdgs/${encodeURIComponent(k)}`}
+                      sector={trendsDataSDGs[k]['name']}
+                      trendsChange={
+                        trendsDataSDGs[k]['combined_trends_mean_change']
+                      }
+                    />
+                  </li>
+                </>
+              );
+            })}
+          </ul>
+        </section>
         {/* <hr className="mt-10 border-[#555]" /> */}
       </div>
       {/* <Footer /> */}

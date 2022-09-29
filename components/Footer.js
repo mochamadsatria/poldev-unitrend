@@ -26,14 +26,13 @@ export default function Footer() {
           <div className="mt-9 font-light text-sm">
             <div className="flex items-center mb-4">
               <span className="material-icons mr-5">email</span>
-              <a className="underline" href="mailto:tes@mail.com">
-                email@ugm.ac.id
+              <a className="underline" href="mailto:poldev.fisipol@ugm.ac.id">
+                poldev.fisipol@ugm.ac.id
               </a>
             </div>
             <div className="flex items-center">
               <span className="material-icons mr-5">location_on</span>
-              Jl. Sisingamangaraja No.4, RT.2/RW.1, Selong, Kec. Kby. Baru, Kota
-              Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12110
+              Jl. Sosio Yustisia No.1, Bulaksumur, Yogyakarta 55281, Indonesia
             </div>
           </div>
         </div>

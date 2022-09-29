@@ -94,7 +94,7 @@ class BarCharts extends Component {
           options={this.state.options}
           series={this.state.series}
           type="bar"
-          height={300}
+          height={this.state.options.xaxis.categories.length * 50}
         />
       </div>
     );

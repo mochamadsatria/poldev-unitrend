@@ -7,6 +7,7 @@ import DetailCard from '../../components/DetailCard';
 import Footer from '../../components/Footer';
 import styles from '../../styles/Home.module.css';
 import trendsData from '../../data/Data_SDGs.json';
+import deskripsiData from '../../data/Deskripsi_SDGs.json';
 import Link from 'next/link';
 
 const BarCharts = dynamic(() => import('../../components/BarCharts'), {
@@ -23,6 +24,10 @@ function Sector({
   positiveWordTrendSortedData,
   negativeWordTrendSorted,
   negativeWordTrendSortedData,
+  lastYearDate,
+  lastYearDateNextWeek,
+  latestDate,
+  latestDateNextWeek,
 }) {
   return (
     // <div>
@@ -47,21 +52,15 @@ function Sector({
             {trendsData[slug]?.name}
           </h1>
           <p className="text-black text-[1.1rem]">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, ullam
-            officia optio numquam voluptatibus tenetur similique eveniet
-            repudiandae voluptate eum autem atque nesciunt, aspernatur fugiat
-            dolore, magni explicabo beatae. Aperiam.
+            {deskripsiData[slug]}
           </p>
         </section>
-        <section className="my-16">
+        <section className="text-justify my-16">
           <h1 className="text-black text-[2rem] font-bold">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Bagaimana  tren  topik  kesetaraan  gender  saat  ini dibandingkan dengan tahun lalu?
           </h1>
-          <p className="text-black text-[1.1rem]">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, ullam
-            officia optio numquam voluptatibus tenetur similique eveniet
-            repudiandae voluptate eum autem atque nesciunt, aspernatur fugiat
-            dolore, magni explicabo beatae. Aperiam.
+          <p className="text-black text-[1.1rem] my-2">
+            Data ini berasal dari Google Trends, dan menunjukkan tren rata-rata untuk semua kata kunci, dan topik umum terkait {trendsData[slug]?.name}. Berikut hasilnya: 
           </p>
           <LineCharts
             trendsData2021={
@@ -81,7 +80,7 @@ function Sector({
         <section className="my-16 columns-1">
           <div className="flex flex-col items-center justify-center border border-solid border-black p-8">
             <p className="text-black text-[1.1rem]">
-              Generic searches are up by
+              Pencarian topik umum meningkat sebesar
             </p>
             <h2 className="text-black text-[2rem] font-bold">
               {selectedTrendsData &&
@@ -90,16 +89,28 @@ function Sector({
             </h2>
           </div>
         </section>
-        <section className="my-16">
-          <h1 className="text-black text-[3rem] font-bold">Generic Words</h1>
+        <section className="text-justify my-16">
+          <h1 className="text-black text-[3rem] font-bold">Topik Umum</h1>
           <h1 className="text-black text-[2rem] font-bold">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Topik umum tentang kesetaraan gender yang mengalami kenaikan pencarian adalah
           </h1>
-          <p className="text-black text-[1.1rem]">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, ullam
-            officia optio numquam voluptatibus tenetur similique eveniet
-            repudiandae voluptate eum autem atque nesciunt, aspernatur fugiat
-            dolore, magni explicabo beatae. Aperiam.
+          <p className="text-black text-[1.1rem] my-2">
+            Data ini diambil dari Google Trends, menunjukkan persentase peningkatan dibandingkan periode yang sama pada tahun sebelumnya.
+          </p>
+          <p className="text-gray-400 text-[0.875rem]">
+                Membandingkan :{" "}
+                {`${lastYearDate.slice(
+                  0,
+                  10
+                )} hingga ${lastYearDateNextWeek.slice(0, 10)}`}{" "}
+                dengan{" "}
+                {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
+                  0,
+                  10
+                )}`}
+              </p>
+              <p className="text-gray-400 text-[0.875rem]">
+                Data terakhir diambil : {latestDate.slice(0, 10)}
           </p>
           <BarCharts
             sector={positiveWordTrendSorted}
@@ -107,21 +118,33 @@ function Sector({
             fillColor="#07B0F8"
           />
         </section>
-        <section className="my-16">
+        <section className="text-justify my-16">
           <h1 className="text-black text-[2rem] font-bold">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Topik umum tentang kesetaraan genderyang mengalami penurunan adalah
           </h1>
-          <p className="text-black text-[1.1rem]">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, ullam
-            officia optio numquam voluptatibus tenetur similique eveniet
-            repudiandae voluptate eum autem atque nesciunt, aspernatur fugiat
-            dolore, magni explicabo beatae. Aperiam.
+          <p className="text-black text-[1.1rem] my-2">
+            Data ini diambil dari Google Trends, menunjukkan persentase penurunan dibandingkan periode yang sama pada tahun lalu.
+            </p>
+                          <p className="text-gray-400 text-[0.875rem]">
+                Membandingkan :{" "}
+                {`${lastYearDate.slice(
+                  0,
+                  10
+                )} hingga ${lastYearDateNextWeek.slice(0, 10)}`}{" "}
+                dengan{" "}
+                {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
+                  0,
+                  10
+                )}`}
+              </p>
+              <p className="text-gray-400 text-[0.875rem]">
+                Data terakhir diambil : {latestDate.slice(0, 10)}
+              </p>
             <BarCharts
               sector={negativeWordTrendSorted}
               series={negativeWordTrendSortedData}
               fillColor="#F84F07"
             />
-          </p>
         </section>
         {/* <hr className="mt-10 border-[#555]" /> */}
       </div>
@@ -167,6 +190,32 @@ export async function getStaticProps({ params }) {
     (word) => trendsData[slug]['word_data'][word]
   );
 
+  const getDateOfWeek = (w, y) => {
+    var sunday = new Date(y, 0, 1 + (w - 1) * 7);
+    while (sunday.getDay() !== 0) {
+      sunday.setDate(sunday.getDate() - 1);
+    }
+    return sunday;
+  };
+
+  const getNextWeekDate = (dt) =>
+    new Date(dt.getTime() + 7 * 24 * 60 * 60 * 1000);
+
+  const _latestDate = getDateOfWeek(
+    Object.keys(selectedTrendsData["biannually_combined_trends_mean"]["2022"])
+      .length,
+    2022
+  );
+  const latestDate = _latestDate.toISOString();
+  const latestDateNextWeek = getNextWeekDate(_latestDate).toISOString();
+  const _lastYearDate = getDateOfWeek(
+    Object.keys(selectedTrendsData["biannually_combined_trends_mean"]["2022"])
+      .length,
+    2021
+  );
+  const lastYearDate = _lastYearDate.toISOString();
+  const lastYearDateNextWeek = getNextWeekDate(_lastYearDate).toISOString();
+
   // By returning { props: { posts } }, the Blog component
   // will receive `posts` as a prop at build time
   return {
@@ -177,6 +226,10 @@ export async function getStaticProps({ params }) {
       positiveWordTrendSortedData,
       negativeWordTrendSorted,
       negativeWordTrendSortedData,
+      lastYearDate,
+      lastYearDateNextWeek,
+      latestDate,
+      latestDateNextWeek,
     },
   };
 }
