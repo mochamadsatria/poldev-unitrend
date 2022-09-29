@@ -110,7 +110,7 @@ function Sector({
                 )}`}
               </p>
               <p className="text-gray-400 text-[0.875rem]">
-                Data terakhir diambil : {latestDate.slice(0, 10)}
+                Data terakhir diambil: {latestDate.slice(0, 10)}
           </p>
           <BarCharts
             sector={positiveWordTrendSorted}
@@ -138,7 +138,7 @@ function Sector({
                 )}`}
               </p>
               <p className="text-gray-400 text-[0.875rem]">
-                Data terakhir diambil : {latestDate.slice(0, 10)}
+                Data terakhir diambil: {latestDate.slice(0, 10)}
               </p>
             <BarCharts
               sector={negativeWordTrendSorted}

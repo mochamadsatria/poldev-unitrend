@@ -122,7 +122,7 @@ export default function Home() {
             Data berikut ini menunjukkan sektor-sektor yang mengalami peningkatan persentase pencarian, dibandingkan dengan periode yang sama pada tahun sebelumnya. Hal ini menunjukkan adanya traksi yang tinggi terhadap topik sektor berikut di Google.
           </p>
           <p className="text-gray-400 text-[0.875rem]">
-            Data terakhir diambil : {latestDate.toISOString().slice(0, 10)}
+            Data terakhir diambil: {latestDate.toISOString().slice(0, 10)}
           </p>
           <BarCharts
             sector={positiveSectorTrendSorted.map(
@@ -140,7 +140,7 @@ export default function Home() {
             Data berikut ini menunjukkan sektor-sektor yang mengalami penurunan persentase, dibandingkan periode yang sama pada tahun sebelumnya. Diketahui bahwa terjadi penurunan yang signifikan terhadap pencarian topik yang berhubungan dengan sektor berikut di Google.
           </p>
           <p className="text-gray-400 text-[0.875rem]">
-            Data terakhir diambil : {latestDate.toISOString().slice(0, 10)}
+            Data terakhir diambil: {latestDate.toISOString().slice(0, 10)}
           </p>
             <BarCharts
               sector={negativeSectorTrendSorted.map(
