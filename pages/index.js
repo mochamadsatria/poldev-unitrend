@@ -60,6 +60,10 @@ export default function Home() {
       )
   );
 
+  const getDateOfWeek = (w, y) => (new Date(y, 0, (1 + (w - 1) * 7)))
+
+  const latestDate = getDateOfWeek(Object.keys(trendsData[Object.keys(trendsData)[0]]["biannually_combined_trends_mean"]["2022"]).length, 2022)
+
   return (
     // <div>
     //   <Head>
@@ -71,7 +75,7 @@ export default function Home() {
     // </div>
     <div className="min-h-screen bg-white">
       {/* <SectorDropDown /> */}
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="flex-1 max-w-7xl mx-auto p-10">
         <section className="my-16">
           <h1 className="text-black text-[1.5rem] font-bold text-center max-w-2xl m-auto">
@@ -85,42 +89,39 @@ export default function Home() {
             Topik Trending
           </h1>
           <div className="flex flex-wrap justify-center">
-            <SectorButton name="Kesehatan" />
-            <SectorButton name="Kesehatan" />
-            <SectorButton name="Kesehatan" />
-            <SectorButton name="Kesehatan" />
-            <SectorButton name="Kesehatan" />
-            <SectorButton name="Kesehatan" />
-            <SectorButton name="Kesehatan" />
-            <SectorButton name="Kesehatan" />
-            <SectorButton name="Kesehatan" />
-            <SectorButton name="Kesehatan" />
-            <SectorButton name="Kesehatan" />
-            <SectorButton name="Kesehatan" />
-            <SectorButton name="Kesehatan" />
+            {Object.keys(trendsData).map((sector, index) => {
+                return (
+                  <>
+                    <SectorButton
+                      href={`/sector/${sector}`}
+                      name={`${trendsData[sector]["name"]}`}
+                    />
+                  </>
+                );
+              })}
           </div>
         </section>
 
-        <section className="my-16">
+        <section className="text-justify my-16">
           <h1 className="text-black text-[2rem] font-bold">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </h1>
-          <p className="text-black text-[1.1rem]">
+          <p className="text-black text-[1.1rem] my-2">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, ullam
             officia optio numquam voluptatibus tenetur similique eveniet
             repudiandae voluptate eum autem atque nesciunt, aspernatur fugiat
             dolore, magni explicabo beatae. Aperiam.
           </p>
         </section>
-        <section className="my-16">
+        <section className="text-justify my-16">
           <h1 className="text-black text-[2rem] font-bold">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Sektor mana saja yang mengalami peningkatan pencarian di Google?
           </h1>
-          <p className="text-black text-[1.1rem]">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, ullam
-            officia optio numquam voluptatibus tenetur similique eveniet
-            repudiandae voluptate eum autem atque nesciunt, aspernatur fugiat
-            dolore, magni explicabo beatae. Aperiam.
+          <p className="text-black text-[1.1rem] my-2">
+            Data berikut ini menunjukkan sektor-sektor yang mengalami peningkatan persentase pencarian, dibandingkan dengan periode yang sama pada tahun sebelumnya. Hal ini menunjukkan adanya traksi yang tinggi terhadap topik sektor berikut di Google.
+          </p>
+          <p className="text-gray-400 text-[0.875rem]">
+            Data terakhir diambil : {latestDate.toISOString().slice(0, 10)}
           </p>
           <BarCharts
             sector={positiveSectorTrendSorted.map(
@@ -130,26 +131,26 @@ export default function Home() {
             fillColor="#07B0F8"
           />
         </section>
-        <section className="my-16">
+        <section className="text-justify my-16">
           <h1 className="text-black text-[2rem] font-bold">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Sektor apa saja yang mengalami penurunan pencarian di Google?
           </h1>
-          <p className="text-black text-[1.1rem]">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, ullam
-            officia optio numquam voluptatibus tenetur similique eveniet
-            repudiandae voluptate eum autem atque nesciunt, aspernatur fugiat
-            dolore, magni explicabo beatae. Aperiam.
+          <p className="text-black text-[1.1rem] my-2">
+            Data berikut ini menunjukkan sektor-sektor yang mengalami penurunan persentase, dibandingkan periode yang sama pada tahun sebelumnya. Diketahui bahwa terjadi penurunan yang signifikan terhadap pencarian topik yang berhubungan dengan sektor berikut di Google.
+          </p>
+          <p className="text-gray-400 text-[0.875rem]">
+            Data terakhir diambil : {latestDate.toISOString().slice(0, 10)}
+          </p>
             <BarCharts
               sector={negativeSectorTrendSorted.map(
                 (sector) => trendsData[sector]['name']
               )}
               series={negativeSectorTrendSortedData}
-              fillColor="#AB004A"
+              fillColor="#F84F07"
             />
-          </p>
         </section>
-        <h1 className="text-black text-[2rem] font-bold">
-          Klik untuk melihat lebih detail
+        <h1 className="text-black text-[1.5rem] font-semibold my-6">
+          Klik  untuk  mengetahui  rincian  data masing-masing sektor
         </h1>
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {trendsDataSorted.map((k, index) => {
@@ -210,7 +211,7 @@ export default function Home() {
         </ul>
         {/* <hr className="mt-10 border-[#555]" /> */}
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

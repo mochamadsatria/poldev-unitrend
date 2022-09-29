@@ -119,13 +119,13 @@ function Sector({
             <BarCharts
               sector={negativeWordTrendSorted}
               series={negativeWordTrendSortedData}
-              fillColor="#AB004A"
+              fillColor="#F84F07"
             />
           </p>
         </section>
         {/* <hr className="mt-10 border-[#555]" /> */}
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

@@ -54,7 +54,7 @@ class LineCharts extends Component {
             colors: '#000000',
           },
         },
-        colors: ['#07B0F8', '#AB004A'],
+        colors: ['#07B0F8', '#F84F07'],
       },
       series: [
         {
@@ -71,7 +71,7 @@ class LineCharts extends Component {
 
   render() {
     return (
-      <div className="line">
+      <div className="line my-12">
         <Chart
           options={this.state.options}
           series={this.state.series}

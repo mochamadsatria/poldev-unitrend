@@ -2,6 +2,9 @@ import { useState, useRef, Fragment, useEffect } from 'react';
 import { Transition } from '@headlessui/react';
 import SectorButton from './SectorButton';
 import Link from 'next/link';
+import PoldevImg from '../public/logo-poldev.png';
+import Image from 'next/image';
+import trendsData from '../data/Data_GT.json';
 
 export default function Navbar() {
   const useOutsideClick = (callback) => {
@@ -28,6 +31,7 @@ export default function Navbar() {
     setIsShown(!isShown);
   };
   const ref = useOutsideClick(handleClickOutside);
+
   return (
     <>
       <Transition
@@ -44,7 +48,7 @@ export default function Navbar() {
       >
         <div>
           <svg
-            className="cursor-pointer my-2"
+            className="cursor-pointer my-4"
             onClick={() => setIsShown(!isShown)}
             width={15}
             height={15}
@@ -56,49 +60,49 @@ export default function Navbar() {
               fill="#06283D"
             />
           </svg>
-          <div>Semua Sektor</div>
+          <div className="my-2">Semua Sektor</div>
           <hr className="border-1 mb-2 mt-1"></hr>
 
           <div className="flex flex-wrap">
-            <SectorButton name="Pertambangan" />
-            <SectorButton name="Pertambangan" />
-            <SectorButton name="Pertambangan" />
-            <SectorButton name="Pertambangan" />
-            <SectorButton name="Pertambangan" />
-            <SectorButton name="Pertambangan" />
-            <SectorButton name="Pertambangan" />
-            <SectorButton name="Pertambangan" />
-            <SectorButton name="Pertambangan" />
-            <SectorButton name="Pertambangan" />
-            <SectorButton name="Pertambangan" />
-            <SectorButton name="Pertambangan" />
-            <SectorButton name="Pertambangan" />
-            <SectorButton name="Pertambangan" />
+            {Object.keys(trendsData).map((sector, index) => {
+              return (
+                <>
+                  <SectorButton
+                    href={`/sector/${sector}`}
+                    name={`${trendsData[sector]["name"]}`}
+                  />
+                </>
+              );
+            })}
           </div>
         </div>
       </Transition>
       <div className="fixed top-0 left-0 right-0 z-[10]">
         <div className="flex bg-[#DFF6FF] h-[50px] items-center justify-around font-medium">
-          <div>Logo</div>
+          <Link href={"/"}>
+            <Image src={PoldevImg} alt="Poldev UGM" className="object-contain hover:cursor-pointer" width="100%" height="30px"></Image>
+          </Link>
           <div className="flex">
             <div className="mx-5 cursor-pointer">
               <Link href="/about">About Us</Link>
             </div>
             <div className="mx-5 flex items-center">
-              <div className="mr-1">Sektor Data</div>
-              <svg
-                className="hover:cursor-pointer"
-                onClick={() => setIsShown(!isShown)}
-                width={10}
-                height={8}
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M0 0l5 8 5-8H0z" fill="#06283D" />
-              </svg>
+              <div  className="hover:cursor-pointer mr-1 flex flex-row items-center" onClick={() => setIsShown(!isShown)}>
+                <span className="mr-1">
+                Sektor Data
+                </span>
+                <svg
+                  width={10}
+                  height={8}
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0l5 8 5-8H0z" fill="#06283D" />
+                </svg>
+              </div>
             </div>
             <div className="mx-5 cursor-pointer">
-              <Link href="/faq">FAQ</Link>
+              <Link href="/teams">Our Teams</Link>
             </div>
           </div>
           <div className="flex items-center">

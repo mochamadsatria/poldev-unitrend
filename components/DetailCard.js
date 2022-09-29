@@ -23,7 +23,7 @@ export default function DetailCard(props) {
               {props.trendsChange ? props.trendsChange.toFixed(1) : '0.0%'}%
             </span>
           ) : (
-            <span className="mx-1 text-[3rem] font-bold text-[#AB004A]">
+            <span className="mx-1 text-[3rem] font-bold text-[#F84F07]">
               {props.trendsChange ? -1 * props.trendsChange.toFixed(1) : '0.0%'}
               %
             </span>

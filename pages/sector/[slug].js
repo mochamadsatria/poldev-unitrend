@@ -27,6 +27,10 @@ function Sector({
   positiveWordTrendSortedData,
   negativeWordTrendSorted,
   negativeWordTrendSortedData,
+  lastYearDate,
+  lastYearDateNextWeek,
+  latestDate,
+  latestDateNextWeek,
 }) {
   return (
     // <div>
@@ -50,22 +54,22 @@ function Sector({
           <h1 className="text-black text-[3em] md:text-[4em] font-bold">
             {trendsData[slug]?.name}
           </h1>
-          <p className="text-black text-[1.1rem]">
+          <p className="text-black text-[1.1rem] my-2">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, ullam
             officia optio numquam voluptatibus tenetur similique eveniet
             repudiandae voluptate eum autem atque nesciunt, aspernatur fugiat
             dolore, magni explicabo beatae. Aperiam.
           </p>
         </section>
-        <section className="my-16">
+        <section className="text-justify my-16">
           <h1 className="text-black text-[2rem] font-bold">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Bagaimana tren sektor pertambangan dan energi saat ini dibandingkan
+            dengan tahun lalu?
           </h1>
-          <p className="text-black text-[1.1rem]">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, ullam
-            officia optio numquam voluptatibus tenetur similique eveniet
-            repudiandae voluptate eum autem atque nesciunt, aspernatur fugiat
-            dolore, magni explicabo beatae. Aperiam.
+          <p className="text-black text-[1.1rem] my-2">
+            Data ini berasal dari Google Trends, dan menunjukkan hasil tren
+            rata-rata seluruh kata kunci, merek dan topik umum yang kami lacak
+            di sektor {trendsData[slug]?.name}. Berikut hasilnya:
           </p>
           <LineCharts
             trendsData2021={
@@ -83,9 +87,11 @@ function Sector({
           />
         </section>
         <section className="my-16 flex flex-row items-center justify-center">
-          {selectedTrendsData["brand_list"].length > 0 &&
+          {selectedTrendsData["brand_list"].length > 0 && (
             <div className="flex flex-col items-center justify-center border border-solid border-black p-8 m-8">
-              <p className="text-black text-[1.1rem]">Brand searches are up by</p>
+              <p className="text-black text-[1.1rem]">
+                Pencarian merek meningkat sebesar
+              </p>
               <h2 className="text-black text-[2rem] font-bold">
                 {selectedTrendsData &&
                   selectedTrendsData["brand_trends_mean_change"] &&
@@ -93,10 +99,10 @@ function Sector({
                 %
               </h2>
             </div>
-          }
+          )}
           <div className="flex flex-col items-center justify-center border border-solid border-black p-8 m-8">
             <p className="text-black text-[1.1rem]">
-              Generic searches are up by
+              Pencarian topik umum meningkat sebesar
             </p>
             <h2 className="text-black text-[2rem] font-bold">
               {selectedTrendsData &&
@@ -107,16 +113,31 @@ function Sector({
         </section>
         {selectedTrendsData["brand_list"].length > 0 && (
           <>
-            <section className="my-16">
-              <h1 className="text-black text-[3rem] font-bold">Brand</h1>
+            <section className="text-justify my-16">
+              <h1 className="text-black text-[3rem] font-bold">Merek</h1>
               <h1 className="text-black text-[2rem] font-bold">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Sektor {trendsData[slug]?.name} didominasi oleh merek berikut
+                ini
               </h1>
-              <p className="text-black text-[1.1rem]">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad,
-                ullam officia optio numquam voluptatibus tenetur similique
-                eveniet repudiandae voluptate eum autem atque nesciunt,
-                aspernatur fugiat dolore, magni explicabo beatae. Aperiam.
+              <p className="text-black text-[1.1rem] my-2">
+                Data ini diambil dari Google Trends, dan menunjukkan persentase
+                peningkatan dibandingkan periode yang sama pada tahun
+                sebelumnya.
+              </p>
+              <p className="text-gray-400 text-[0.875rem]">
+                Membandingkan :{" "}
+                {`${lastYearDate.slice(
+                  0,
+                  10
+                )} hingga ${lastYearDateNextWeek.slice(0, 10)}`}{" "}
+                dengan{" "}
+                {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
+                  0,
+                  10
+                )}`}
+              </p>
+              <p className="text-gray-400 text-[0.875rem]">
+                Data terakhir diambil : {latestDate.slice(0, 10)}
               </p>
               <BarCharts
                 sector={positiveBrandTrendSorted}
@@ -124,34 +145,62 @@ function Sector({
                 fillColor="#07B0F8"
               />
             </section>
-            <section className="my-16">
+            <section className="text-justify my-16">
               <h1 className="text-black text-[2rem] font-bold">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Merek-merek pada sektor {trendsData[slug]?.name} yang mengalami
+                penurunan adalah
               </h1>
-              <p className="text-black text-[1.1rem]">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad,
-                ullam officia optio numquam voluptatibus tenetur similique
-                eveniet repudiandae voluptate eum autem atque nesciunt,
-                aspernatur fugiat dolore, magni explicabo beatae. Aperiam.
-                <BarCharts
-                  sector={negativeBrandTrendSorted}
-                  series={negativeBrandTrendSortedData}
-                  fillColor="#AB004A"
-                />
+              <p className="text-black text-[1.1rem] my-2">
+                Data ini diambil dari Google Trends, dan menunjukkan persentase
+                penurunan dibandingkan periode yang sama pada tahun sebelumnya.
               </p>
+              <p className="text-gray-400 text-[0.875rem]">
+                Membandingkan :{" "}
+                {`${lastYearDate.slice(
+                  0,
+                  10
+                )} hingga ${lastYearDateNextWeek.slice(0, 10)}`}{" "}
+                dengan{" "}
+                {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
+                  0,
+                  10
+                )}`}
+              </p>
+              <p className="text-gray-400 text-[0.875rem]">
+                Data terakhir diambil : {latestDate.slice(0, 10)}
+              </p>
+              <BarCharts
+                sector={negativeBrandTrendSorted}
+                series={negativeBrandTrendSortedData}
+                fillColor="#F84F07"
+              />
             </section>
           </>
         )}
-        <section className="my-16">
-          <h1 className="text-black text-[3rem] font-bold">Generic Words</h1>
+        <section className="text-justify my-16">
+          <h1 className="text-black text-[3rem] font-bold">Topik Umum</h1>
           <h1 className="text-black text-[2rem] font-bold">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Topik umum sektor {trendsData[slug]?.name} yang mengalami kenaikan
+            pencarian adalah
           </h1>
-          <p className="text-black text-[1.1rem]">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, ullam
-            officia optio numquam voluptatibus tenetur similique eveniet
-            repudiandae voluptate eum autem atque nesciunt, aspernatur fugiat
-            dolore, magni explicabo beatae. Aperiam.
+          <p className="text-black text-[1.1rem] my-2">
+            Data ini diambil dari Google Trends, dan menunjukkan persentase
+            peningkatan dibandingkan periode yang sama pada tahun sebelumnya.
+          </p>
+          <p className="text-gray-400 text-[0.875rem]">
+            Membandingkan :{" "}
+            {`${lastYearDate.slice(0, 10)} hingga ${lastYearDateNextWeek.slice(
+              0,
+              10
+            )}`}{" "}
+            dengan{" "}
+            {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
+              0,
+              10
+            )}`}
+          </p>
+          <p className="text-gray-400 text-[0.875rem]">
+            Data terakhir diambil : {latestDate.slice(0, 10)}
           </p>
           <BarCharts
             sector={positiveWordTrendSorted}
@@ -159,25 +208,39 @@ function Sector({
             fillColor="#07B0F8"
           />
         </section>
-        <section className="my-16">
+        <section className="text-justify my-16">
           <h1 className="text-black text-[2rem] font-bold">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Topik umum sektor {trendsData[slug]?.name} yang mengalami penurunan
+            adalah
           </h1>
-          <p className="text-black text-[1.1rem]">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, ullam
-            officia optio numquam voluptatibus tenetur similique eveniet
-            repudiandae voluptate eum autem atque nesciunt, aspernatur fugiat
-            dolore, magni explicabo beatae. Aperiam.
-            <BarCharts
-              sector={negativeWordTrendSorted}
-              series={negativeWordTrendSortedData}
-              fillColor="#AB004A"
-            />
+          <p className="text-black text-[1.1rem] my-2">
+            Data ini diambil dari Google Trends, dan menunjukkan persentase
+            penurunan dibandingkan periode yang sama pada tahun sebelumnya.
           </p>
+          <p className="text-gray-400 text-[0.875rem]">
+            Membandingkan :{" "}
+            {`${lastYearDate.slice(0, 10)} hingga ${lastYearDateNextWeek.slice(
+              0,
+              10
+            )}`}{" "}
+            dengan{" "}
+            {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
+              0,
+              10
+            )}`}
+          </p>
+          <p className="text-gray-400 text-[0.875rem]">
+            Data terakhir diambil : {latestDate.slice(0, 10)}
+          </p>
+          <BarCharts
+            sector={negativeWordTrendSorted}
+            series={negativeWordTrendSortedData}
+            fillColor="#F84F07"
+          />
         </section>
         {/* <hr className="mt-10 border-[#555]" /> */}
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
@@ -253,6 +316,32 @@ export async function getStaticProps({ params }) {
     (word) => trendsData[slug]["word_data"][word]
   );
 
+  const getDateOfWeek = (w, y) => {
+    var sunday = new Date(y, 0, 1 + (w - 1) * 7);
+    while (sunday.getDay() !== 0) {
+      sunday.setDate(sunday.getDate() - 1);
+    }
+    return sunday;
+  };
+
+  const getNextWeekDate = (dt) =>
+    new Date(dt.getTime() + 7 * 24 * 60 * 60 * 1000);
+
+  const _latestDate = getDateOfWeek(
+    Object.keys(selectedTrendsData["biannually_combined_trends_mean"]["2022"])
+      .length,
+    2022
+  );
+  const latestDate = _latestDate.toISOString();
+  const latestDateNextWeek = getNextWeekDate(_latestDate).toISOString();
+  const _lastYearDate = getDateOfWeek(
+    Object.keys(selectedTrendsData["biannually_combined_trends_mean"]["2022"])
+      .length,
+    2021
+  );
+  const lastYearDate = _lastYearDate.toISOString();
+  const lastYearDateNextWeek = getNextWeekDate(_lastYearDate).toISOString();
+
   // By returning { props: { posts } }, the Blog component
   // will receive `posts` as a prop at build time
   return {
@@ -267,6 +356,10 @@ export async function getStaticProps({ params }) {
       positiveWordTrendSortedData,
       negativeWordTrendSorted,
       negativeWordTrendSortedData,
+      lastYearDate,
+      lastYearDateNextWeek,
+      latestDate,
+      latestDateNextWeek,
     },
   };
 }
