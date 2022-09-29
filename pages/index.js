@@ -103,16 +103,16 @@ export default function Home() {
           </div>
         </section> */}
 
-        <section className="h-screen flex flex-row overflow-hidden justify-between items-center">
-          <div className='mr-4'>
-            <h1 className="text-black text-[3rem] font-bold">
-              Institute for Policy Development Data Center
+        <section className="h-[50vh] my-[25vh] relative">
+          <div className="absolute z-[1] w-[50%] top-1/2 translate-y-[-50%]">
+            <h1 className="text-[#07B0F8] text-[3rem] font-bold drop-shadow-[0_5px_10px_rgba(0,0,0,0.2)]">
+              UNITREND by Institute for Policy Development
             </h1>
-            <p className="text-black text-[1.5rem] my-2">
+            <p className="text-[#07B0F8] text-[1.5rem] my-2 drop-shadow-[0_5px_10px_rgba(0,0,0,0.2)]">
               Presenting Data for Better Policy
             </p>
           </div>
-          <Image src={heroImg} alt="Futuristic city" className='ml-4 w-[30vw] h-[auto]'></Image>
+          <Image src={heroImg} alt="Futuristic city" className='w-[40vw] absolute right-0 top-2/4 translate-y-[-50%] h-[auto] contrast-[110%] brightness-[70%] saturate-0'></Image>
         </section>
         <section className="text-justify my-16">
           <h1 className="text-black text-[2rem] font-bold">

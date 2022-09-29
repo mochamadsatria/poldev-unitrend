@@ -64,11 +64,11 @@ function Sector({
             Bagaimana tren sektor {trendsData[slug]?.name} saat ini dibandingkan
             dengan tahun lalu?
           </h1>
-          {/* <p className="text-black text-[1.1rem] my-2">
+          <p className="text-black text-[1.1rem] my-2">
             Data ini berasal dari Google Trends, dan menunjukkan hasil tren
             rata-rata seluruh kata kunci, merek dan topik umum yang kami lacak
             di sektor {trendsData[slug]?.name}. Berikut hasilnya:
-          </p> */}
+          </p>
           <LineCharts
             trendsData2021={
               selectedTrendsData &&
@@ -117,11 +117,11 @@ function Sector({
                 Sektor {trendsData[slug]?.name} didominasi oleh merek berikut
                 ini
               </h1>
-              {/* <p className="text-black text-[1.1rem] my-2">
+              <p className="text-black text-[1.1rem] my-2">
                 Data ini diambil dari Google Trends, dan menunjukkan persentase
                 peningkatan dibandingkan periode yang sama pada tahun
                 sebelumnya.
-              </p> */}
+              </p>
               <p className="text-gray-400 text-[0.875rem]">
                 Membandingkan :{" "}
                 {`${lastYearDate.slice(
@@ -148,10 +148,10 @@ function Sector({
                 Merek-merek pada sektor {trendsData[slug]?.name} yang mengalami
                 penurunan adalah
               </h1>
-              {/* <p className="text-black text-[1.1rem] my-2">
+              <p className="text-black text-[1.1rem] my-2">
                 Data ini diambil dari Google Trends, dan menunjukkan persentase
                 penurunan dibandingkan periode yang sama pada tahun sebelumnya.
-              </p> */}
+              </p>
               <p className="text-gray-400 text-[0.875rem]">
                 Membandingkan :{" "}
                 {`${lastYearDate.slice(
@@ -181,10 +181,10 @@ function Sector({
             Topik umum sektor {trendsData[slug]?.name} yang mengalami kenaikan
             pencarian adalah
           </h1>
-          {/* <p className="text-black text-[1.1rem] my-2">
+          <p className="text-black text-[1.1rem] my-2">
             Data ini diambil dari Google Trends, dan menunjukkan persentase
             peningkatan dibandingkan periode yang sama pada tahun sebelumnya.
-          </p> */}
+          </p>
           <p className="text-gray-400 text-[0.875rem]">
             Membandingkan :{" "}
             {`${lastYearDate.slice(0, 10)} hingga ${lastYearDateNextWeek.slice(
@@ -211,10 +211,10 @@ function Sector({
             Topik umum sektor {trendsData[slug]?.name} yang mengalami penurunan
             adalah
           </h1>
-          {/* <p className="text-black text-[1.1rem] my-2">
+          <p className="text-black text-[1.1rem] my-2">
             Data ini diambil dari Google Trends, dan menunjukkan persentase
             penurunan dibandingkan periode yang sama pada tahun sebelumnya.
-          </p> */}
+          </p>
           <p className="text-gray-400 text-[0.875rem]">
             Membandingkan :{" "}
             {`${lastYearDate.slice(0, 10)} hingga ${lastYearDateNextWeek.slice(
