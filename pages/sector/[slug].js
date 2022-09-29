@@ -63,7 +63,7 @@ function Sector({
         </section>
         <section className="text-justify my-16">
           <h1 className="text-black text-[2rem] font-bold">
-            Bagaimana tren sektor pertambangan dan energi saat ini dibandingkan
+            Bagaimana tren sektor {trendsData[slug]?.name} saat ini dibandingkan
             dengan tahun lalu?
           </h1>
           <p className="text-black text-[1.1rem] my-2">
