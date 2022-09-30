@@ -51,16 +51,16 @@ function Sector({
           <h1 className="text-black text-[3em] md:text-[4em] font-bold">
             {trendsData[slug]?.name}
           </h1>
-          <p className="text-black text-[1.1rem]">
+          <p className="text-black text-base">
             {deskripsiData[slug]}
           </p>
         </section>
         <section className="text-justify my-16">
           <h1 className="text-black text-[2rem] font-bold">
-            Bagaimana  tren  topik  kesetaraan  gender  saat  ini dibandingkan dengan tahun lalu?
+            Bagaimana tren topik {trendsData[slug]?.name.toLowerCase()} saat ini dibandingkan dengan tahun lalu?
           </h1>
-          <p className="text-black text-[1.1rem] my-2">
-            Data ini berasal dari Google Trends, dan menunjukkan tren rata-rata untuk semua kata kunci, dan topik umum terkait {trendsData[slug]?.name}. Berikut hasilnya: 
+          <p className="text-black text-base my-2">
+            Data ini berasal dari Google Trends, dan menunjukkan tren rata-rata untuk semua kata kunci, dan topik umum terkait {trendsData[slug]?.name.toLowerCase()}. Berikut hasilnya 
           </p>
           <LineCharts
             trendsData2021={
@@ -79,7 +79,7 @@ function Sector({
         </section>
         <section className="my-16 columns-1">
           <div className="flex flex-col items-center justify-center border border-solid border-black p-8">
-            <p className="text-black text-[1.1rem]">
+            <p className="text-black text-base">
               Pencarian topik umum meningkat sebesar
             </p>
             <h2 className="text-black text-[2rem] font-bold">
@@ -92,10 +92,10 @@ function Sector({
         <section className="text-justify my-16">
           <h1 className="text-black text-[3rem] font-bold">Topik Umum</h1>
           <h1 className="text-black text-[2rem] font-bold">
-            Topik umum tentang kesetaraan gender yang mengalami kenaikan pencarian adalah
+            Topik umum tentang {trendsData[slug]?.name.toLowerCase()} yang mengalami kenaikan pencarian adalah
           </h1>
-          <p className="text-black text-[1.1rem] my-2">
-            Data ini diambil dari Google Trends, menunjukkan persentase peningkatan dibandingkan periode yang sama pada tahun sebelumnya.
+          <p className="text-black text-base my-2">
+            Data ini diambil dari Google Trends, menunjukkan persentase peningkatan dibandingkan periode yang sama pada tahun sebelumnya
           </p>
           <p className="text-gray-400 text-[0.875rem]">
                 Membandingkan :{" "}
@@ -120,9 +120,9 @@ function Sector({
         </section>
         <section className="text-justify my-16">
           <h1 className="text-black text-[2rem] font-bold">
-            Topik umum tentang kesetaraan genderyang mengalami penurunan adalah
+            Topik umum tentang {trendsData[slug]?.name.toLowerCase()} yang mengalami penurunan adalah
           </h1>
-          <p className="text-black text-[1.1rem] my-2">
+          <p className="text-black text-base my-2">
             Data ini diambil dari Google Trends, menunjukkan persentase penurunan dibandingkan periode yang sama pada tahun lalu.
             </p>
                           <p className="text-gray-400 text-[0.875rem]">

@@ -16,7 +16,7 @@ export default function about() {
             <h1 className="text-black text-[3em] md:text-[4em] font-bold">
               FAQ
             </h1>
-            <p className="text-black text-[1.1rem] indent-16">
+            <p className="text-black text-base indent-16">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis
               lacus, turpis vitae lobortis. Justo, gravida vitae rutrum in
               elementum hendrerit. Etiam facilisis nisl purus mi felis turpis

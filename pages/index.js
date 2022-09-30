@@ -117,12 +117,23 @@ export default function Home() {
         </section>
         <section className="text-justify my-16">
           <h1 className="text-black text-[2rem] font-bold">
+            Apa yang kami lakukan?
+          </h1>
+          <p className="text-black text-base my-2">
+            Penggunaan <i>big data</i> seperti Google Trends dapat membantu pengambil kebijakan dalam memahami kondisi sosial dan ekonomi masyarakat secara cepat, akurat dan <i>real-time</i>. Para investor, misalnya, memanfaatkan Google Trends untuk melihat variasi harga aset global. Seorang investor bisa menentukan diversifikasi portofolio mereka menggunakan informasi <i>item</i> yang ditelusuri melalui Google Trends. Para pekerja komersial atau pengusaha memanfaatkan Google Trends untuk menganalisis pasar, terutama untuk mengukur tren permintaan untuk dijadikan acuan dalam menyusun strategi bisnis. Google Trends juga berperan dalam menciptakan nilai tambah melalui fitur berbasis <i>artificial intelligence</i> untuk membantu membangun platform <i>business to business</i> (B2B) yang efektif. 
+          </p>
+          <p className="text-black text-base my-2">
+            Bagi pengambil kebijakan, data Google Trends dapat memberikan lensa informatif dalam melihat pergeseran minat pencarian Google yang berkaitan dengan isu-isu sosial, ekonomi dan politik saat ini. Google Trends juga dapat digunakan untuk memprediksi pertumbuhan PDB suatu negara bersamaan dengan indikator ekonomi makro lainnya seperti pertumbuhan ekonomi, pengangguran dan inflasi sebagai dasar pengambilan kebijakan. Data tersebut dapat menjadi alternatif peringatan dini bagi pemangku kebijakan untuk menentukan langkah yang akan dicapai untuk mencapai <i>Sustainable Development Goals</i> (SDGs).
+          </p>
+        </section>
+        <section className="text-justify my-16">
+          <h1 className="text-black text-[2rem] font-bold">
             Sektor mana saja yang mengalami peningkatan pencarian di Google?
           </h1>
-          <p className="text-black text-[1.1rem] my-2">
+          <p className="text-black text-base my-2">
             Data berikut ini menunjukkan sektor-sektor yang mengalami peningkatan persentase pencarian, dibandingkan dengan periode yang sama pada tahun sebelumnya. Hal ini menunjukkan adanya traksi yang tinggi terhadap topik sektor berikut di Google.
           </p>
-          <p className="text-gray-400 text-[0.875rem]">
+          <p className="text-gray-400 text-sm">
             Data terakhir diambil: {latestDate.toISOString().slice(0, 10)}
           </p>
           <BarCharts
@@ -137,10 +148,10 @@ export default function Home() {
           <h1 className="text-black text-[2rem] font-bold">
             Sektor apa saja yang mengalami penurunan pencarian di Google?
           </h1>
-          <p className="text-black text-[1.1rem] my-2">
+          <p className="text-black text-base my-2">
             Data berikut ini menunjukkan sektor-sektor yang mengalami penurunan persentase, dibandingkan periode yang sama pada tahun sebelumnya. Diketahui bahwa terjadi penurunan yang signifikan terhadap pencarian topik yang berhubungan dengan sektor berikut di Google.
           </p>
-          <p className="text-gray-400 text-[0.875rem]">
+          <p className="text-gray-400 text-sm">
             Data terakhir diambil: {latestDate.toISOString().slice(0, 10)}
           </p>
             <BarCharts
@@ -151,8 +162,8 @@ export default function Home() {
               fillColor="#F84F07"
             />
         </section>
-        <h1 className="text-black text-[1.5rem] font-semibold">
-          Klik  untuk  mengetahui  rincian  data masing-masing sektor
+        <h1 className="text-black text-xl font-semibold">
+          Klik untuk mengetahui rincian data masing-masing sektor
         </h1>
         <ul className="my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {trendsDataSorted.map((k, index) => {
@@ -195,8 +206,8 @@ export default function Home() {
         </ul>
         <section className="text-justify my-16">
           <h1 className="text-black text-[2rem] font-bold"><i>Sustainable Development Goals</i></h1>
-          <p className="text-black text-[1.1rem] my-2">
-          SDGs (<i>Sustainable Development Goals</i>) adalah agenda 2030 yang merupakan kesepakatan pembangunan berkelanjutan berdasarkan hak asasi manusia dan kesetaraan. Poin umum dari pembangunan berkelanjutan, digunakan sebagai pedoman untuk melaksanakan pembangunan yang menjaga peningkatan kesejahteraan ekonomi masyarakat secara berkesinambungan, pembangunan yang menjaga keberlanjutan kehidupan sosial masyarakat, pembangunan yang menjaga kualitas lingkungan hidup serta pembangunan yang menjamin keadilan dan terlaksananya tata kelola yang mampu menjaga peningkatan kualitas hidup dari satu generasi ke generasi berikutnya. PolDev Data Center menyajikan keyword-keyword yang berelevansi tinggi terhadap beberapa poin SDGs.
+          <p className="text-black text-base my-2">
+            <i>Sustainable Development Goals</i> (SDGs) adalah agenda tahun 2030 yang merupakan kesepakatan pembangunan berkelanjutan berdasarkan hak asasi manusia dan kesetaraan. Poin umum dari pembangunan berkelanjutan, digunakan sebagai pedoman untuk melaksanakan pembangunan yang menjaga peningkatan kesejahteraan ekonomi masyarakat secara berkesinambungan, pembangunan yang menjaga keberlanjutan kehidupan sosial masyarakat, pembangunan yang menjaga kualitas lingkungan hidup serta pembangunan yang menjamin keadilan dan terlaksananya tata kelola yang mampu menjaga peningkatan kualitas hidup dari satu generasi ke generasi berikutnya. UNITREND menyajikan <i>keyword-keyword</i> yang berelevansi tinggi terhadap topik mengenai poin SDGs yang populer di Indonesia.
             </p>
           <ul className="my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {trendsDataSDGsSorted.map((k, index) => {

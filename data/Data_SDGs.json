@@ -215,7 +215,7 @@
         },
         "combined_trends_mean_change": -23.58974358974359,
         "slug": "kemiskinan",
-        "name": "Kemiskinan"
+        "name": "Menghapus Kemiskinan"
     },
     "kelaparan": {
         "word_list": [
@@ -437,7 +437,7 @@
         },
         "combined_trends_mean_change": 24.896265560165972,
         "slug": "kelaparan",
-        "name": "Kelaparan"
+        "name": "Mengakhiri Kelaparan"
     },
     "good-health-and-well-being": {
         "word_list": [
@@ -661,7 +661,7 @@
         },
         "combined_trends_mean_change": -4.815864022662893,
         "slug": "good-health-and-well-being",
-        "name": "Good Health and Well-being"
+        "name": "Kualitas Kesehatan"
     },
     "kualitas-pendidikan": {
         "word_list": [
@@ -883,7 +883,7 @@
         },
         "combined_trends_mean_change": 30.49180327868852,
         "slug": "kualitas-pendidikan",
-        "name": "Kualitas Pendidikan"
+        "name": "Pendidikan Bermutu"
     },
     "ketidaksetaraan-gender": {
         "word_list": [
@@ -1105,7 +1105,7 @@
         },
         "combined_trends_mean_change": -15.384615384615392,
         "slug": "ketidaksetaraan-gender",
-        "name": "Ketidaksetaraan Gender"
+        "name": "Kesetaraan Gender"
     },
     "ketidaksejahteraan": {
         "word_list": [
@@ -1327,6 +1327,6 @@
         },
         "combined_trends_mean_change": 28.099173553719012,
         "slug": "ketidaksejahteraan",
-        "name": "Ketidaksejahteraan"
+        "name": "Mengurangi Ketimpangan"
     }
 }

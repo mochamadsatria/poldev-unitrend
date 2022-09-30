@@ -55,19 +55,16 @@ function Sector({
           <h1 className="text-black text-[3em] md:text-[4em] font-bold">
             {trendsData[slug]?.name}
           </h1>
-          <p className="text-black text-[1.1rem] my-2">
+          <p className="text-black text-base my-2">
             {deskripsiData[slug]}
           </p>
         </section>
         <section className="text-justify my-16">
           <h1 className="text-black text-[2rem] font-bold">
-            Bagaimana tren sektor {trendsData[slug]?.name} saat ini dibandingkan
-            dengan tahun lalu?
+            Bagaimana tren sektor {trendsData[slug]?.name.toLowerCase()} saat ini dibandingkan dengan tahun lalu?
           </h1>
-          <p className="text-black text-[1.1rem] my-2">
-            Data ini berasal dari Google Trends, dan menunjukkan hasil tren
-            rata-rata seluruh kata kunci, merek dan topik umum yang kami lacak
-            di sektor {trendsData[slug]?.name}. Berikut hasilnya:
+          <p className="text-black text-base my-2">
+            Data ini berasal dari Google Trends, dan menunjukkan hasil tren rata-rata seluruh kata kunci, merek dan topik umum yang kami lacak di sektor {trendsData[slug]?.name}. Berikut hasilnya
           </p>
           <LineCharts
             trendsData2021={
@@ -87,7 +84,7 @@ function Sector({
         <section className="my-16 flex flex-row items-center justify-center">
           {selectedTrendsData["brand_list"].length > 0 && (
             <div className="flex flex-col items-center justify-center border border-solid border-black p-8 m-8">
-              <p className="text-black text-[1.1rem]">
+              <p className="text-black text-base">
                 Pencarian merek meningkat sebesar
               </p>
               <h2 className="text-black text-[2rem] font-bold">
@@ -99,7 +96,7 @@ function Sector({
             </div>
           )}
           <div className="flex flex-col items-center justify-center border border-solid border-black p-8 m-8">
-            <p className="text-black text-[1.1rem]">
+            <p className="text-black text-base">
               Pencarian topik umum meningkat sebesar
             </p>
             <h2 className="text-black text-[2rem] font-bold">
@@ -114,13 +111,10 @@ function Sector({
             <section className="text-justify my-16">
               <h1 className="text-black text-[3rem] font-bold">Merek</h1>
               <h1 className="text-black text-[2rem] font-bold">
-                Sektor {trendsData[slug]?.name} didominasi oleh merek berikut
-                ini
+                Sektor {trendsData[slug]?.name.toLowerCase()} didominasi oleh merek berikut ini
               </h1>
-              <p className="text-black text-[1.1rem] my-2">
-                Data ini diambil dari Google Trends, dan menunjukkan persentase
-                peningkatan dibandingkan periode yang sama pada tahun
-                sebelumnya.
+              <p className="text-black text-base my-2">
+                Data ini diambil dari Google Trends, dan menunjukkan persentase peningkatan dibandingkan periode yang sama pada tahun sebelumnya.
               </p>
               <p className="text-gray-400 text-[0.875rem]">
                 Membandingkan :{" "}
@@ -145,12 +139,10 @@ function Sector({
             </section>
             <section className="text-justify my-16">
               <h1 className="text-black text-[2rem] font-bold">
-                Merek-merek pada sektor {trendsData[slug]?.name} yang mengalami
-                penurunan adalah
+                Merek-merek pada sektor {trendsData[slug]?.name.toLowerCase()} yang mengalami penurunan adalah
               </h1>
-              <p className="text-black text-[1.1rem] my-2">
-                Data ini diambil dari Google Trends, dan menunjukkan persentase
-                penurunan dibandingkan periode yang sama pada tahun sebelumnya.
+              <p className="text-black text-base my-2">
+                Data ini diambil dari Google Trends, dan  menunjukkan persentase penurunan dibandingkan periode yang sama pada tahun sebelumnya.
               </p>
               <p className="text-gray-400 text-[0.875rem]">
                 Membandingkan :{" "}
@@ -178,12 +170,10 @@ function Sector({
         <section className="text-justify my-16">
           <h1 className="text-black text-[3rem] font-bold">Topik Umum</h1>
           <h1 className="text-black text-[2rem] font-bold">
-            Topik umum sektor {trendsData[slug]?.name} yang mengalami kenaikan
-            pencarian adalah
+            Topik umum sektor {trendsData[slug]?.name.toLowerCase()} yang mengalami kenaikan pencarian adalah
           </h1>
-          <p className="text-black text-[1.1rem] my-2">
-            Data ini diambil dari Google Trends, dan menunjukkan persentase
-            peningkatan dibandingkan periode yang sama pada tahun sebelumnya.
+          <p className="text-black text-base my-2">
+            Data ini diambil dari Google Trends, dan menunjukkan persentase peningkatan dibandingkan periode yang sama pada tahun sebelumnya.
           </p>
           <p className="text-gray-400 text-[0.875rem]">
             Membandingkan :{" "}
@@ -208,12 +198,10 @@ function Sector({
         </section>
         <section className="text-justify my-16">
           <h1 className="text-black text-[2rem] font-bold">
-            Topik umum sektor {trendsData[slug]?.name} yang mengalami penurunan
-            adalah
+            Topik umum sektor {trendsData[slug]?.name.toLowerCase()} yang mengalami penurunan adalah
           </h1>
-          <p className="text-black text-[1.1rem] my-2">
-            Data ini diambil dari Google Trends, dan menunjukkan persentase
-            penurunan dibandingkan periode yang sama pada tahun sebelumnya.
+          <p className="text-black text-base my-2">
+            Data ini diambil dari Google Trends, dan menunjukkan persentase penurunan dibandingkan periode yang sama pada tahun sebelumnya.
           </p>
           <p className="text-gray-400 text-[0.875rem]">
             Membandingkan :{" "}

@@ -10,7 +10,7 @@ export default function Footer() {
           <Image src={PoldevImg} alt="Poldev UGM"></Image>
           <ul className="mt-3 font-light text-sm text-gray-300">
             <li>
-            PolDev (<i>Institute for Policy Development</i>) merupakan <i>Research Center</i> di Universitas Gadjah Mada. PolDev turut berperan dalam mendukung perumusan kebijakan berbasis data. Melalui UNITREND, PolDev berusaha menyajikan data terkait isu-isu aktual yang sedang diperbincangkan oleh masyarakat Indonesia.
+              PolDev (<i>Institute for Policy Development</i>) merupakan <i>Research Center</i> di Universitas Gadjah Mada. PolDev turut berperan dalam mendukung perumusan kebijakan berbasis data. Melalui UNITREND, PolDev berusaha menyajikan data terkait isu-isu aktual yang sedang diperbincangkan oleh masyarakat Indonesia.
             </li>
           </ul>
         </div>
