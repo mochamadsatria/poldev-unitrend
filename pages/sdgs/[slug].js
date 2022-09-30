@@ -47,7 +47,7 @@ function Sector({
             </p>
           </Link>
         </section>
-        <section className="my-16">
+        <section className="text-justify">
           <h1 className="text-black text-[3em] md:text-[4em] font-bold">
             {trendsData[slug]?.name}
           </h1>
@@ -80,7 +80,7 @@ function Sector({
         <section className="my-16 columns-1">
           <div className="flex flex-col items-center justify-center border border-solid border-black p-8">
             <p className="text-black text-base">
-              Pencarian topik umum meningkat sebesar
+              Pencarian topik umum berubah sebesar
             </p>
             <h2 className="text-black text-[2rem] font-bold">
               {selectedTrendsData &&
