@@ -85,7 +85,7 @@ function Sector({
           {selectedTrendsData["brand_list"].length > 0 && (
             <div className="flex flex-col items-center justify-center border border-solid border-black p-8 m-8">
               <p className="text-black text-base">
-                Pencarian merek meningkat sebesar
+                Pencarian merek berubah sebesar
               </p>
               <h2 className="text-black text-[2rem] font-bold">
                 {selectedTrendsData &&
@@ -97,7 +97,7 @@ function Sector({
           )}
           <div className="flex flex-col items-center justify-center border border-solid border-black p-8 m-8">
             <p className="text-black text-base">
-              Pencarian topik umum meningkat sebesar
+              Pencarian topik umum berubah sebesar
             </p>
             <h2 className="text-black text-[2rem] font-bold">
               {selectedTrendsData &&
