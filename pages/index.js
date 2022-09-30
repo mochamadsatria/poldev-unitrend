@@ -12,6 +12,7 @@ import Navbar from '../components/Navbar';
 import SectorDropDown from '../components/SectorDropDown';
 import SectorButton from '../components/SectorButton';
 import heroImg from '../public/hero.jpg'
+import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 
 const BarCharts = dynamic(() => import('../components/BarCharts'), {
   ssr: false,
@@ -102,7 +103,7 @@ export default function Home() {
               })}
           </div>
         </section> */}
-
+        
         <section className="h-[50vh] my-[25vh] relative">
           <div className="absolute z-[1] w-[100%] xl:w-[50%] top-1/2 translate-y-[-50%]">
             <h1 className="text-[#07B0F8] text-[3rem] font-bold drop-shadow-[0_5px_10px_rgba(0,0,0,0.2)]">

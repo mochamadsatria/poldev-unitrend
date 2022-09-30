@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import arrowUp from '../public/arrow-up.svg';
 import arrowDown from '../public/arrow-down.svg';
-import Image from 'next/image';
+import Image from 'next/future/image';
 
 export default function DetailCard(props) {
   return (
@@ -11,13 +11,11 @@ export default function DetailCard(props) {
           {props.sector ? props.sector : 'Pariwisata'}
         </div>
         <div className="flex justify-center items-center">
-          <div className="h-[3.2rem] w-[3.2rem] relative mx-1">
             {props.trendsChange > 0.0 ? (
-              <Image src={arrowUp} alt="arrow up" layout="fill" />
+              <Image src={arrowUp} className="h-[3.2rem] w-[3.2rem] mx-1" alt="arrow up" layout="fill" />
             ) : (
-              <Image src={arrowDown} alt="arrow up" layout="fill" />
+              <Image src={arrowDown} className="h-[3.2rem] w-[3.2rem] mx-1" alt="arrow up" layout="fill" />
             )}
-          </div>
           {props.trendsChange > 0.0 ? (
             <span className="mx-1 text-[3rem] font-bold text-[#07B0F8]">
               {props.trendsChange ? props.trendsChange.toFixed(1) : '0.0%'}%

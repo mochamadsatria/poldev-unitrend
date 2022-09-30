@@ -20,7 +20,7 @@ export default function about() {
             </h1>
             <Image src={PoldevImg} alt="Poldev UGM" className="my-6 self-center"></Image>
             <p className="text-black text-[1.1rem] indent-16">
-            PolDev (<i>Institute for Policy Development</i>)merupakan <i>Research Center</i> di Universitas Gadjah Mada. PolDev turut berperan dalam mendukung perumusan kebijakan berbasis data. Melalui UNITREND, PolDev berusaha menyajikan data terkait isu-isu aktual yang sedang diperbincangkan oleh masyarakat Indonesia. Data berperan signifikan tidak hanya dalam proses perumusan kebijakan tetapi juga untuk menganalisa kondisi di masa kini serta memprediksi tren di masa depan.
+            PolDev (<i>Institute for Policy Development</i>) merupakan <i>Research Center</i> di Universitas Gadjah Mada. PolDev turut berperan dalam mendukung perumusan kebijakan berbasis data. Melalui UNITREND, PolDev berusaha menyajikan data terkait isu-isu aktual yang sedang diperbincangkan oleh masyarakat Indonesia. Data berperan signifikan tidak hanya dalam proses perumusan kebijakan tetapi juga untuk menganalisa kondisi di masa kini serta memprediksi tren di masa depan.
             </p>
             <p className="text-black text-[1.1rem] indent-16">
               Namun demikian, disaat proses pengambilan kebijakan harus dilakukan dengan cepat dan akurat, seringkali terdapat <i>lag</i>, dimana data-data resmi yang tersedia diambil di masa lalu, atau beberapa bulan dan beberapa tahun sebelumnya. 
