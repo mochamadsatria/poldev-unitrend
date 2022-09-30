@@ -1,4 +1,8 @@
 import Link from 'next/link';
+import Image from 'next/future/image';
+import NurRimaImg from '../public/Nur Rima Russelina.jpeg';
+import SailaturRizqiImg from '../public/Sailatur Rizqi As Suhudiyah, S.IP_ Junior Researcher.jpg';
+import TeamCard from '../components/TeamCard';
 
 export default function about() {
   return (
@@ -16,19 +20,53 @@ export default function about() {
             <h1 className="text-black text-[3em] md:text-[4em] font-bold">
               Our Teams
             </h1>
-            <p className="text-black text-[1.1rem] indent-16">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis
-              lacus, turpis vitae lobortis. Justo, gravida vitae rutrum in
-              elementum hendrerit. Etiam facilisis nisl purus mi felis turpis
-              sed nec. Sit curabitur dui sed magna gravida venenatis, amet
-              egestas viverra. Non vitae, eu ut lacus, aliquam. Enim imperdiet
-              luctus arcu tempus fringilla et nulla eget enim. Elit ut massa
-              pellentesque at. Felis amet, tincidunt varius eu. Scelerisque amet
-              eu amet fames habitant leo interdum donec. Neque vulputate urna
-              purus, volutpat amet enim viverra pharetra rhoncus. Dignissim id
-              aenean aenean ut pulvinar aliquet laoreet justo volutpat. Sed
-              vitae habitasse.
-            </p>
+            <div className="flex justify-between flex-wrap">
+              <div className="max-w-[250px] overflow-hidden my-5">
+                <div className="flex justify-center">
+                  <Image
+                    src={NurRimaImg}
+                    className="h-[250px] w-[250px] object-cover"
+                    alt="Nur Rima Russelina"
+                  />
+                </div>
+                <div className="py-4">
+                  <div className="font-medium text-lg mb-1">
+                    Nur Rima Rosselina
+                  </div>
+                  <p className="text-gray-700 text-base italic">CEO</p>
+                </div>
+              </div>
+              <div className="max-w-[250px] overflow-hidden my-5">
+                <div className="flex justify-center">
+                  <Image
+                    src={NurRimaImg}
+                    className="h-[250px] w-[250px] object-cover"
+                    alt="Nur Rima Russelina"
+                  />
+                </div>
+                <div className="py-4">
+                  <div className="font-medium text-lg mb-1">
+                    Nur Rima Rosselina
+                  </div>
+                  <p className="text-gray-700 text-base italic">CEO</p>
+                </div>
+              </div>
+              <div className="max-w-[250px] overflow-hidden my-5">
+                <div className="flex justify-center">
+                  <Image
+                    src={NurRimaImg}
+                    className="h-[250px] w-[250px] object-cover"
+                    alt="Nur Rima Russelina"
+                  />
+                </div>
+                <div className="py-4">
+                  <div className="font-medium text-lg mb-1">
+                    Nur Rima Rosselina
+                  </div>
+                  <p className="text-gray-700 text-base italic">CEO</p>
+                </div>
+              </div>
+            </div>
           </section>
         </div>
       </div>
