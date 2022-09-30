@@ -1,0 +1,32 @@
+[
+    {
+        "name" : "Ignatius Ardhana R, S.IP",
+        "role" : "Project Lead",
+        "description" : "Ignatius Ardhana Reswara, S.IP merupakan lulusan S1Departemen Manajemen dan Kebijakan Publik pada tahun 2022. Selama kuliah Ardha aktif dalam kegiatan akademik dan mendapatkan hibah penelitian big data analysis dari Afan Gaffar Awards. Ardha juga memiliki pengalaman kerja sebagai research assistant di Swasaba Research Initiative dan sempat pula mengikuti program magang di Institute for Policy Development Fisipol UGM.",
+        "image" : "/teams-ardha.png"
+    },
+    {
+        "name" : "Sailatur Rizqi As Suhudiyah, S.IP",
+        "role" : "Data Analyst",
+        "description" : "Saila merupakan lulusan S1 Departemen Manajemen dan Kebijakan Publik Fakultas Ilmu Sosial dan Ilmu Politik UGM pada tahun 2022. Selama kuliah Saila memiliki beberapa pengalaman magang pada bidang social media specialist dan sempat pula mengikuti program magang di Institute for Policy Development Fisipol UGM. Saila juga memiliki pengalaman kerja sebagai research assistant pada beberapa project milik pemerintah dan BUMN.",
+        "image" : "/teams-saila.png"
+    },
+    {
+        "name" : "Nur Rima Russelina , S.IP",
+        "role" : "Data Analyst",
+        "description" : "Saila merupakan lulusan S1 Departemen Manajemen dan Kebijakan Publik Fakultas Ilmu Sosial dan Ilmu Politik UGM pada tahun 2022. Selama kuliah Saila memiliki beberapa pengalaman magang pada bidangsocial media specialist dan sempat pula mengikuti program magang di Institute for Policy Development Fisipol UGM. Saila juga memiliki pengalaman kerjasebagai research assistant pada beberapa project milik pemerintah dan BUMN.",
+        "image" : "/teams-rima.png"
+    },
+    {
+        "name" : "Bara Muhammad Setiadi",
+        "role" : "Research Assistant",
+        "description" : "Bara adalah mahasiswa S-1 Departemen Politik dan Pemerintahan Universitas Gadjah Mada sekaligus magang asisten peneliti kuantitatif di Institute for Policy Development UGM. Ia sekarang juga menjadi Kepala Divisi Riset di Dewan Mahasiswa Fisipol UGM. Minat studi Bara termasuk politik energi, ekonomi politik, dan politik perkotaan.",
+        "image" : "/teams-ardha.png"
+    },
+    {
+        "name" : "Ahmad Zidan",
+        "role" : "Data Engineer",
+        "description" : "Zidan sedang menempuh pendidikan sarjana Teknologi Informasi di Departemen Teknik Elektro dan Teknologi Informasi Universitas Gadjah Mada. Ia selama kuliah aktif mengikuti aktivitas akademik di beberapa",
+        "image" : "/teams-zidan.png"
+    }
+]

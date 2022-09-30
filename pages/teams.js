@@ -1,8 +1,7 @@
-import Link from 'next/link';
-import Image from 'next/future/image';
-import NurRimaImg from '../public/Nur Rima Russelina.jpeg';
-import SailaturRizqiImg from '../public/Sailatur Rizqi As Suhudiyah, S.IP_ Junior Researcher.jpg';
-import TeamCard from '../components/TeamCard';
+import Link from "next/link";
+import Image from "next/future/image";
+import TeamCard from "../components/TeamCard";
+import TeamData from "../data/Teams.json";
 
 export default function about() {
   return (
@@ -21,51 +20,32 @@ export default function about() {
               Our Teams
             </h1>
             <div className="flex justify-between flex-wrap">
-              <div className="max-w-[250px] overflow-hidden my-5">
-                <div className="flex justify-center">
-                  <Image
-                    src={NurRimaImg}
-                    className="h-[250px] w-[250px] object-cover"
-                    alt="Nur Rima Russelina"
-                  />
-                </div>
-                <div className="py-4">
-                  <div className="font-medium text-lg mb-1">
-                    Nur Rima Rosselina
-                  </div>
-                  <p className="text-gray-700 text-base italic">CEO</p>
-                </div>
-              </div>
-              <div className="max-w-[250px] overflow-hidden my-5">
-                <div className="flex justify-center">
-                  <Image
-                    src={NurRimaImg}
-                    className="h-[250px] w-[250px] object-cover"
-                    alt="Nur Rima Russelina"
-                  />
-                </div>
-                <div className="py-4">
-                  <div className="font-medium text-lg mb-1">
-                    Nur Rima Rosselina
-                  </div>
-                  <p className="text-gray-700 text-base italic">CEO</p>
-                </div>
-              </div>
-              <div className="max-w-[250px] overflow-hidden my-5">
-                <div className="flex justify-center">
-                  <Image
-                    src={NurRimaImg}
-                    className="h-[250px] w-[250px] object-cover"
-                    alt="Nur Rima Russelina"
-                  />
-                </div>
-                <div className="py-4">
-                  <div className="font-medium text-lg mb-1">
-                    Nur Rima Rosselina
-                  </div>
-                  <p className="text-gray-700 text-base italic">CEO</p>
-                </div>
-              </div>
+              {TeamData.map((member, index) => {
+                return (
+                  <>
+                    <div className="max-w-[250px] overflow-hidden my-5">
+                      <div className="flex justify-center">
+                        <Image
+                          src={member.image}
+                          width={250}
+                          height={250}
+                          className="h-[250px] w-[250px] object-cover object-top"
+                          alt={member.name}
+                        />
+                      </div>
+                      <div className="py-4">
+                        <h2 className="font-medium text-lg mb-1">
+                          {member.name}
+                        </h2>
+                        <p className="text-gray-700 text-base italic">{member.role}</p>
+                        <p className="text-gray-500 text-sm">
+                          {member.description}
+                        </p>
+                      </div>
+                    </div>
+                  </>
+                );
+              })}
             </div>
           </section>
         </div>

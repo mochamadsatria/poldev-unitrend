@@ -11,7 +11,7 @@ import SearchBar from '../components/SearchBar';
 import Navbar from '../components/Navbar';
 import SectorDropDown from '../components/SectorDropDown';
 import SectorButton from '../components/SectorButton';
-import heroImg from '../public/hero.jpg'
+import heroImg from '../public/hero.png'
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 
 const BarCharts = dynamic(() => import('../components/BarCharts'), {
