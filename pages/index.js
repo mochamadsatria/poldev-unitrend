@@ -63,7 +63,7 @@ export default function Home() {
   );
 
   const getDateOfWeek = (w, y) => {
-    var sunday = new Date(y, 0, 1 + (w - 1) * 7);
+    var sunday = new Date(y, 0, 1 + (w) * 7);
     while (sunday.getDay() !== 0) {
       sunday.setDate(sunday.getDate() - 1);
     }
