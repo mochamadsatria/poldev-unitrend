@@ -69,7 +69,7 @@ export default function Navbar() {
                 <>
                   <SectorButton
                     href={`/sector/${sector}`}
-                    name={`${trendsData[sector]["name"]}`}
+                    name={`${trendsData[sector]['name']}`}
                   />
                 </>
               );
@@ -79,11 +79,17 @@ export default function Navbar() {
       </Transition>
       <div className="fixed top-0 left-0 right-0 z-[10]">
         <div className="flex bg-[#DFF6FF] h-[50px] items-center justify-around font-medium">
-          <Link href={"/"}>
-            <Image src={PoldevImg} alt="Poldev UGM" className="object-contain hover:cursor-pointer" width="100%" height="30px"></Image>
+          <Link href={'/'}>
+            <Image
+              src={PoldevImg}
+              alt="Poldev UGM"
+              className="object-contain hover:cursor-pointer"
+              width="100%"
+              height="30px"
+            ></Image>
           </Link>
           <div className="flex">
-            <div className="mx-5 cursor-pointer">
+            <div className="mx-5 cursor-pointer invisible md:visible">
               <Link href="/about">About Us</Link>
             </div>
             {/* <div className="mx-5 flex items-center">
@@ -101,7 +107,7 @@ export default function Navbar() {
                 </svg>
               </div>
             </div> */}
-            <div className="mx-5 cursor-pointer">
+            <div className="mx-5 cursor-pointer invisible md:visible">
               <Link href="/teams">Our Teams</Link>
             </div>
           </div>

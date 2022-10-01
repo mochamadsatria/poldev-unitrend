@@ -6,7 +6,7 @@
         "image" : "/teams-ardha.png"
     },
     {
-        "name" : "Sailatur Rizqi As Suhudiyah, S.IP",
+        "name" : "Sailatur Rizqi As S., S.IP",
         "role" : "Data Analyst",
         "description" : "Saila merupakan lulusan S1 Departemen Manajemen dan Kebijakan Publik Fakultas Ilmu Sosial dan Ilmu Politik UGM pada tahun 2022. Selama kuliah Saila memiliki beberapa pengalaman magang pada bidang social media specialist dan sempat pula mengikuti program magang di Institute for Policy Development Fisipol UGM. Saila juga memiliki pengalaman kerja sebagai research assistant pada beberapa project milik pemerintah dan BUMN.",
         "image" : "/teams-saila.png"
@@ -26,7 +26,13 @@
     {
         "name" : "Ahmad Zidan",
         "role" : "Data Engineer",
-        "description" : "Zidan sedang menempuh pendidikan sarjana Teknologi Informasi di Departemen Teknik Elektro dan Teknologi Informasi Universitas Gadjah Mada. Ia selama kuliah aktif mengikuti aktivitas akademik di bidang analisis sosial media dan information security. Zidan memiliki ketertarikan di bidang studi information security, web development, data engineering, dan data science",
+        "description" : "Zidan sedang menempuh pendidikan sarjana Teknologi Informasi di Departemen Teknik Elektro dan Teknologi Informasi Universitas Gadjah Mada. Ia selama kuliah aktif mengikuti aktivitas akademik di bidang analisis sosial media dan information security. Zidan memiliki ketertarikan di bidang studi information security, web development, data engineering, dan data science.",
         "image" : "/teams-zidan.png"
+    },
+    {
+        "name" : "Ade Firmansyah",
+        "role" : "Web Developer",
+        "description" : "Ade sedang menempuh pendidikan sarjana Teknologi Informasi di Departemen Teknik Elektro dan Teknologi Informasi Universitas Gadjah Mada. Selama kuliah, Ade aktif mengikuti aktivitas akademik di bidang pengembangan web dan analisis data. Ade memiliki ketertarikan di bidang studi web development, software engineering, dan data science.",
+        "image" : "/teams-ade.png"
     }
 ]

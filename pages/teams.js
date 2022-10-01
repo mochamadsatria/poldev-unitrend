@@ -1,7 +1,7 @@
-import Link from "next/link";
-import Image from "next/future/image";
-import TeamCard from "../components/TeamCard";
-import TeamData from "../data/Teams.json";
+import Link from 'next/link';
+import Image from 'next/future/image';
+import TeamCard from '../components/TeamCard';
+import TeamData from '../data/Teams.json';
 
 export default function about() {
   return (
@@ -19,7 +19,7 @@ export default function about() {
             <h1 className="text-black text-[3em] md:text-[4em] font-bold">
               Our Teams
             </h1>
-            <div className="flex justify-between flex-wrap">
+            <div className="flex justify-center xsm:justify-between flex-wrap">
               {TeamData.map((member, index) => {
                 return (
                   <>
@@ -37,7 +37,9 @@ export default function about() {
                         <h2 className="font-medium text-lg mb-1">
                           {member.name}
                         </h2>
-                        <p className="text-gray-700 text-base italic">{member.role}</p>
+                        <p className="text-gray-700 text-base italic">
+                          {member.role}
+                        </p>
                         <p className="text-gray-500 text-sm">
                           {member.description}
                         </p>
