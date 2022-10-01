@@ -196,7 +196,7 @@ export default function Home() {
             )}`}
           </p>
           <p className="text-gray-400 text-[0.875rem]">
-            Data terakhir diambil: {latestDate.slice(0, 10)}
+            Data terakhir diambil: {latestDateNextWeek.slice(0, 10)}
           </p>
           <BarCharts
             sector={positiveSectorTrendSorted.map(
@@ -229,7 +229,7 @@ export default function Home() {
             )}`}
           </p>
           <p className="text-gray-400 text-[0.875rem]">
-            Data terakhir diambil: {latestDate.slice(0, 10)}
+            Data terakhir diambil: {latestDateNextWeek.slice(0, 10)}
           </p>
           <BarCharts
             sector={negativeSectorTrendSorted.map(
