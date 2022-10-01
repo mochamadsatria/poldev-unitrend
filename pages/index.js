@@ -1,70 +1,92 @@
-import dynamic from 'next/dynamic';
-import Head from 'next/head';
-import Image from 'next/future/image';
-import DetailCard from '../components/DetailCard';
+import dynamic from "next/dynamic";
+import Head from "next/head";
+import Image from "next/future/image";
+import DetailCard from "../components/DetailCard";
 // import BarCharts from '../components/BarCharts';
-import Footer from '../components/Footer';
-import styles from '../styles/Home.module.css';
-import trendsData from '../data/Data_GT.json';
-import trendsDataSDGs from '../data/Data_SDGs.json';
-import SearchBar from '../components/SearchBar';
-import Navbar from '../components/Navbar';
-import SectorDropDown from '../components/SectorDropDown';
-import SectorButton from '../components/SectorButton';
-import heroImg from '../public/hero.png'
-import { Parallax, ParallaxLayer } from '@react-spring/parallax'
+import Footer from "../components/Footer";
+import styles from "../styles/Home.module.css";
+import trendsData from "../data/Data_GT.json";
+import trendsDataSDGs from "../data/Data_SDGs.json";
+import SearchBar from "../components/SearchBar";
+import Navbar from "../components/Navbar";
+import SectorDropDown from "../components/SectorDropDown";
+import SectorButton from "../components/SectorButton";
+import heroImg from "../public/hero.png";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
-const BarCharts = dynamic(() => import('../components/BarCharts'), {
+const BarCharts = dynamic(() => import("../components/BarCharts"), {
   ssr: false,
 });
 
 export default function Home() {
   const positiveSectorTrendSorted = Object.keys(trendsData)
-    .filter((sector) => trendsData[sector]['combined_trends_mean_change'] > 0.0)
+    .filter((sector) => trendsData[sector]["combined_trends_mean_change"] > 0.0)
     .sort(
       (a, b) =>
         -(
-          trendsData[a]['combined_trends_mean_change'] -
-          trendsData[b]['combined_trends_mean_change']
+          trendsData[a]["combined_trends_mean_change"] -
+          trendsData[b]["combined_trends_mean_change"]
         )
     );
 
   const positiveSectorTrendSortedData = positiveSectorTrendSorted.map(
-    (sector) => trendsData[sector]['combined_trends_mean_change']
+    (sector) => trendsData[sector]["combined_trends_mean_change"]
   );
 
   const negativeSectorTrendSorted = Object.keys(trendsData)
-    .filter((sector) => trendsData[sector]['combined_trends_mean_change'] < 0.0)
+    .filter((sector) => trendsData[sector]["combined_trends_mean_change"] < 0.0)
     .sort(
       (a, b) =>
         -(
-          trendsData[a]['combined_trends_mean_change'] -
-          trendsData[b]['combined_trends_mean_change']
+          trendsData[a]["combined_trends_mean_change"] -
+          trendsData[b]["combined_trends_mean_change"]
         )
     );
 
   const negativeSectorTrendSortedData = negativeSectorTrendSorted.map(
-    (sector) => trendsData[sector]['combined_trends_mean_change']
+    (sector) => trendsData[sector]["combined_trends_mean_change"]
   );
 
   const trendsDataSorted = Object.keys(trendsData).sort(
     (a, b) =>
       -(
-        trendsData[a]['combined_trends_mean_change'] -
-        trendsData[b]['combined_trends_mean_change']
+        trendsData[a]["combined_trends_mean_change"] -
+        trendsData[b]["combined_trends_mean_change"]
       )
   );
   const trendsDataSDGsSorted = Object.keys(trendsDataSDGs).sort(
     (a, b) =>
       -(
-        trendsDataSDGs[a]['combined_trends_mean_change'] -
-        trendsDataSDGs[b]['combined_trends_mean_change']
+        trendsDataSDGs[a]["combined_trends_mean_change"] -
+        trendsDataSDGs[b]["combined_trends_mean_change"]
       )
   );
 
-  const getDateOfWeek = (w, y) => (new Date(y, 0, (1 + (w - 1) * 7)))
+  const getDateOfWeek = (w, y) => {
+    var sunday = new Date(y, 0, 1 + (w - 1) * 7);
+    while (sunday.getDay() !== 0) {
+      sunday.setDate(sunday.getDate() - 1);
+    }
+    return sunday;
+  };
+  const _selectedTrendsData = trendsData[Object.keys(trendsData)[0]]
+  const getNextWeekDate = (dt) =>
+    new Date(dt.getTime() + 7 * 24 * 60 * 60 * 1000);
 
-  const latestDate = getDateOfWeek(Object.keys(trendsData[Object.keys(trendsData)[0]]["biannually_combined_trends_mean"]["2022"]).length, 2022)
+  const _latestDate = getDateOfWeek(
+    Object.keys(_selectedTrendsData["biannually_combined_trends_mean"]["2022"])
+      .length,
+    2022
+  );
+  const latestDate = _latestDate.toISOString();
+  const latestDateNextWeek = getNextWeekDate(_latestDate).toISOString();
+  const _lastYearDate = getDateOfWeek(
+    Object.keys(_selectedTrendsData["biannually_combined_trends_mean"]["2022"])
+      .length,
+    2021
+  );
+  const lastYearDate = _lastYearDate.toISOString();
+  const lastYearDateNextWeek = getNextWeekDate(_lastYearDate).toISOString();
 
   return (
     // <div>
@@ -103,7 +125,7 @@ export default function Home() {
               })}
           </div>
         </section> */}
-        
+
         <section className="h-[50vh] my-[25vh] relative">
           <div className="absolute z-[1] w-[100%] xl:w-[50%] top-1/2 translate-y-[-50%]">
             <h1 className="text-[#07B0F8] text-[3rem] font-bold drop-shadow-[0_5px_10px_rgba(0,0,0,0.2)]">
@@ -113,17 +135,42 @@ export default function Home() {
               Presenting Data for Better Policy
             </p>
           </div>
-          <Image src={heroImg} alt="Futuristic city" className='w-[40vw] absolute right-0 top-2/4 translate-y-[-50%] h-[auto] contrast-[110%] brightness-[70%] saturate-0 hidden xl:block'></Image>
+          <Image
+            src={heroImg}
+            alt="Futuristic city"
+            className="w-[40vw] absolute right-0 top-2/4 translate-y-[-50%] h-[auto] contrast-[110%] brightness-[70%] saturate-0 hidden xl:block"
+          ></Image>
         </section>
         <section className="text-justify my-16">
           <h1 className="text-black text-[2rem] font-bold">
             Apa yang kami lakukan?
           </h1>
           <p className="text-black text-base my-2">
-            Penggunaan <i>big data</i> seperti Google Trends dapat membantu pengambil kebijakan dalam memahami kondisi sosial dan ekonomi masyarakat secara cepat, akurat dan <i>real-time</i>. Para investor, misalnya, memanfaatkan Google Trends untuk melihat variasi harga aset global. Seorang investor bisa menentukan diversifikasi portofolio mereka menggunakan informasi <i>item</i> yang ditelusuri melalui Google Trends. Para pekerja komersial atau pengusaha memanfaatkan Google Trends untuk menganalisis pasar, terutama untuk mengukur tren permintaan untuk dijadikan acuan dalam menyusun strategi bisnis. Google Trends juga berperan dalam menciptakan nilai tambah melalui fitur berbasis <i>artificial intelligence</i> untuk membantu membangun platform <i>business to business</i> (B2B) yang efektif. 
+            Penggunaan <i>big data</i> seperti Google Trends dapat membantu
+            pengambil kebijakan dalam memahami kondisi sosial dan ekonomi
+            masyarakat secara cepat, akurat dan <i>real-time</i>. Para investor,
+            misalnya, memanfaatkan Google Trends untuk melihat variasi harga
+            aset global. Seorang investor bisa menentukan diversifikasi
+            portofolio mereka menggunakan informasi <i>item</i> yang ditelusuri
+            melalui Google Trends. Para pekerja komersial atau pengusaha
+            memanfaatkan Google Trends untuk menganalisis pasar, terutama untuk
+            mengukur tren permintaan untuk dijadikan acuan dalam menyusun
+            strategi bisnis. Google Trends juga berperan dalam menciptakan nilai
+            tambah melalui fitur berbasis <i>artificial intelligence</i> untuk
+            membantu membangun platform <i>business to business</i> (B2B) yang
+            efektif.
           </p>
           <p className="text-black text-base my-2">
-            Bagi pengambil kebijakan, data Google Trends dapat memberikan lensa informatif dalam melihat pergeseran minat pencarian Google yang berkaitan dengan isu-isu sosial, ekonomi dan politik saat ini. Google Trends juga dapat digunakan untuk memprediksi pertumbuhan PDB suatu negara bersamaan dengan indikator ekonomi makro lainnya seperti pertumbuhan ekonomi, pengangguran dan inflasi sebagai dasar pengambilan kebijakan. Data tersebut dapat menjadi alternatif peringatan dini bagi pemangku kebijakan untuk menentukan langkah yang akan dicapai untuk mencapai <i>Sustainable Development Goals</i> (SDGs).
+            Bagi pengambil kebijakan, data Google Trends dapat memberikan lensa
+            informatif dalam melihat pergeseran minat pencarian Google yang
+            berkaitan dengan isu-isu sosial, ekonomi dan politik saat ini.
+            Google Trends juga dapat digunakan untuk memprediksi pertumbuhan PDB
+            suatu negara bersamaan dengan indikator ekonomi makro lainnya
+            seperti pertumbuhan ekonomi, pengangguran dan inflasi sebagai dasar
+            pengambilan kebijakan. Data tersebut dapat menjadi alternatif
+            peringatan dini bagi pemangku kebijakan untuk menentukan langkah
+            yang akan dicapai untuk mencapai{" "}
+            <i>Sustainable Development Goals</i> (SDGs).
           </p>
         </section>
         <section className="text-justify my-16">
@@ -131,14 +178,29 @@ export default function Home() {
             Sektor mana saja yang mengalami peningkatan pencarian di Google?
           </h1>
           <p className="text-black text-base my-2">
-            Data berikut ini menunjukkan sektor-sektor yang mengalami peningkatan persentase pencarian, dibandingkan dengan periode yang sama pada tahun sebelumnya. Hal ini menunjukkan adanya traksi yang tinggi terhadap topik sektor berikut di Google.
+            Data berikut ini menunjukkan sektor-sektor yang mengalami
+            peningkatan persentase pencarian, dibandingkan dengan periode yang
+            sama pada tahun sebelumnya. Hal ini menunjukkan adanya traksi yang
+            tinggi terhadap topik sektor berikut di Google.
           </p>
-          <p className="text-gray-400 text-sm">
-            Data terakhir diambil: {latestDate.toISOString().slice(0, 10)}
+          <p className="text-gray-400 text-[0.875rem]">
+            Membandingkan :{" "}
+            {`${lastYearDate.slice(0, 10)} hingga ${lastYearDateNextWeek.slice(
+              0,
+              10
+            )}`}{" "}
+            dengan{" "}
+            {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
+              0,
+              10
+            )}`}
+          </p>
+          <p className="text-gray-400 text-[0.875rem]">
+            Data terakhir diambil: {latestDate.slice(0, 10)}
           </p>
           <BarCharts
             sector={positiveSectorTrendSorted.map(
-              (sector) => trendsData[sector]['name']
+              (sector) => trendsData[sector]["name"]
             )}
             series={positiveSectorTrendSortedData}
             fillColor="#07B0F8"
@@ -149,18 +211,33 @@ export default function Home() {
             Sektor apa saja yang mengalami penurunan pencarian di Google?
           </h1>
           <p className="text-black text-base my-2">
-            Data berikut ini menunjukkan sektor-sektor yang mengalami penurunan persentase, dibandingkan periode yang sama pada tahun sebelumnya. Diketahui bahwa terjadi penurunan yang signifikan terhadap pencarian topik yang berhubungan dengan sektor berikut di Google.
+            Data berikut ini menunjukkan sektor-sektor yang mengalami penurunan
+            persentase, dibandingkan periode yang sama pada tahun sebelumnya.
+            Diketahui bahwa terjadi penurunan yang signifikan terhadap pencarian
+            topik yang berhubungan dengan sektor berikut di Google.
           </p>
-          <p className="text-gray-400 text-sm">
-            Data terakhir diambil: {latestDate.toISOString().slice(0, 10)}
+          <p className="text-gray-400 text-[0.875rem]">
+            Membandingkan :{" "}
+            {`${lastYearDate.slice(0, 10)} hingga ${lastYearDateNextWeek.slice(
+              0,
+              10
+            )}`}{" "}
+            dengan{" "}
+            {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
+              0,
+              10
+            )}`}
           </p>
-            <BarCharts
-              sector={negativeSectorTrendSorted.map(
-                (sector) => trendsData[sector]['name']
-              )}
-              series={negativeSectorTrendSortedData}
-              fillColor="#F84F07"
-            />
+          <p className="text-gray-400 text-[0.875rem]">
+            Data terakhir diambil: {latestDate.slice(0, 10)}
+          </p>
+          <BarCharts
+            sector={negativeSectorTrendSorted.map(
+              (sector) => trendsData[sector]["name"]
+            )}
+            series={negativeSectorTrendSortedData}
+            fillColor="#F84F07"
+          />
         </section>
         <h1 className="text-black text-xl font-semibold">
           Klik untuk mengetahui rincian data masing-masing sektor
@@ -172,8 +249,8 @@ export default function Home() {
                 <li key={index}>
                   <DetailCard
                     href={`/sector/${encodeURIComponent(k)}`}
-                    sector={trendsData[k]['name']}
-                    trendsChange={trendsData[k]['combined_trends_mean_change']}
+                    sector={trendsData[k]["name"]}
+                    trendsChange={trendsData[k]["combined_trends_mean_change"]}
                   />
                 </li>
               </>
@@ -205,10 +282,23 @@ export default function Home() {
           </li> */}
         </ul>
         <section className="text-justify my-16">
-          <h1 className="text-black text-[2rem] font-bold"><i>Sustainable Development Goals</i></h1>
+          <h1 className="text-black text-[2rem] font-bold">
+            <i>Sustainable Development Goals</i>
+          </h1>
           <p className="text-black text-base my-2">
-            <i>Sustainable Development Goals</i> (SDGs) adalah agenda tahun 2030 yang merupakan kesepakatan pembangunan berkelanjutan berdasarkan hak asasi manusia dan kesetaraan. Poin umum dari pembangunan berkelanjutan, digunakan sebagai pedoman untuk melaksanakan pembangunan yang menjaga peningkatan kesejahteraan ekonomi masyarakat secara berkesinambungan, pembangunan yang menjaga keberlanjutan kehidupan sosial masyarakat, pembangunan yang menjaga kualitas lingkungan hidup serta pembangunan yang menjamin keadilan dan terlaksananya tata kelola yang mampu menjaga peningkatan kualitas hidup dari satu generasi ke generasi berikutnya. UNITREND menyajikan <i>keyword-keyword</i> yang berelevansi tinggi terhadap topik mengenai poin SDGs yang populer di Indonesia.
-            </p>
+            <i>Sustainable Development Goals</i> (SDGs) adalah agenda tahun 2030
+            yang merupakan kesepakatan pembangunan berkelanjutan berdasarkan hak
+            asasi manusia dan kesetaraan. Poin umum dari pembangunan
+            berkelanjutan, digunakan sebagai pedoman untuk melaksanakan
+            pembangunan yang menjaga peningkatan kesejahteraan ekonomi
+            masyarakat secara berkesinambungan, pembangunan yang menjaga
+            keberlanjutan kehidupan sosial masyarakat, pembangunan yang menjaga
+            kualitas lingkungan hidup serta pembangunan yang menjamin keadilan
+            dan terlaksananya tata kelola yang mampu menjaga peningkatan
+            kualitas hidup dari satu generasi ke generasi berikutnya. UNITREND
+            menyajikan <i>keyword-keyword</i> yang berelevansi tinggi terhadap
+            topik mengenai poin SDGs yang populer di Indonesia.
+          </p>
           <ul className="my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {trendsDataSDGsSorted.map((k, index) => {
               return (
@@ -216,9 +306,9 @@ export default function Home() {
                   <li key={index}>
                     <DetailCard
                       href={`/sdgs/${encodeURIComponent(k)}`}
-                      sector={trendsDataSDGs[k]['name']}
+                      sector={trendsDataSDGs[k]["name"]}
                       trendsChange={
-                        trendsDataSDGs[k]['combined_trends_mean_change']
+                        trendsDataSDGs[k]["combined_trends_mean_change"]
                       }
                     />
                   </li>
