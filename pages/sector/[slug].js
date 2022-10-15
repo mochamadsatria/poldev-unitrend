@@ -1,19 +1,19 @@
-import dynamic from "next/dynamic";
-import { useRouter } from "next/router";
-import Head from "next/head";
-import Image from "next/image";
-import DetailCard from "../../components/DetailCard";
+import dynamic from 'next/dynamic';
+import { useRouter } from 'next/router';
+import Head from 'next/head';
+import Image from 'next/image';
+import DetailCard from '../../components/DetailCard';
 // import BarCharts from '../components/BarCharts';
-import Footer from "../../components/Footer";
-import styles from "../../styles/Home.module.css";
-import trendsData from "../../data/Data_GT.json";
-import deskripsiData from "../../data/Deskripsi_GT.json";
-import Link from "next/link";
+import Footer from '../../components/Footer';
+import styles from '../../styles/Home.module.css';
+import trendsData from '../../data/Data_GT.json';
+import deskripsiData from '../../data/Deskripsi_GT.json';
+import Link from 'next/link';
 
-const BarCharts = dynamic(() => import("../../components/BarCharts"), {
+const BarCharts = dynamic(() => import('../../components/BarCharts'), {
   ssr: false,
 });
-const LineCharts = dynamic(() => import("../../components/LineCharts"), {
+const LineCharts = dynamic(() => import('../../components/LineCharts'), {
   ssr: false,
 });
 
@@ -55,42 +55,44 @@ function Sector({
           <h1 className="text-black text-[3em] md:text-[4em] font-bold">
             {trendsData[slug]?.name}
           </h1>
-          <p className="text-black text-base my-2">
-            {deskripsiData[slug]}
-          </p>
+          <p className="text-black text-base my-2">{deskripsiData[slug]}</p>
         </section>
         <section className="text-justify my-16">
           <h1 className="text-black text-[2rem] font-bold">
-            Bagaimana tren sektor {trendsData[slug]?.name.toLowerCase()} saat ini dibandingkan dengan tahun lalu?
+            Tren sektor {trendsData[slug]?.name.toLowerCase()} saat ini
+            dibandingkan dengan tahun lalu?
           </h1>
-          <p className="text-black text-base my-2">
-            Data ini berasal dari Google Trends, dan menunjukkan hasil tren rata-rata seluruh kata kunci, merek dan topik umum yang kami lacak di sektor {trendsData[slug]?.name}. Berikut hasilnya
-          </p>
+
           <LineCharts
             trendsData2021={
               selectedTrendsData &&
               Object.values(
-                selectedTrendsData["biannually_combined_trends_mean"]["2021"]
+                selectedTrendsData['biannually_combined_trends_mean']['2021']
               )
             }
             trendsData2022={
               selectedTrendsData &&
               Object.values(
-                selectedTrendsData["biannually_combined_trends_mean"]["2022"]
+                selectedTrendsData['biannually_combined_trends_mean']['2022']
               )
             }
           />
+          <p className="text-gray-400 text-[0.875rem] my-2">
+            Data ini berasal dari Google Trends, dan menunjukkan hasil tren
+            rata-rata seluruh kata kunci, merek dan topik umum yang kami lacak
+            di sektor {trendsData[slug]?.name}.
+          </p>
         </section>
         <section className="my-16 flex flex-row items-center justify-center">
-          {selectedTrendsData["brand_list"].length > 0 && (
+          {selectedTrendsData['brand_list'].length > 0 && (
             <div className="flex flex-col items-center justify-center border border-solid border-black p-8 m-8">
               <p className="text-black text-base">
                 Pencarian merek berubah sebesar
               </p>
               <h2 className="text-black text-[2rem] font-bold">
                 {selectedTrendsData &&
-                  selectedTrendsData["brand_trends_mean_change"] &&
-                  selectedTrendsData["brand_trends_mean_change"].toFixed(1)}
+                  selectedTrendsData['brand_trends_mean_change'] &&
+                  selectedTrendsData['brand_trends_mean_change'].toFixed(1)}
                 %
               </h2>
             </div>
@@ -101,128 +103,140 @@ function Sector({
             </p>
             <h2 className="text-black text-[2rem] font-bold">
               {selectedTrendsData &&
-                selectedTrendsData["word_trends_mean_change"].toFixed(1)}
+                selectedTrendsData['word_trends_mean_change'].toFixed(1)}
               %
             </h2>
           </div>
         </section>
-        {selectedTrendsData["brand_list"].length > 0 && (
+        {selectedTrendsData['brand_list'].length > 0 && (
           <>
             <section className="text-justify my-16">
               <h1 className="text-black text-[3rem] font-bold">Merek</h1>
-              <h1 className="text-black text-[2rem] font-bold">
-                Sektor {trendsData[slug]?.name.toLowerCase()} didominasi oleh merek berikut ini
+              <h1 className="text-black text-[1.875rem] font-medium">
+                Sektor {trendsData[slug]?.name.toLowerCase()} didominasi oleh
+                merek berikut ini
               </h1>
-              <p className="text-black text-base my-2">
-                Data ini diambil dari Google Trends, dan menunjukkan persentase peningkatan dibandingkan periode yang sama pada tahun sebelumnya.
-              </p>
-              <p className="text-gray-400 text-[0.875rem]">
-                Membandingkan :{" "}
-                {`${lastYearDate.slice(
-                  0,
-                  10
-                )} hingga ${lastYearDateNextWeek.slice(0, 10)}`}{" "}
-                dengan{" "}
-                {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
-                  0,
-                  10
-                )}`}
-              </p>
-              <p className="text-gray-400 text-[0.875rem]">
-                Data terakhir diambil: {latestDateNextWeek.slice(0, 10)}
-              </p>
+              {/* <p className="text-black text-base my-2">
+                Data ini diambil dari Google Trends, dan menunjukkan persentase
+                peningkatan dibandingkan periode yang sama pada tahun
+                sebelumnya.
+              </p> */}
+
               <BarCharts
                 sector={positiveBrandTrendSorted}
                 series={positiveBrandTrendSortedData}
                 fillColor="#07B0F8"
               />
-            </section>
-            <section className="text-justify my-16">
-              <h1 className="text-black text-[2rem] font-bold">
-                Merek-merek pada sektor {trendsData[slug]?.name.toLowerCase()} yang mengalami penurunan adalah
-              </h1>
-              <p className="text-black text-base my-2">
-                Data ini diambil dari Google Trends, dan  menunjukkan persentase penurunan dibandingkan periode yang sama pada tahun sebelumnya.
-              </p>
-              <p className="text-gray-400 text-[0.875rem]">
-                Membandingkan :{" "}
+              <p className="text-gray-400 text-[0.75rem]">
+                Membandingkan :{' '}
                 {`${lastYearDate.slice(
                   0,
                   10
-                )} hingga ${lastYearDateNextWeek.slice(0, 10)}`}{" "}
-                dengan{" "}
+                )} hingga ${lastYearDateNextWeek.slice(0, 10)}`}{' '}
+                dengan{' '}
                 {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
                   0,
                   10
                 )}`}
               </p>
-              <p className="text-gray-400 text-[0.875rem]">
+              <p className="text-gray-400 text-[0.75rem]">
                 Data terakhir diambil: {latestDateNextWeek.slice(0, 10)}
               </p>
+            </section>
+            <section className="text-justify my-16">
+              <h1 className="text-black text-[1.875rem] font-medium">
+                Merek-merek pada sektor {trendsData[slug]?.name.toLowerCase()}{' '}
+                yang mengalami penurunan
+              </h1>
+              {/* <p className="text-black text-base my-2">
+                Data ini diambil dari Google Trends, dan menunjukkan persentase
+                penurunan dibandingkan periode yang sama pada tahun sebelumnya.
+              </p> */}
               <BarCharts
                 sector={negativeBrandTrendSorted}
                 series={negativeBrandTrendSortedData}
                 fillColor="#F84F07"
               />
+              <p className="text-gray-400 text-[0.75rem]">
+                Membandingkan :{' '}
+                {`${lastYearDate.slice(
+                  0,
+                  10
+                )} hingga ${lastYearDateNextWeek.slice(0, 10)}`}{' '}
+                dengan{' '}
+                {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
+                  0,
+                  10
+                )}`}
+              </p>
+              <p className="text-gray-400 text-[0.75rem]">
+                Data terakhir diambil: {latestDateNextWeek.slice(0, 10)}
+              </p>
             </section>
           </>
         )}
         <section className="text-justify my-16">
-          <h1 className="text-black text-[3rem] font-bold">Topik Umum</h1>
-          <h1 className="text-black text-[2rem] font-bold">
-            Topik umum sektor {trendsData[slug]?.name.toLowerCase()} yang mengalami kenaikan pencarian adalah
+          {/* <h1 className="text-black text-[3rem] font-bold">Topik Umum</h1> */}
+          <h1 className="text-black text-[1.875rem] font-medium">
+            Topik umum sektor {trendsData[slug]?.name.toLowerCase()} yang
+            mengalami kenaikan pencarian
           </h1>
-          <p className="text-black text-base my-2">
-            Data ini diambil dari Google Trends, dan menunjukkan persentase peningkatan dibandingkan periode yang sama pada tahun sebelumnya.
-          </p>
-          <p className="text-gray-400 text-[0.875rem]">
-            Membandingkan :{" "}
-            {`${lastYearDate.slice(0, 10)} hingga ${lastYearDateNextWeek.slice(
-              0,
-              10
-            )}`}{" "}
-            dengan{" "}
-            {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
-              0,
-              10
-            )}`}
-          </p>
-          <p className="text-gray-400 text-[0.875rem]">
-            Data terakhir diambil: {latestDateNextWeek.slice(0, 10)}
-          </p>
+          {/* <p className="text-black text-base my-2">
+            Data ini diambil dari Google Trends, dan menunjukkan persentase
+            peningkatan dibandingkan periode yang sama pada tahun sebelumnya.
+          </p> */}
+
           <BarCharts
             sector={positiveWordTrendSorted}
             series={positiveWordTrendSortedData}
             fillColor="#07B0F8"
           />
-        </section>
-        <section className="text-justify my-16">
-          <h1 className="text-black text-[2rem] font-bold">
-            Topik umum sektor {trendsData[slug]?.name.toLowerCase()} yang mengalami penurunan adalah
-          </h1>
-          <p className="text-black text-base my-2">
-            Data ini diambil dari Google Trends, dan menunjukkan persentase penurunan dibandingkan periode yang sama pada tahun sebelumnya.
-          </p>
-          <p className="text-gray-400 text-[0.875rem]">
-            Membandingkan :{" "}
+          <p className="text-gray-400 text-[0.75rem]">
+            Membandingkan :{' '}
             {`${lastYearDate.slice(0, 10)} hingga ${lastYearDateNextWeek.slice(
               0,
               10
-            )}`}{" "}
-            dengan{" "}
+            )}`}{' '}
+            dengan{' '}
             {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
               0,
               10
             )}`}
           </p>
-          <p className="text-gray-400 text-[0.875rem]">
+          <p className="text-gray-400 text-[0.75rem]">
             Data terakhir diambil: {latestDateNextWeek.slice(0, 10)}
           </p>
+        </section>
+        <section className="text-justify my-16">
+          <h1 className="text-black text-[1.875rem] font-medium">
+            Topik umum sektor {trendsData[slug]?.name.toLowerCase()} yang
+            mengalami penurunan
+          </h1>
+          {/* <p className="text-black text-base my-2">
+            Data ini diambil dari Google Trends, dan menunjukkan persentase
+            penurunan dibandingkan periode yang sama pada tahun sebelumnya.
+          </p> */}
+
           <BarCharts
             sector={negativeWordTrendSorted}
             series={negativeWordTrendSortedData}
             fillColor="#F84F07"
           />
+          <p className="text-gray-400 text-[0.75rem]">
+            Membandingkan :{' '}
+            {`${lastYearDate.slice(0, 10)} hingga ${lastYearDateNextWeek.slice(
+              0,
+              10
+            )}`}{' '}
+            dengan{' '}
+            {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
+              0,
+              10
+            )}`}
+          </p>
+          <p className="text-gray-400 text-[0.75rem]">
+            Data terakhir diambil: {latestDateNextWeek.slice(0, 10)}
+          </p>
         </section>
         {/* <hr className="mt-10 border-[#555]" /> */}
       </div>
@@ -234,7 +248,7 @@ function Sector({
 export async function getStaticPaths() {
   return {
     paths: [],
-    fallback: "blocking",
+    fallback: 'blocking',
   };
 }
 
@@ -243,67 +257,67 @@ export async function getStaticProps({ params }) {
   var selectedTrendsData = slug && trendsData[slug];
   const positiveBrandTrendSorted =
     selectedTrendsData &&
-    selectedTrendsData["brand_list"].length > 0 &&
-    Object.keys(selectedTrendsData["brand_data"])
-      .filter((brand) => trendsData[slug]["brand_data"][brand] > 0.0)
+    selectedTrendsData['brand_list'].length > 0 &&
+    Object.keys(selectedTrendsData['brand_data'])
+      .filter((brand) => trendsData[slug]['brand_data'][brand] > 0.0)
       .sort(
         (a, b) =>
           -(
-            trendsData[slug]["brand_data"][a] -
-            trendsData[slug]["brand_data"][b]
+            trendsData[slug]['brand_data'][a] -
+            trendsData[slug]['brand_data'][b]
           )
       );
 
   const positiveBrandTrendSortedData =
     positiveBrandTrendSorted &&
     positiveBrandTrendSorted?.map(
-      (brand) => trendsData[slug]["brand_data"][brand]
+      (brand) => trendsData[slug]['brand_data'][brand]
     );
 
   const negativeBrandTrendSorted =
     selectedTrendsData &&
-    Object.keys(selectedTrendsData["brand_data"])
-      .filter((brand) => trendsData[slug]["brand_data"][brand] < 0.0)
+    Object.keys(selectedTrendsData['brand_data'])
+      .filter((brand) => trendsData[slug]['brand_data'][brand] < 0.0)
       .sort(
         (a, b) =>
           -(
-            trendsData[slug]["brand_data"][a] -
-            trendsData[slug]["brand_data"][b]
+            trendsData[slug]['brand_data'][a] -
+            trendsData[slug]['brand_data'][b]
           )
       );
 
   const negativeBrandTrendSortedData = negativeBrandTrendSorted?.map(
-    (brand) => trendsData[slug]["brand_data"][brand]
+    (brand) => trendsData[slug]['brand_data'][brand]
   );
 
   const positiveWordTrendSorted =
     selectedTrendsData &&
-    Object.keys(selectedTrendsData["word_data"])
-      .filter((word) => trendsData[slug]["word_data"][word] > 0.0)
+    Object.keys(selectedTrendsData['word_data'])
+      .filter((word) => trendsData[slug]['word_data'][word] > 0.0)
       .sort(
         (a, b) =>
-          -(trendsData[slug]["word_data"][a] - trendsData[slug]["word_data"][b])
+          -(trendsData[slug]['word_data'][a] - trendsData[slug]['word_data'][b])
       );
 
   const positiveWordTrendSortedData = positiveWordTrendSorted?.map(
-    (word) => trendsData[slug]["word_data"][word]
+    (word) => trendsData[slug]['word_data'][word]
   );
 
   const negativeWordTrendSorted =
     selectedTrendsData &&
-    Object.keys(selectedTrendsData["word_data"])
-      .filter((word) => trendsData[slug]["word_data"][word] < 0.0)
+    Object.keys(selectedTrendsData['word_data'])
+      .filter((word) => trendsData[slug]['word_data'][word] < 0.0)
       .sort(
         (a, b) =>
-          -(trendsData[slug]["word_data"][a] - trendsData[slug]["word_data"][b])
+          -(trendsData[slug]['word_data'][a] - trendsData[slug]['word_data'][b])
       );
 
   const negativeWordTrendSortedData = negativeWordTrendSorted?.map(
-    (word) => trendsData[slug]["word_data"][word]
+    (word) => trendsData[slug]['word_data'][word]
   );
 
   const getDateOfWeek = (w, y) => {
-    var sunday = new Date(y, 0, 1 + (w) * 7);
+    var sunday = new Date(y, 0, 1 + w * 7);
     while (sunday.getDay() !== 0) {
       sunday.setDate(sunday.getDate() - 1);
     }
@@ -314,14 +328,14 @@ export async function getStaticProps({ params }) {
     new Date(dt.getTime() + 7 * 24 * 60 * 60 * 1000);
 
   const _latestDate = getDateOfWeek(
-    Object.keys(selectedTrendsData["biannually_combined_trends_mean"]["2022"])
+    Object.keys(selectedTrendsData['biannually_combined_trends_mean']['2022'])
       .length,
     2022
   );
   const latestDate = _latestDate.toISOString();
   const latestDateNextWeek = getNextWeekDate(_latestDate).toISOString();
   const _lastYearDate = getDateOfWeek(
-    Object.keys(selectedTrendsData["biannually_combined_trends_mean"]["2022"])
+    Object.keys(selectedTrendsData['biannually_combined_trends_mean']['2022'])
       .length,
     2021
   );

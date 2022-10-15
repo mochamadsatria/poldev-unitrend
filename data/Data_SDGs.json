@@ -1,5 +1,5 @@
 {
-    "menghapus-kemiskinan": {
+    "kemiskinan": {
         "word_list": [
             "anak jalanan",
             "tuna wisma",
@@ -214,10 +214,10 @@
             }
         },
         "combined_trends_mean_change": 32.52427184466019,
-        "slug": "menghapus-kemiskinan",
+        "slug": "kemiskinan",
         "name": "Menghapus Kemiskinan"
     },
-    "mengakhiri-kelaparan": {
+    "kelaparan": {
         "word_list": [
             "kemiskinan",
             "kelaparan",
@@ -436,10 +436,10 @@
             }
         },
         "combined_trends_mean_change": 36.1904761904762,
-        "slug": "mengakhiri-kelaparan",
-        "name": "Mengakhiri Kelaparan"
+        "slug": "kelaparan",
+        "name": "Kelaparan"
     },
-    "kualitas-kesehatan": {
+    "kerentanan-kesehatan": {
         "word_list": [
             "TBC",
             "AIDS",
@@ -660,10 +660,10 @@
             }
         },
         "combined_trends_mean_change": 26.045016077170406,
-        "slug": "kualitas-kesehatan",
-        "name": "Kualitas Kesehatan"
+        "slug": "kerentanan-kesehatan",
+        "name": "Kerentanan Kesehatan"
     },
-    "pendidikan-bermutu": {
+    "ketimpangan-pendidikan": {
         "word_list": [
             "pengangguran",
             "guru honor",
@@ -882,10 +882,10 @@
             }
         },
         "combined_trends_mean_change": 61.26760563380281,
-        "slug": "pendidikan-bermutu",
-        "name": "Pendidikan Bermutu"
+        "slug": "ketimpangan-pendidikan]",
+        "name": "Ketimpangan Pendidikan"
     },
-    "kesetaraan-gender": {
+    "ketidaksetaraan-gender": {
         "word_list": [
             "kekerasan rumah tangga",
             "patriaki",
@@ -1104,10 +1104,10 @@
             }
         },
         "combined_trends_mean_change": 44.915254237288146,
-        "slug": "kesetaraan-gender",
-        "name": "Kesetaraan Gender"
+        "slug": "ketidaksetaraan-gender",
+        "name": "Ketidaksetaraan Gender"
     },
-    "mengurangi-ketimpangan": {
+    "ketimpangan": {
         "word_list": [
             "kesenjangan",
             "kaya dan miskin",
@@ -1326,7 +1326,7 @@
             }
         },
         "combined_trends_mean_change": 20.312499999999993,
-        "slug": "mengurangi-ketimpangan",
-        "name": "Mengurangi Ketimpangan"
+        "slug": "ketimpangan",
+        "name": "Ketimpangan"
     }
 }

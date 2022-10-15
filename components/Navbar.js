@@ -2,7 +2,8 @@ import { useState, useRef, Fragment, useEffect } from 'react';
 import { Transition } from '@headlessui/react';
 import SectorButton from './SectorButton';
 import Link from 'next/link';
-import PoldevImg from '../public/logo-poldev.png';
+// import PoldevImg from '../public/logo-poldev.png';
+import PoldevImg from '../public/poldev-img.png';
 import Image from 'next/image';
 import trendsData from '../data/Data_GT.json';
 
@@ -78,18 +79,19 @@ export default function Navbar() {
         </div>
       </Transition>
       <div className="fixed top-0 left-0 right-0 z-[10]">
-        <div className="flex bg-[#DFF6FF] h-[50px] items-center justify-around font-medium">
+        <div className="flex bg-[#DFF6FF] h-[60px] items-center justify-between font-medium px-[10%]">
           <Link href={'/'}>
             <Image
               src={PoldevImg}
               alt="Poldev UGM"
-              className="object-contain hover:cursor-pointer"
-              width="100%"
-              height="30px"
-            ></Image>
+              className="hover:cursor-pointer"
+              layout="intrinsic"
+              // width={160}
+              // height={50}
+            />
           </Link>
           <div className="flex">
-            <div className="mx-5 cursor-pointer invisible md:visible">
+            <div className="mx-5 cursor-pointer hidden md:block">
               <Link href="/about">About Us</Link>
             </div>
             {/* <div className="mx-5 flex items-center">
@@ -107,8 +109,11 @@ export default function Navbar() {
                 </svg>
               </div>
             </div> */}
-            <div className="mx-5 cursor-pointer invisible md:visible">
+            <div className="mx-5 cursor-pointer hidden md:block">
               <Link href="/teams">Our Teams</Link>
+            </div>
+            <div className="mx-5 cursor-pointer hidden md:block">
+              <Link href="/pemilu2024">Pemilu 2024</Link>
             </div>
           </div>
           <div className="flex items-center">

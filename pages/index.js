@@ -1,87 +1,87 @@
-import dynamic from "next/dynamic";
-import Head from "next/head";
-import Image from "next/future/image";
-import DetailCard from "../components/DetailCard";
+import dynamic from 'next/dynamic';
+import Head from 'next/head';
+import Image from 'next/future/image';
+import DetailCard from '../components/DetailCard';
 // import BarCharts from '../components/BarCharts';
-import Footer from "../components/Footer";
-import styles from "../styles/Home.module.css";
-import trendsData from "../data/Data_GT.json";
-import trendsDataSDGs from "../data/Data_SDGs.json";
-import SearchBar from "../components/SearchBar";
-import Navbar from "../components/Navbar";
-import SectorDropDown from "../components/SectorDropDown";
-import SectorButton from "../components/SectorButton";
-import heroImg from "../public/hero.png";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import Footer from '../components/Footer';
+import styles from '../styles/Home.module.css';
+import trendsData from '../data/Data_GT.json';
+import trendsDataSDGs from '../data/Data_SDGs.json';
+import SearchBar from '../components/SearchBar';
+import Navbar from '../components/Navbar';
+import SectorDropDown from '../components/SectorDropDown';
+import SectorButton from '../components/SectorButton';
+import heroImg from '../public/hero.png';
+import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 
-const BarCharts = dynamic(() => import("../components/BarCharts"), {
+const BarCharts = dynamic(() => import('../components/BarCharts'), {
   ssr: false,
 });
 
 export default function Home() {
   const positiveSectorTrendSorted = Object.keys(trendsData)
-    .filter((sector) => trendsData[sector]["combined_trends_mean_change"] > 0.0)
+    .filter((sector) => trendsData[sector]['combined_trends_mean_change'] > 0.0)
     .sort(
       (a, b) =>
         -(
-          trendsData[a]["combined_trends_mean_change"] -
-          trendsData[b]["combined_trends_mean_change"]
+          trendsData[a]['combined_trends_mean_change'] -
+          trendsData[b]['combined_trends_mean_change']
         )
     );
 
   const positiveSectorTrendSortedData = positiveSectorTrendSorted.map(
-    (sector) => trendsData[sector]["combined_trends_mean_change"]
+    (sector) => trendsData[sector]['combined_trends_mean_change']
   );
 
   const negativeSectorTrendSorted = Object.keys(trendsData)
-    .filter((sector) => trendsData[sector]["combined_trends_mean_change"] < 0.0)
+    .filter((sector) => trendsData[sector]['combined_trends_mean_change'] < 0.0)
     .sort(
       (a, b) =>
         -(
-          trendsData[a]["combined_trends_mean_change"] -
-          trendsData[b]["combined_trends_mean_change"]
+          trendsData[a]['combined_trends_mean_change'] -
+          trendsData[b]['combined_trends_mean_change']
         )
     );
 
   const negativeSectorTrendSortedData = negativeSectorTrendSorted.map(
-    (sector) => trendsData[sector]["combined_trends_mean_change"]
+    (sector) => trendsData[sector]['combined_trends_mean_change']
   );
 
   const trendsDataSorted = Object.keys(trendsData).sort(
     (a, b) =>
       -(
-        trendsData[a]["combined_trends_mean_change"] -
-        trendsData[b]["combined_trends_mean_change"]
+        trendsData[a]['combined_trends_mean_change'] -
+        trendsData[b]['combined_trends_mean_change']
       )
   );
   const trendsDataSDGsSorted = Object.keys(trendsDataSDGs).sort(
     (a, b) =>
       -(
-        trendsDataSDGs[a]["combined_trends_mean_change"] -
-        trendsDataSDGs[b]["combined_trends_mean_change"]
+        trendsDataSDGs[a]['combined_trends_mean_change'] -
+        trendsDataSDGs[b]['combined_trends_mean_change']
       )
   );
 
   const getDateOfWeek = (w, y) => {
-    var sunday = new Date(y, 0, 1 + (w) * 7);
+    var sunday = new Date(y, 0, 1 + w * 7);
     while (sunday.getDay() !== 0) {
       sunday.setDate(sunday.getDate() - 1);
     }
     return sunday;
   };
-  const _selectedTrendsData = trendsData[Object.keys(trendsData)[0]]
+  const _selectedTrendsData = trendsData[Object.keys(trendsData)[0]];
   const getNextWeekDate = (dt) =>
     new Date(dt.getTime() + 7 * 24 * 60 * 60 * 1000);
 
   const _latestDate = getDateOfWeek(
-    Object.keys(_selectedTrendsData["biannually_combined_trends_mean"]["2022"])
+    Object.keys(_selectedTrendsData['biannually_combined_trends_mean']['2022'])
       .length,
     2022
   );
   const latestDate = _latestDate.toISOString();
   const latestDateNextWeek = getNextWeekDate(_latestDate).toISOString();
   const _lastYearDate = getDateOfWeek(
-    Object.keys(_selectedTrendsData["biannually_combined_trends_mean"]["2022"])
+    Object.keys(_selectedTrendsData['biannually_combined_trends_mean']['2022'])
       .length,
     2021
   );
@@ -129,7 +129,7 @@ export default function Home() {
         <section className="h-[50vh] my-[25vh] relative">
           <div className="absolute z-[1] w-[100%] xl:w-[50%] top-1/2 translate-y-[-50%]">
             <h1 className="text-[#07B0F8] text-[3rem] font-bold drop-shadow-[0_5px_10px_rgba(0,0,0,0.2)]">
-              UNITREND by Institute for Policy Development
+              UniTrend
             </h1>
             <p className="text-[#07B0F8] text-[1.5rem] my-2 drop-shadow-[0_5px_10px_rgba(0,0,0,0.2)]">
               Presenting Data for Better Policy
@@ -143,7 +143,7 @@ export default function Home() {
         </section>
         <section className="text-justify my-16">
           <h1 className="text-black text-[2rem] font-bold">
-            Apa yang kami lakukan?
+            Wow, Google Trends?
           </h1>
           <p className="text-black text-base my-2">
             Penggunaan <i>big data</i> seperti Google Trends dapat membantu
@@ -169,78 +169,78 @@ export default function Home() {
             seperti pertumbuhan ekonomi, pengangguran dan inflasi sebagai dasar
             pengambilan kebijakan. Data tersebut dapat menjadi alternatif
             peringatan dini bagi pemangku kebijakan untuk menentukan langkah
-            yang akan dicapai untuk mencapai{" "}
+            yang akan dicapai untuk mencapai{' '}
             <i>Sustainable Development Goals</i> (SDGs).
           </p>
         </section>
         <section className="text-justify my-16">
           <h1 className="text-black text-[2rem] font-bold">
-            Sektor mana saja yang mengalami peningkatan pencarian di Google?
+            Sektor yang mengalami peningkatan
           </h1>
-          <p className="text-black text-base my-2">
+          {/* <p className="text-black text-base my-2">
             Data berikut ini menunjukkan sektor-sektor yang mengalami
             peningkatan persentase pencarian, dibandingkan dengan periode yang
             sama pada tahun sebelumnya. Hal ini menunjukkan adanya traksi yang
             tinggi terhadap topik sektor berikut di Google.
-          </p>
-          <p className="text-gray-400 text-[0.875rem]">
-            Membandingkan :{" "}
-            {`${lastYearDate.slice(0, 10)} hingga ${lastYearDateNextWeek.slice(
-              0,
-              10
-            )}`}{" "}
-            dengan{" "}
-            {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
-              0,
-              10
-            )}`}
-          </p>
-          <p className="text-gray-400 text-[0.875rem]">
-            Data terakhir diambil: {latestDateNextWeek.slice(0, 10)}
-          </p>
+          </p> */}
           <BarCharts
             sector={positiveSectorTrendSorted.map(
-              (sector) => trendsData[sector]["name"]
+              (sector) => trendsData[sector]['name']
             )}
             series={positiveSectorTrendSortedData}
             fillColor="#07B0F8"
           />
-        </section>
-        <section className="text-justify my-16">
-          <h1 className="text-black text-[2rem] font-bold">
-            Sektor apa saja yang mengalami penurunan pencarian di Google?
-          </h1>
-          <p className="text-black text-base my-2">
-            Data berikut ini menunjukkan sektor-sektor yang mengalami penurunan
-            persentase, dibandingkan periode yang sama pada tahun sebelumnya.
-            Diketahui bahwa terjadi penurunan yang signifikan terhadap pencarian
-            topik yang berhubungan dengan sektor berikut di Google.
-          </p>
-          <p className="text-gray-400 text-[0.875rem]">
-            Membandingkan :{" "}
+          <p className="text-gray-400 text-[0.75rem]">
+            Membandingkan :{' '}
             {`${lastYearDate.slice(0, 10)} hingga ${lastYearDateNextWeek.slice(
               0,
               10
-            )}`}{" "}
-            dengan{" "}
+            )}`}{' '}
+            dengan{' '}
             {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
               0,
               10
             )}`}
           </p>
-          <p className="text-gray-400 text-[0.875rem]">
+          <p className="text-gray-400 text-[0.75rem]">
             Data terakhir diambil: {latestDateNextWeek.slice(0, 10)}
           </p>
+        </section>
+        <section className="text-justify my-16">
+          <h1 className="text-black text-[2rem] font-bold">
+            Sektor yang mengalami penurunan
+          </h1>
+          {/* <p className="text-black text-base my-2">
+            Data berikut ini menunjukkan sektor-sektor yang mengalami penurunan
+            persentase, dibandingkan periode yang sama pada tahun sebelumnya.
+            Diketahui bahwa terjadi penurunan yang signifikan terhadap pencarian
+            topik yang berhubungan dengan sektor berikut di Google.
+          </p> */}
           <BarCharts
             sector={negativeSectorTrendSorted.map(
-              (sector) => trendsData[sector]["name"]
+              (sector) => trendsData[sector]['name']
             )}
             series={negativeSectorTrendSortedData}
             fillColor="#F84F07"
           />
+          <p className="text-gray-400 text-[0.75rem]">
+            Membandingkan :{' '}
+            {`${lastYearDate.slice(0, 10)} hingga ${lastYearDateNextWeek.slice(
+              0,
+              10
+            )}`}{' '}
+            dengan{' '}
+            {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
+              0,
+              10
+            )}`}
+          </p>
+          <p className="text-gray-400 text-[0.75rem]">
+            Data terakhir diambil: {latestDateNextWeek.slice(0, 10)}
+          </p>
         </section>
         <h1 className="text-black text-xl font-semibold">
-          Klik untuk mengetahui rincian data masing-masing sektor
+          Silakan klik untuk mengetahui rincian data per sektor
         </h1>
         <ul className="my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {trendsDataSorted.map((k, index) => {
@@ -248,9 +248,10 @@ export default function Home() {
               <>
                 <li key={index}>
                   <DetailCard
+                    type="Sector"
                     href={`/sector/${encodeURIComponent(k)}`}
-                    sector={trendsData[k]["name"]}
-                    trendsChange={trendsData[k]["combined_trends_mean_change"]}
+                    sector={trendsData[k]['name']}
+                    trendsChange={trendsData[k]['combined_trends_mean_change']}
                   />
                 </li>
               </>
@@ -305,10 +306,11 @@ export default function Home() {
                 <>
                   <li key={index}>
                     <DetailCard
+                      type="SDG"
                       href={`/sdgs/${encodeURIComponent(k)}`}
-                      sector={trendsDataSDGs[k]["name"]}
+                      sector={trendsDataSDGs[k]['name']}
                       trendsChange={
-                        trendsDataSDGs[k]["combined_trends_mean_change"]
+                        trendsDataSDGs[k]['combined_trends_mean_change']
                       }
                     />
                   </li>

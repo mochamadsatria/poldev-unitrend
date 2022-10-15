@@ -51,17 +51,13 @@ function Sector({
           <h1 className="text-black text-[3em] md:text-[4em] font-bold">
             {trendsData[slug]?.name}
           </h1>
-          <p className="text-black text-base">
-            {deskripsiData[slug]}
-          </p>
+          <p className="text-black text-base">{deskripsiData[slug]}</p>
         </section>
         <section className="text-justify my-16">
           <h1 className="text-black text-[2rem] font-bold">
-            Bagaimana tren topik {trendsData[slug]?.name.toLowerCase()} saat ini dibandingkan dengan tahun lalu?
+            Tren {trendsData[slug]?.name.toLowerCase()} saat ini dibandingkan
+            dengan tahun lalu?
           </h1>
-          <p className="text-black text-base my-2">
-            Data ini berasal dari Google Trends, dan menunjukkan tren rata-rata untuk semua kata kunci, dan topik umum terkait {trendsData[slug]?.name.toLowerCase()}. Berikut hasilnya 
-          </p>
           <LineCharts
             trendsData2021={
               selectedTrendsData &&
@@ -76,12 +72,15 @@ function Sector({
               )
             }
           />
+          <p className="text-gray-400 text-[0.75rem] my-2">
+            Data ini berasal dari Google Trends, dan menunjukkan tren rata-rata
+            untuk semua kata kunci, dan topik umum terkait{' '}
+            {trendsData[slug]?.name.toLowerCase()}
+          </p>
         </section>
         <section className="my-16 columns-1">
           <div className="flex flex-col items-center justify-center border border-solid border-black p-8">
-            <p className="text-black text-base">
-              Pencarian topik umum berubah sebesar
-            </p>
+            <p className="text-black text-base">Pencarian berubah sebesar</p>
             <h2 className="text-black text-[2rem] font-bold">
               {selectedTrendsData &&
                 selectedTrendsData['word_trends_mean_change'].toFixed(1)}
@@ -90,61 +89,67 @@ function Sector({
           </div>
         </section>
         <section className="text-justify my-16">
-          <h1 className="text-black text-[3rem] font-bold">Topik Umum</h1>
+          {/* <h1 className="text-black text-[3rem] font-bold">Topik Umum</h1> */}
           <h1 className="text-black text-[2rem] font-bold">
-            Topik umum tentang {trendsData[slug]?.name.toLowerCase()} yang mengalami kenaikan pencarian adalah
+            Isu tentang {trendsData[slug]?.name.toLowerCase()} yang mengalami
+            kenaikan pencarian adalah
           </h1>
           <p className="text-black text-base my-2">
-            Data ini diambil dari Google Trends, menunjukkan persentase peningkatan dibandingkan periode yang sama pada tahun sebelumnya
+            Data ini diambil dari Google Trends, menunjukkan persentase
+            peningkatan dibandingkan periode yang sama pada tahun sebelumnya
           </p>
-          <p className="text-gray-400 text-[0.875rem]">
-                Membandingkan :{" "}
-                {`${lastYearDate.slice(
-                  0,
-                  10
-                )} hingga ${lastYearDateNextWeek.slice(0, 10)}`}{" "}
-                dengan{" "}
-                {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
-                  0,
-                  10
-                )}`}
-              </p>
-              <p className="text-gray-400 text-[0.875rem]">
-                Data terakhir diambil: {latestDateNextWeek.slice(0, 10)}
-          </p>
+
           <BarCharts
             sector={positiveWordTrendSorted}
             series={positiveWordTrendSortedData}
             fillColor="#07B0F8"
           />
+          <p className="text-gray-400 text-[0.75rem]">
+            Membandingkan :{' '}
+            {`${lastYearDate.slice(0, 10)} hingga ${lastYearDateNextWeek.slice(
+              0,
+              10
+            )}`}{' '}
+            dengan{' '}
+            {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
+              0,
+              10
+            )}`}
+          </p>
+          <p className="text-gray-400 text-[0.75rem]">
+            Data terakhir diambil: {latestDateNextWeek.slice(0, 10)}
+          </p>
         </section>
         <section className="text-justify my-16">
           <h1 className="text-black text-[2rem] font-bold">
-            Topik umum tentang {trendsData[slug]?.name.toLowerCase()} yang mengalami penurunan adalah
+            Isu tentang {trendsData[slug]?.name.toLowerCase()} yang mengalami
+            penurunan adalah
           </h1>
-          <p className="text-black text-base my-2">
-            Data ini diambil dari Google Trends, menunjukkan persentase penurunan dibandingkan periode yang sama pada tahun lalu.
-            </p>
-                          <p className="text-gray-400 text-[0.875rem]">
-                Membandingkan :{" "}
-                {`${lastYearDate.slice(
-                  0,
-                  10
-                )} hingga ${lastYearDateNextWeek.slice(0, 10)}`}{" "}
-                dengan{" "}
-                {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
-                  0,
-                  10
-                )}`}
-              </p>
-              <p className="text-gray-400 text-[0.875rem]">
-                Data terakhir diambil: {latestDateNextWeek.slice(0, 10)}
-              </p>
-            <BarCharts
-              sector={negativeWordTrendSorted}
-              series={negativeWordTrendSortedData}
-              fillColor="#F84F07"
-            />
+          {/* <p className="text-black text-base my-2">
+            Data ini diambil dari Google Trends, menunjukkan persentase
+            penurunan dibandingkan periode yang sama pada tahun lalu.
+          </p> */}
+
+          <BarCharts
+            sector={negativeWordTrendSorted}
+            series={negativeWordTrendSortedData}
+            fillColor="#F84F07"
+          />
+          <p className="text-gray-400 text-[0.75rem]">
+            Membandingkan :{' '}
+            {`${lastYearDate.slice(0, 10)} hingga ${lastYearDateNextWeek.slice(
+              0,
+              10
+            )}`}{' '}
+            dengan{' '}
+            {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
+              0,
+              10
+            )}`}
+          </p>
+          <p className="text-gray-400 text-[0.75rem]">
+            Data terakhir diambil: {latestDateNextWeek.slice(0, 10)}
+          </p>
         </section>
         {/* <hr className="mt-10 border-[#555]" /> */}
       </div>
@@ -191,7 +196,7 @@ export async function getStaticProps({ params }) {
   );
 
   const getDateOfWeek = (w, y) => {
-    var sunday = new Date(y, 0, 1 + (w) * 7);
+    var sunday = new Date(y, 0, 1 + w * 7);
     while (sunday.getDay() !== 0) {
       sunday.setDate(sunday.getDate() - 1);
     }
@@ -202,14 +207,14 @@ export async function getStaticProps({ params }) {
     new Date(dt.getTime() + 7 * 24 * 60 * 60 * 1000);
 
   const _latestDate = getDateOfWeek(
-    Object.keys(selectedTrendsData["biannually_combined_trends_mean"]["2022"])
+    Object.keys(selectedTrendsData['biannually_combined_trends_mean']['2022'])
       .length,
     2022
   );
   const latestDate = _latestDate.toISOString();
   const latestDateNextWeek = getNextWeekDate(_latestDate).toISOString();
   const _lastYearDate = getDateOfWeek(
-    Object.keys(selectedTrendsData["biannually_combined_trends_mean"]["2022"])
+    Object.keys(selectedTrendsData['biannually_combined_trends_mean']['2022'])
       .length,
     2021
   );

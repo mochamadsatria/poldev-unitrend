@@ -10,12 +10,18 @@ export default function Footer() {
           <Image src={PoldevImg} alt="Poldev UGM"></Image>
           <ul className="mt-3 font-light text-sm text-gray-300">
             <li>
-              PolDev (<i>Institute for Policy Development</i>) merupakan <i>Research Center</i> di Universitas Gadjah Mada. PolDev turut berperan dalam mendukung perumusan kebijakan berbasis data. Melalui UNITREND, PolDev berusaha menyajikan data terkait isu-isu aktual yang sedang diperbincangkan oleh masyarakat Indonesia.
+              PolDev (<i>Institute for Policy Development</i>) merupakan{' '}
+              <i>Research Center</i> di Universitas Gadjah Mada. PolDev turut
+              berperan dalam mendukung perumusan kebijakan berbasis data.
+              Melalui UNITREND, PolDev berusaha menyajikan data terkait isu-isu
+              aktual yang sedang diperbincangkan oleh masyarakat Indonesia.
             </li>
           </ul>
         </div>
         <div className="p-4">
-          <h3 className="font-bold text-lg">Kontak Kami</h3>
+          <h3 className="font-bold text-sm">
+            Untuk data yang lebih detail silakan hubungi kami
+          </h3>
           <div className="mt-9 font-light text-sm">
             <div className="flex items-center mb-4">
               <span className="material-icons mr-5">email</span>
@@ -23,9 +29,26 @@ export default function Footer() {
                 poldev.fisipol@ugm.ac.id
               </a>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center mb-4">
               <span className="material-icons mr-5">location_on</span>
               Jl. Sosio Yustisia No.1, Bulaksumur, Yogyakarta 55281, Indonesia
+            </div>
+            <div className="flex items-center mb-4">
+              <span className="material-icons mr-5">language</span>
+              <a href="https://www.poldevinstitute.org/">
+                www.poldevinstitute.org
+              </a>
+            </div>
+            <div className="flex items-center mb-4">
+              <span className="material-icons mr-5">call</span>
+              <div>
+                <div className="text-justify">
+                  <a href="https://wa.me/6289634661590"> CP1: 089634661590</a>
+                </div>
+                <div className="text-justify">
+                  <a href="https://wa.me/6285869347062">CP2: 085869347062</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

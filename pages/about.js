@@ -18,12 +18,31 @@ export default function about() {
             <h1 className="text-black text-[3em] md:text-[4em] font-bold">
               About Us
             </h1>
-            <Image src={PoldevImg} alt="Poldev UGM" className="my-6 self-center"></Image>
-            <p className="text-black text-base indent-16">
-              PolDev (<i>Institute for Policy Development</i>) merupakan <i>Research Center</i> di Universitas Gadjah Mada. PolDev turut berperan dalam mendukung perumusan kebijakan berbasis data. Melalui UNITREND, PolDev berusaha menyajikan data terkait isu-isu aktual yang sedang diperbincangkan oleh masyarakat Indonesia. Data berperan signifikan tidak hanya dalam proses perumusan kebijakan tetapi juga untuk menganalisis kondisi di masa kini serta memprediksi tren di masa depan. Namun demikian, di saat proses pengambilan kebijakan harus dilakukan dengan cepat dan akurat, seringkali terdapat <i>lag</i>, dimana data-data resmi yang tersedia diambil di masa lalu, atau beberapa bulan dan beberapa tahun sebelumnya. 
+            <Image
+              src={PoldevImg}
+              alt="Poldev UGM"
+              className="my-6 self-center"
+            ></Image>
+            <p className="text-black text-base indent-10">
+              PolDev (<i>Institute for Policy Development</i>) merupakan
+              <i> Research Center</i> di Universitas Gadjah Mada. PolDev turut
+              berperan dalam mendukung perumusan kebijakan berbasis data.
+              Melalui UniTrend, PolDev berusaha menyajikan data terkait isu-isu
+              aktual yang sedang diperbincangkan oleh masyarakat Indonesia. Data
+              yang digunakan didapatkan dari Google Trends, Facebook Ads,
+              Instagram Ads, Twitter, dan platform lainnya. Data berperan
+              signifikan tidak hanya dalam proses perumusan kebijakan tetapi
+              juga untuk menganalisa kondisi di masa kini serta memprediksi tren
+              di masa depan. Namun demikian, disaat proses pengambilan kebijakan
+              harus dilakukan dengan cepat dan akurat, seringkali terdapat{' '}
+              <i>lag</i>, dimana data-data resmi yang tersedia diambil di masa
+              lalu, atau beberapa bulan dan beberapa tahun sebelumnya.
             </p>
-            <p className="text-black text-base indent-16">
-              UNITREND berusaha untuk mengintegrasikan data berbasis survey secara <i>real-time</i>. Data-data tersebut diharapkan dapat menjadi alternatif data selain data-data <i>official</i> yang dirilis oleh pemerintah dan instansi publik lainnya.
+            <p className="text-black text-base indent-10">
+              UNITREND berusaha untuk mengintegrasikan data berbasis survey
+              secara <i>real-time</i>. Data-data tersebut diharapkan dapat
+              menjadi alternatif data selain data-data <i>official</i> yang
+              dirilis oleh pemerintah dan instansi publik lainnya.
             </p>
           </section>
         </div>
