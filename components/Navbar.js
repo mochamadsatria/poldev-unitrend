@@ -113,7 +113,7 @@ export default function Navbar() {
               <Link href="/teams">Our Teams</Link>
             </div>
             <div className="mx-5 cursor-pointer hidden md:block">
-              <Link href="/pemilu2024">Pemilu 2024</Link>
+              <Link href="/pemilu-2024">Pemilu 2024</Link>
             </div>
           </div>
           <div className="flex items-center">
