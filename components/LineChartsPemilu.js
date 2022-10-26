@@ -66,7 +66,7 @@ class LineCharts extends Component {
           options={this.state.options}
           series={this.state.series}
           type="line"
-          height={400}
+          height={600}
         />
       </div>
     );

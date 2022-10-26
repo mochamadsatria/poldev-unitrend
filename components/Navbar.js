@@ -94,6 +94,9 @@ export default function Navbar() {
             <div className="mx-5 cursor-pointer hidden md:block">
               <Link href="/about">About Us</Link>
             </div>
+            <div className="mx-5 cursor-pointer hidden md:block">
+              <Link href="/pemilu-2024">Pemilu 2024</Link>
+            </div>
             {/* <div className="mx-5 flex items-center">
               <div  className="hover:cursor-pointer mr-1 flex flex-row items-center" onClick={() => setIsShown(!isShown)}>
                 <span className="mr-1">
@@ -110,10 +113,10 @@ export default function Navbar() {
               </div>
             </div> */}
             <div className="mx-5 cursor-pointer hidden md:block">
-              <Link href="/teams">Our Teams</Link>
+              <Link href="/methodology">Methodology</Link>
             </div>
             <div className="mx-5 cursor-pointer hidden md:block">
-              <Link href="/pemilu-2024">Pemilu 2024</Link>
+              <Link href="/teams">Our Teams</Link>
             </div>
           </div>
           <div className="flex items-center">
