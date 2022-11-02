@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import axios from "axios";
 
-const baseURL = process.env.SUPERSET_HOST;
+const baseURL = process.env.SUPERSET_DOMAIN;
 
 export default function handler(req, res) {
   return new Promise((resolve, reject) => {
