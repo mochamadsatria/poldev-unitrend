@@ -5,6 +5,10 @@ import Image from 'next/future/image';
 import pemiluData from '../data/Data_Pemilu.json'
 import { embedDashboard } from "@superset-ui/embedded-sdk";
 import axios from "axios";
+import getConfig from "next/config";
+
+
+const { publicRuntimeConfig } = getConfig();
 
 const LineChartsPemilu = dynamic(() => import('../components/LineChartsPemilu'), {
   ssr: false,
@@ -26,8 +30,8 @@ export default function Pemilu2024() {
   useEffect(() => {
 
     embedDashboard({
-      id: process.env.SUPERSET_DASHBOARD_ID, // given by the Superset embedding UI
-      supersetDomain: process.env.SUPERSET_DOMAIN,
+      id: publicRuntimeConfig.SUPERSET_DASHBOARD_ID, // given by the Superset embedding UI
+      supersetDomain: publicRuntimeConfig.SUPERSET_HOST,
       mountPoint: document.getElementById("superset-pemilu"), // any html element that can contain an iframe
       fetchGuestToken: () => fetchGuestTokenFromBackend(),
       dashboardUiConfig: { hideTitle: true, hideChartControls: true,}, // dashboard UI config: hideTitle, hideTab, hideChartControls (optional)
@@ -59,7 +63,7 @@ return (
             Pemilu 2024
           </h1>
           <p className="text-black text-base indent-10">
-            {process.env.SUPERSET_DASHBOARD_ID} Pemilihan Umum Presiden Indonesia 2024 adalah sebuah proses
+            {publicRuntimeConfig.SUPERSET_DASHBOARD_ID} Pemilihan Umum Presiden Indonesia 2024 adalah sebuah proses
             demokrasi untuk memilih Presiden dan Wakil Presiden Republik
             Indonesia untuk masa bakti 2024–2029 yang akan dilaksanakan pada
             Rabu, 14 Februari 2024. Pemilihan ini akan menjadi pemilihan

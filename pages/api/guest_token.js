@@ -1,15 +1,18 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import axios from "axios";
+import getConfig from "next/config";
 
-const baseURL = process.env.SUPERSET_DOMAIN;
+const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
+
+const baseURL = publicRuntimeConfig.SUPERSET_HOST;
 
 export default function handler(req, res) {
   return new Promise((resolve, reject) => {
     axios.post(
       `${baseURL}/api/v1/security/login`,
       {
-        username: process.env.SUPERSET_USERNAME,
-        password: process.env.SUPERSET_PASSWORD,
+        username: serverRuntimeConfig.SUPERSET_USERNAME,
+        password: serverRuntimeConfig.SUPERSET_PASSWORD,
         provider: 'db',
         refresh: false,
       },
@@ -29,7 +32,7 @@ export default function handler(req, res) {
             resources: [
               {
                 type: 'dashboard',
-                id: process.env.SUPERSET_DASHBOARD_ID,
+                id: publicRuntimeConfig.SUPERSET_DASHBOARD_ID,
               },
             ],
           },

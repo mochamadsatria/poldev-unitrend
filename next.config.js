@@ -4,13 +4,15 @@ const nextConfig = {
   swcMinify: true,
   experimental: { images: { allowFutureImage: true } },
   output: 'standalone',
-  env: {
+  publicRuntimeConfig: {
     SUPERSET_HOST: process.env.SUPERSET_HOST,
     SUPERSET_DOMAIN: process.env.SUPERSET_DOMAIN,
-    SUPERSET_USERNAME: process.env.SUPERSET_USERNAME,
-    SUPERSET_PASSWORD: process.env.SUPERSET_PASSWORD,
     SUPERSET_DASHBOARD_ID: process.env.SUPERSET_DASHBOARD_ID,
   },
+  serverRuntimeConfig: {
+    SUPERSET_USERNAME: process.env.SUPERSET_USERNAME,
+    SUPERSET_PASSWORD: process.env.SUPERSET_PASSWORD,
+  }
 }
 
 module.exports = nextConfig
