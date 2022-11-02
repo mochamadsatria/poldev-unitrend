@@ -59,7 +59,7 @@ return (
             Pemilu 2024
           </h1>
           <p className="text-black text-base indent-10">
-            Pemilihan Umum Presiden Indonesia 2024 adalah sebuah proses
+            {process.env.SUPERSET_DASHBOARD_ID} Pemilihan Umum Presiden Indonesia 2024 adalah sebuah proses
             demokrasi untuk memilih Presiden dan Wakil Presiden Republik
             Indonesia untuk masa bakti 2024–2029 yang akan dilaksanakan pada
             Rabu, 14 Februari 2024. Pemilihan ini akan menjadi pemilihan
