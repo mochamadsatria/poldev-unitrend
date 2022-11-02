@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  node:
+    build: .
+    ports:
+      - "127.0.0.1:3000:3000"
+
+  nginx:
+    image: nginx:latest
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ${PWD}/config/cert_unitrend.pem:/etc/ssl/certs/cert.pem
+      - ${PWD}/config/key_unitrend.pem:/etc/ssl/private/key.pem
+      - ${PWD}/config/nginx.conf:/etc/nginx/nginx.conf

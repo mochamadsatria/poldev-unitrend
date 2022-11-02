@@ -3,6 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   experimental: { images: { allowFutureImage: true } },
+  output: 'standalone',
 }
 
 module.exports = nextConfig
