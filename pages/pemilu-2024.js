@@ -27,7 +27,7 @@ export default function Pemilu2024() {
 
     embedDashboard({
       id: process.env.SUPERSET_DASHBOARD_ID, // given by the Superset embedding UI
-      supersetDomain: process.env.SUPERSET_HOST,
+      supersetDomain: process.env.SUPERSET_DOMAIN,
       mountPoint: document.getElementById("superset-pemilu"), // any html element that can contain an iframe
       fetchGuestToken: () => fetchGuestTokenFromBackend(),
       dashboardUiConfig: { hideTitle: true, hideChartControls: true,}, // dashboard UI config: hideTitle, hideTab, hideChartControls (optional)
