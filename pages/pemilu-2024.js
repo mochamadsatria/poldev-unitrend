@@ -37,7 +37,9 @@ export default function Pemilu2024() {
       dashboardUiConfig: { hideTitle: true, hideChartControls: true,}, // dashboard UI config: hideTitle, hideTab, hideChartControls (optional)
     });
 
-    document.getElementById('superset-pemilu').getElementsByTagName('iframe')[0].style.cssText = `
+    var iframePemilu = document.getElementById('superset-pemilu').getElementsByTagName('iframe')[0];
+
+    iframePemilu.style.cssText = `
           position: absolute;
           top: 50%;
           left: 50%;
