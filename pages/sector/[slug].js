@@ -116,62 +116,78 @@ function Sector({
                 Sektor {trendsData[slug]?.name.toLowerCase()} didominasi oleh
                 merek berikut ini
               </h1>
-              {/* <p className="text-black text-base my-2">
-                Data ini diambil dari Google Trends, dan menunjukkan persentase
-                peningkatan dibandingkan periode yang sama pada tahun
-                sebelumnya.
-              </p> */}
-
-              <BarCharts
-                sector={positiveBrandTrendSorted}
-                series={positiveBrandTrendSortedData}
-                fillColor="#07B0F8"
-              />
+              {
+                positiveBrandTrendSorted.length > 0 ? (
+                  <>
+                  <BarCharts
+                    sector={positiveBrandTrendSorted}
+                    series={positiveBrandTrendSortedData}
+                    fillColor="#07B0F8"
+                  />
+                  </>
+                )
+                :
+                (
+                  <>
+                  <p className="text-black text-base my-2">Tidak ada merek pada sektor {trendsData[slug]?.name.toLowerCase()}{' '}
+                  yang mengalami peningkatan.</p>
+                  </>
+                )
+              }
               <p className="text-gray-400 text-[0.75rem]">
-                Membandingkan :{' '}
-                {`${lastYearDate.slice(
-                  0,
-                  10
-                )} hingga ${lastYearDateNextWeek.slice(0, 10)}`}{' '}
-                dengan{' '}
-                {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
-                  0,
-                  10
-                )}`}
-              </p>
-              <p className="text-gray-400 text-[0.75rem]">
-                Data terakhir diambil: {latestDateNextWeek.slice(0, 10)}
-              </p>
+                    Membandingkan :{' '}
+                    {`${lastYearDate.slice(
+                      0,
+                      10
+                    )} hingga ${lastYearDateNextWeek.slice(0, 10)}`}{' '}
+                    dengan{' '}
+                    {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
+                      0,
+                      10
+                    )}`}
+                  </p>
+                  <p className="text-gray-400 text-[0.75rem]">
+                    Data terakhir diambil: {latestDateNextWeek.slice(0, 10)}
+                  </p>
             </section>
             <section className="text-justify my-16">
               <h1 className="text-black text-[1.875rem] font-medium">
                 Merek-merek pada sektor {trendsData[slug]?.name.toLowerCase()}{' '}
                 yang mengalami penurunan
               </h1>
-              {/* <p className="text-black text-base my-2">
-                Data ini diambil dari Google Trends, dan menunjukkan persentase
-                penurunan dibandingkan periode yang sama pada tahun sebelumnya.
-              </p> */}
-              <BarCharts
-                sector={negativeBrandTrendSorted}
-                series={negativeBrandTrendSortedData}
-                fillColor="#F84F07"
-              />
+              { negativeBrandTrendSorted.length > 0 ? 
+              (
+                <>
+                <BarCharts
+                  sector={negativeBrandTrendSorted}
+                  series={negativeBrandTrendSortedData}
+                  fillColor="#F84F07"
+                />
+                </>
+              )
+              :
+              (
+                <>
+                <p className="text-black text-base my-2">Tidak ada merek pada sektor {trendsData[slug]?.name.toLowerCase()}{' '}
+                yang mengalami penurunan.</p>
+                </>
+              )
+              }
               <p className="text-gray-400 text-[0.75rem]">
-                Membandingkan :{' '}
-                {`${lastYearDate.slice(
-                  0,
-                  10
-                )} hingga ${lastYearDateNextWeek.slice(0, 10)}`}{' '}
-                dengan{' '}
-                {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
-                  0,
-                  10
-                )}`}
-              </p>
-              <p className="text-gray-400 text-[0.75rem]">
-                Data terakhir diambil: {latestDateNextWeek.slice(0, 10)}
-              </p>
+                  Membandingkan :{' '}
+                  {`${lastYearDate.slice(
+                    0,
+                    10
+                  )} hingga ${lastYearDateNextWeek.slice(0, 10)}`}{' '}
+                  dengan{' '}
+                  {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
+                    0,
+                    10
+                  )}`}
+                </p>
+                <p className="text-gray-400 text-[0.75rem]">
+                  Data terakhir diambil: {latestDateNextWeek.slice(0, 10)}
+                </p>
             </section>
           </>
         )}

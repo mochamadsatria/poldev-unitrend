@@ -72,7 +72,7 @@ function Sector({
               )
             }
           />
-          <p className="text-gray-400 text-[0.75rem] my-2">
+          <p className="text-gray-400 text-[0.75rem]">
             Data ini berasal dari Google Trends, dan menunjukkan tren rata-rata
             untuk semua kata kunci, dan topik umum terkait{' '}
             {trendsData[slug]?.name.toLowerCase()}

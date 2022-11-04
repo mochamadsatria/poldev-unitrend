@@ -64,19 +64,13 @@ return (
           <h1 className="text-black text-[3em] md:text-[4em] font-bold">
             Pemilu 2024
           </h1>
-          <p className="text-black text-base indent-10">
-            {publicRuntimeConfig.SUPERSET_DASHBOARD_ID} Pemilihan Umum Presiden Indonesia 2024 adalah sebuah proses
-            demokrasi untuk memilih Presiden dan Wakil Presiden Republik
-            Indonesia untuk masa bakti 2024–2029 yang akan dilaksanakan pada
-            Rabu, 14 Februari 2024. Pemilihan ini akan menjadi pemilihan
-            presiden langsung kelima di Indonesia. Menjelang momentum
-            tersebut, banyak isu politik yang kemudian menjadi hal yang
-            diperbincangkan oleh masyarakat Indonesia.
+          <p className="text-black text-base">
+            Memasuki awal tahun politik, berbagai lembaga survei telah mengeluarkan hasil survei elektabilitas yang semakin mengerucutkan nama-nama kandidat calon presiden. Fenomena politik menjelang pemilu selalu menarik untuk diikuti perkembangannya, khususnya dari sudut pandang perilaku politik masyarakat. Oleh karena itu, data mengenai perilaku politik masyarakat merupakan “emas” yang akan senantiasa dicari dan dipahami. Dengan memahami perilaku politik masyarakat, aktor politik dapat menyusun kampanye, komunikasi publik, branding partai dan calon presiden, bahkan mencari kriteria calon presiden yang diinginkan masyarakat. UniTrend mencoba untuk berkontribusi menyediakan informasi alternatif mengenai perilaku politik masyarakat melalui data Google Trends. Data Google Trends sebelumnya pernah dipakai untuk memprediksi hasil pemilu di Amerika Serikat dan Kanada. Melalui website ini, secara khusus UniTrend ingin mengawal dan memprediksi Pemilu 2024 di Indonesia.
           </p>
         </section>
         <section className="text-justify my-16">
           <h1 className="text-black text-[2rem] font-bold">
-            Lorem ipsum capres
+            Tren Bakal Calon Presiden 2024
           </h1>
           <LineChartsPemilu
             seriesData={
@@ -93,14 +87,17 @@ return (
               )
               )}
           />
-          <p className="text-gray-400 text-[0.875rem] my-2">
+          <p className="text-gray-400 text-[0.875rem]">
+            Data terakhir diambil: 2 November 2022
+          </p>
+          <p className="text-gray-400 text-[0.875rem]">
             Data ini berasal dari Google Trends, dan menunjukkan hasil tren
-            rata-rata seluruh kata kunci, merek dan topik umum yang kami lacak.
+            rata-rata seluruh kata kunci bakal calon presiden 2024 yang kami lacak.
           </p>
         </section>
         <section className="text-justify my-16">
           <h1 className="text-black text-[2rem] font-bold">
-            Lorem ipsum partai
+            Tren Partai Politik Menuju Pemilu 2024
           </h1>
           <LineChartsPemilu
             seriesData={
@@ -117,22 +114,29 @@ return (
               )
               )}
           />
-          <p className="text-gray-400 text-[0.875rem] my-2">
-            Data ini berasal dari Google Trends, dan menunjukkan hasil tren
-            rata-rata seluruh kata kunci, merek dan topik umum yang kami lacak.
+          <p className="text-gray-400 text-[0.875rem]">
+            Data terakhir diambil: 2022/10/02
           </p>
+          <p className="text-gray-400 text-[0.875rem]">
+            Data ini berasal dari Google Trends, dan menunjukkan hasil tren
+            rata-rata seluruh kata kunci partai politik yang kami lacak.
+          </p>
+
         </section>
         <section className="text-justify my-16">
           <h1 className="text-black text-[2rem] font-bold">
-            Lorem ipsum partai
+            Analisis Twitter Pemilu 2024
           </h1>
+          <p className="text-black text-base">
+            Media sosial Twitter sudah tidak asing lagi bagi studi politik di berbagai negara untuk memahami dan memetakan wacana publik masyarakat mengenai isu sosial dan politik. Oleh karena itu, UniTrend menyediakan berbagai informasi untuk memahami perilaku masyarakat mulai dari sentimen cuitan, distribusi cuitan mengenai kandidat capres, jumlah cuitan mengenai kandidat capres, dan jenis perangkat yang digunakan dalam melakukan cuitan. Melalui data ini, kita dapat melihat struktur dan dinamika masyarakat di media sosial Twitter mengenai Pemilu 2024.
+          </p>
           <div id="superset-pemilu" className="relative max-w-screen min-h-screen">
 
           </div>
-          <p className="text-gray-400 text-[0.875rem] my-2">
-            Data ini berasal dari Google Trends, dan menunjukkan hasil tren
+          {/* <p className="text-gray-400 text-[0.875rem] my-2">
+            Data ini berasal dari Twitter, dan menunjukkan hasil tren
             rata-rata seluruh kata kunci, merek dan topik umum yang kami lacak.
-          </p>
+          </p> */}
         </section>
       </div>
     </div>

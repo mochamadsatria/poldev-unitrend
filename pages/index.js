@@ -167,10 +167,9 @@ export default function Home() {
             Google Trends juga dapat digunakan untuk memprediksi pertumbuhan PDB
             suatu negara bersamaan dengan indikator ekonomi makro lainnya
             seperti pertumbuhan ekonomi, pengangguran dan inflasi sebagai dasar
-            pengambilan kebijakan. Data tersebut dapat menjadi alternatif
-            peringatan dini bagi pemangku kebijakan untuk menentukan langkah
-            yang akan dicapai untuk mencapai{' '}
-            <i>Sustainable Development Goals</i> (SDGs).
+            pengambilan kebijakan. Data tersebut dapat menjadi alternatif 
+            peringatan dini bagi pemangku kebijakan untuk menentukan langkah 
+            yang akan dicapai dalam  mencapai <i>Sustainable Development Goals</i> (SDGs).
           </p>
         </section>
         <section className="text-justify my-16">
@@ -297,7 +296,7 @@ export default function Home() {
             keberlanjutan kehidupan sosial masyarakat, pembangunan yang menjaga
             kualitas lingkungan hidup serta pembangunan yang menjamin keadilan
             dan terlaksananya tata kelola yang mampu menjaga peningkatan
-            kualitas hidup dari satu generasi ke generasi berikutnya. UNITREND
+            kualitas hidup dari satu generasi ke generasi berikutnya. UniTrend
             menyajikan <i>keyword-keyword</i> yang berelevansi tinggi terhadap
             topik mengenai poin SDGs yang populer di Indonesia.
           </p>

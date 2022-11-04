@@ -13,7 +13,7 @@ export default function Footer() {
               PolDev (<i>Institute for Policy Development</i>) merupakan{' '}
               <i>Research Center</i> di Universitas Gadjah Mada. PolDev turut
               berperan dalam mendukung perumusan kebijakan berbasis data.
-              Melalui UNITREND, PolDev berusaha menyajikan data terkait isu-isu
+              Melalui UniTrend, PolDev berusaha menyajikan data terkait isu-isu
               aktual yang sedang diperbincangkan oleh masyarakat Indonesia.
             </li>
           </ul>
@@ -43,10 +43,7 @@ export default function Footer() {
               <span className="material-icons mr-5">call</span>
               <div>
                 <div className="text-justify">
-                  <a href="https://wa.me/6289634661590"> CP1: 089634661590</a>
-                </div>
-                <div className="text-justify">
-                  <a href="https://wa.me/6285869347062">CP2: 085869347062</a>
+                  Contact Person : <a href="https://wa.me/6289634661590">089634661590</a> / <a href="https://wa.me/6285869347062">085869347062</a>
                 </div>
               </div>
             </div>

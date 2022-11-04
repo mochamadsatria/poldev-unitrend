@@ -24,25 +24,10 @@ export default function about() {
               className="my-6 self-center"
             ></Image>
             <p className="text-black text-base indent-10">
-              PolDev (<i>Institute for Policy Development</i>) merupakan
-              <i> Research Center</i> di Universitas Gadjah Mada. PolDev turut
-              berperan dalam mendukung perumusan kebijakan berbasis data.
-              Melalui UniTrend, PolDev berusaha menyajikan data terkait isu-isu
-              aktual yang sedang diperbincangkan oleh masyarakat Indonesia. Data
-              yang digunakan didapatkan dari Google Trends, Facebook Ads,
-              Instagram Ads, Twitter, dan platform lainnya. Data berperan
-              signifikan tidak hanya dalam proses perumusan kebijakan tetapi
-              juga untuk menganalisa kondisi di masa kini serta memprediksi tren
-              di masa depan. Namun demikian, disaat proses pengambilan kebijakan
-              harus dilakukan dengan cepat dan akurat, seringkali terdapat{' '}
-              <i>lag</i>, dimana data-data resmi yang tersedia diambil di masa
-              lalu, atau beberapa bulan dan beberapa tahun sebelumnya.
+              Institute for Policy Development (PolDev) merupakan lembaga penelitian di Universitas Gadjah Mada dan turut berperan dalam mendukung perumusan kebijakan berbasis data. Melalui UniTrend, PolDev berusaha menyajikan dan menganalisis data terkait isu-isu aktual yang sedang diperbincangkan oleh masyarakat Indonesia. Data yang digunakan didapatkan dari survey, data Google Trends, data dari media sosial, dan platform sumber data lainnya. 
             </p>
             <p className="text-black text-base indent-10">
-              UNITREND berusaha untuk mengintegrasikan data berbasis survey
-              secara <i>real-time</i>. Data-data tersebut diharapkan dapat
-              menjadi alternatif data selain data-data <i>official</i> yang
-              dirilis oleh pemerintah dan instansi publik lainnya.
+              Data berperan signifikan tidak hanya dalam proses perumusan kebijakan tetapi juga untuk menganalisa kondisi di masa kini dan memprediksi masa depan. Namun demikian, disaat proses pengambilan kebijakan harus dilakukan dengan cepat dan akurat, seringkali terdapat lag, dimana data-data resmi yang tersedia diambil di masa lalu, atau beberapa bulan dan beberapa tahun sebelumnya. UniTrend berusaha untuk mengintegrasikan data berbasis survey secara real-time. Data-data tersebut diharapkan dapat menjadi alternatif data selain data-data official yang dirilis oleh pemerintah dan instansi publik lainnya.
             </p>
           </section>
         </div>

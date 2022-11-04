@@ -95,7 +95,10 @@ export default function Navbar() {
               <Link href="/about">About Us</Link>
             </div>
             <div className="mx-5 cursor-pointer hidden md:block">
-              <Link href="/pemilu-2024">Pemilu 2024</Link>
+              <Link href="/">Economic & Development</Link>
+            </div>
+            <div className="mx-5 cursor-pointer hidden md:block">
+              <Link href="/indonesian-election">Indonesian Election</Link>
             </div>
             {/* <div className="mx-5 flex items-center">
               <div  className="hover:cursor-pointer mr-1 flex flex-row items-center" onClick={() => setIsShown(!isShown)}>
