@@ -251,6 +251,7 @@ export default function Home() {
                     type="Sector"
                     href={`/sector/${encodeURIComponent(k)}`}
                     sector={trendsData[k]['name']}
+                    slug={trendsData[k]['slug']}
                     trendsChange={trendsData[k]['combined_trends_mean_change']}
                   />
                 </li>
@@ -309,6 +310,7 @@ export default function Home() {
                       type="SDG"
                       href={`/sdgs/${encodeURIComponent(k)}`}
                       sector={trendsDataSDGs[k]['name']}
+                      slug={trendsDataSDGs[k]['slug']}
                       trendsChange={
                         trendsDataSDGs[k]['combined_trends_mean_change']
                       }

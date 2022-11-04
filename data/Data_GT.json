@@ -1,5 +1,6 @@
 {
     "pariwisata": {
+        "image": "/sdgs-img/pariwisata.jpg",
         "brand_list": [
             "Pegipegi",
             "Google Trips",
@@ -373,6 +374,7 @@
         "name": "Pariwisata"
     },
     "berita-dan-hiburan": {
+        "image": "/sdgs-img/berita-dan-hiburan.jpg",
         "brand_list": [
             "Indonesia Lawyers Club",
             "Brownis",
@@ -756,6 +758,7 @@
         "name": "Berita dan Hiburan"
     },
     "pertambangan-dan-energi": {
+        "image": "/sdgs-img/pertambangan-dan-energi.jpg",
         "brand_list": [
             "Indonesia Asahan Aluminium",
             "Aneka Tambang",
@@ -1139,6 +1142,7 @@
         "name": "Pertambangan dan Energi"
     },
     "kecantikan-dan-mode": {
+        "image": "/sdgs-img/kecantikan-dan-mode.jpg",
         "brand_list": [
             "Wardah",
             "Maybelline",
@@ -1570,6 +1574,7 @@
         "name": "Kecantikan dan Mode"
     },
     "transportasi": {
+        "image": "/sdgs-img/transportasi.jpg",
         "brand_list": [
             "Kereta Api Bengawan",
             "Kereta Api Senja Utama",
@@ -1971,6 +1976,7 @@
         "name": "Transportasi"
     },
     "keuangan": {
+        "image": "/sdgs-img/keuangan.jpg",
         "brand_list": [
             "BRI",
             "BCA",
@@ -2372,6 +2378,7 @@
         "name": "Keuangan"
     },
     "marketplace": {
+        "image": "/sdgs-img/marketplace.jpg",
         "brand_list": [
             "Shopee",
             "Tokopedia",
@@ -2731,6 +2738,7 @@
         "name": "Marketplace"
     },
     "kesehatan": {
+        "image": "/sdgs-img/kesehatan.jpg",
         "brand_list": [
             "Kimia Farma",
             "K24",
@@ -3140,6 +3148,7 @@
         "name": "Kesehatan"
     },
     "telepon-seluler-dan-provider": {
+        "image": "/sdgs-img/telepon-seluler-dan-provider.jpg",
         "brand_list": [
             "Samsung",
             "Iphone",
@@ -3499,6 +3508,7 @@
         "name": "Telepon Seluler dan Provider"
     },
     "kerja-dari-rumah": {
+        "image": "/sdgs-img/kerja-dari-rumah.jpg",
         "brand_list": [
             "Google Meet",
             "Zoom",
@@ -3852,6 +3862,7 @@
         "name": "Kerja dari Rumah"
     },
     "makanan-dan-minuman": {
+        "image": "/sdgs-img/makanan-dan-minuman.jpg",
         "brand_list": [
             "Tango",
             "Indomie",
@@ -4247,6 +4258,7 @@
         "name": "Makanan dan Minuman"
     },
     "televisi-film-dan-permainan": {
+        "image": "/sdgs-img/televisi-film-dan-permainan.jpg",
         "brand_list": [
             "Mobile Legend",
             "Free Fire",
@@ -4628,6 +4640,7 @@
         "name": "Televisi, Film, dan Permainan"
     },
     "otomotif": {
+        "image": "/sdgs-img/otomotif.jpg",
         "brand_list": [
             "Kawasaki",
             "Yamaha",
@@ -5045,6 +5058,7 @@
         "name": "Otomotif"
     },
     "hobi-dan-kerajinan": {
+        "image": "/sdgs-img/hobi-dan-kerajinan.jpg",
         "brand_list": [],
         "brand_data": {},
         "word_list": [
@@ -5283,6 +5297,7 @@
         "name": "Hobi dan Kerajinan"
     },
     "judi-online": {
+        "image": "/sdgs-img/judi-online.jpg",
         "brand_list": [
             "juragan69",
             "demo slot",
@@ -5640,6 +5655,7 @@
         "name": "Judi Online"
     },
     "barang-elektronik-rumah-tangga": {
+        "image": "/sdgs-img/barang-elektronik-dan-rumah-tangga.jpg",
         "brand_list": [
             "Cosmos",
             "Sanyo",
@@ -6029,6 +6045,7 @@
         "name": "Barang Elektronik Rumah Tangga"
     },
     "properti": {
+        "image": "/sdgs-img/properti.jpg",
         "brand_list": [],
         "brand_data": {},
         "word_list": [

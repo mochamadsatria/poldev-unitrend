@@ -119,7 +119,7 @@ export default function Navbar() {
               <Link href="/teams">Our Teams</Link>
             </div>
           </div>
-          <div className="flex items-center">
+          {/* <div className="flex items-center">
             <div className="mr-1">ID</div>
             <svg
               width={10}
@@ -129,7 +129,7 @@ export default function Navbar() {
             >
               <path d="M0 0l5 8 5-8H0z" fill="#06283D" />
             </svg>
-          </div>
+          </div> */}
         </div>
       </div>
       <div

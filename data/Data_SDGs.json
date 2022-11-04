@@ -1,5 +1,6 @@
 {
     "menghapus-kemiskinan": {
+        "image": "/sdgs-img/menghapus-kemiskinan.jpg",
         "word_list": [
             "anak jalanan",
             "tuna wisma",
@@ -226,6 +227,7 @@
         "name": "Menghapus Kemiskinan"
     },
     "kelaparan": {
+        "image": "/sdgs-img/kelaparan.jpg",
         "word_list": [
             "kemiskinan",
             "kelaparan",
@@ -456,6 +458,7 @@
         "name": "Kelaparan"
     },
     "kerentanan-kesehatan": {
+        "image": "/sdgs-img/kerentanan-kesehatan.jpg",
         "word_list": [
             "TBC",
             "AIDS",
@@ -688,6 +691,7 @@
         "name": "Kerentanan Kesehatan"
     },
     "ketimpangan-pendidikan": {
+        "image": "/sdgs-img/ketimpangan-pendidikan.jpg",
         "word_list": [
             "pengangguran",
             "guru honor",
@@ -918,6 +922,7 @@
         "name": "Ketimpangan Pendidikan"
     },
     "ketidaksetaraan-gender": {
+        "image": "/sdgs-img/ketidaksetaraan-gender.jpg",
         "word_list": [
             "kekerasan rumah tangga",
             "patriaki",
@@ -1148,6 +1153,7 @@
         "name": "Ketidaksetaraan Gender"
     },
     "ketimpangan": {
+        "image": "/sdgs-img/ketimpangan.jpg",
         "word_list": [
             "kesenjangan",
             "kaya dan miskin",

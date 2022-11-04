@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Image from 'next/future/image';
-import TeamCard from '../components/TeamCard';
 import TeamData from '../data/Teams.json';
 
 export default function about() {
