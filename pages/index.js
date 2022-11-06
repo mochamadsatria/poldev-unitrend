@@ -97,10 +97,10 @@ export default function Home() {
     //   </Head>
     //   <h1>Hello World</h1>
     // </div>
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       {/* <SectorDropDown /> */}
       {/* <Navbar /> */}
-      <div className="flex-1 max-w-7xl mx-auto p-10">
+      <div className="flex-1">
         {/* <section className="my-16">
           <h1 className="text-black text-[1.5rem] font-bold text-center max-w-2xl m-auto">
             Ingin mengetahui topik apa yang banyak ditelusuri masyarakat pada
@@ -126,199 +126,20 @@ export default function Home() {
           </div>
         </section> */}
 
-        <section className="h-[50vh] my-[25vh] relative">
-          <div className="absolute z-[1] w-[100%] xl:w-[50%] top-1/2 translate-y-[-50%]">
-            <h1 className="text-[#07B0F8] text-[3rem] font-bold drop-shadow-[0_5px_10px_rgba(0,0,0,0.2)]">
+        <section className="flex justify-center items-center h-screen max-w-screen bg-[url('/hero.png')] bg-cover shadow-[inset_0_0_0_1920px_rgba(0,0,0,0.65)]">
+          <div className="w-[100%] xl:w-[50%] ">
+            <h1 className="text-white text-[4rem] font-bold drop-shadow-[0_10px_15px_rgba(255,255,255,0.3)]">
               UniTrend
             </h1>
-            <p className="text-[#07B0F8] text-[1.5rem] my-2 drop-shadow-[0_5px_10px_rgba(0,0,0,0.2)]">
+            <p className="text-white text-[1.75rem] my-2 drop-shadow-[0_10px_15px_rgba(255,255,255,0.3)]">
               Presenting Data for Better Policy
             </p>
           </div>
-          <Image
+          {/* <Image
             src={heroImg}
             alt="Futuristic city"
-            className="w-[40vw] absolute right-0 top-2/4 translate-y-[-50%] h-[auto] contrast-[110%] brightness-[70%] saturate-0 hidden xl:block"
-          ></Image>
-        </section>
-        <section className="text-justify my-16">
-          <h1 className="text-black text-[2rem] font-bold">
-            Wow, Google Trends?
-          </h1>
-          <p className="text-black text-base my-2">
-            Penggunaan <i>big data</i> seperti Google Trends dapat membantu
-            pengambil kebijakan dalam memahami kondisi sosial dan ekonomi
-            masyarakat secara cepat, akurat dan <i>real-time</i>. Para investor,
-            misalnya, memanfaatkan Google Trends untuk melihat variasi harga
-            aset global. Seorang investor bisa menentukan diversifikasi
-            portofolio mereka menggunakan informasi <i>item</i> yang ditelusuri
-            melalui Google Trends. Para pekerja komersial atau pengusaha
-            memanfaatkan Google Trends untuk menganalisis pasar, terutama untuk
-            mengukur tren permintaan untuk dijadikan acuan dalam menyusun
-            strategi bisnis. Google Trends juga berperan dalam menciptakan nilai
-            tambah melalui fitur berbasis <i>artificial intelligence</i> untuk
-            membantu membangun platform <i>business to business</i> (B2B) yang
-            efektif.
-          </p>
-          <p className="text-black text-base my-2">
-            Bagi pengambil kebijakan, data Google Trends dapat memberikan lensa
-            informatif dalam melihat pergeseran minat pencarian Google yang
-            berkaitan dengan isu-isu sosial, ekonomi dan politik saat ini.
-            Google Trends juga dapat digunakan untuk memprediksi pertumbuhan PDB
-            suatu negara bersamaan dengan indikator ekonomi makro lainnya
-            seperti pertumbuhan ekonomi, pengangguran dan inflasi sebagai dasar
-            pengambilan kebijakan. Data tersebut dapat menjadi alternatif 
-            peringatan dini bagi pemangku kebijakan untuk menentukan langkah 
-            yang akan dicapai dalam  mencapai <i>Sustainable Development Goals</i> (SDGs).
-          </p>
-        </section>
-        <section className="text-justify my-16">
-          <h1 className="text-black text-[2rem] font-bold">
-            Sektor yang mengalami peningkatan
-          </h1>
-          {/* <p className="text-black text-base my-2">
-            Data berikut ini menunjukkan sektor-sektor yang mengalami
-            peningkatan persentase pencarian, dibandingkan dengan periode yang
-            sama pada tahun sebelumnya. Hal ini menunjukkan adanya traksi yang
-            tinggi terhadap topik sektor berikut di Google.
-          </p> */}
-          <BarCharts
-            sector={positiveSectorTrendSorted.map(
-              (sector) => trendsData[sector]['name']
-            )}
-            series={positiveSectorTrendSortedData}
-            fillColor="#07B0F8"
-          />
-          <p className="text-gray-400 text-[0.75rem]">
-            Membandingkan :{' '}
-            {`${lastYearDate.slice(0, 10)} hingga ${lastYearDateNextWeek.slice(
-              0,
-              10
-            )}`}{' '}
-            dengan{' '}
-            {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
-              0,
-              10
-            )}`}
-          </p>
-          <p className="text-gray-400 text-[0.75rem]">
-            Data terakhir diambil: {latestDateNextWeek.slice(0, 10)}
-          </p>
-        </section>
-        <section className="text-justify my-16">
-          <h1 className="text-black text-[2rem] font-bold">
-            Sektor yang mengalami penurunan
-          </h1>
-          {/* <p className="text-black text-base my-2">
-            Data berikut ini menunjukkan sektor-sektor yang mengalami penurunan
-            persentase, dibandingkan periode yang sama pada tahun sebelumnya.
-            Diketahui bahwa terjadi penurunan yang signifikan terhadap pencarian
-            topik yang berhubungan dengan sektor berikut di Google.
-          </p> */}
-          <BarCharts
-            sector={negativeSectorTrendSorted.map(
-              (sector) => trendsData[sector]['name']
-            )}
-            series={negativeSectorTrendSortedData}
-            fillColor="#F84F07"
-          />
-          <p className="text-gray-400 text-[0.75rem]">
-            Membandingkan :{' '}
-            {`${lastYearDate.slice(0, 10)} hingga ${lastYearDateNextWeek.slice(
-              0,
-              10
-            )}`}{' '}
-            dengan{' '}
-            {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
-              0,
-              10
-            )}`}
-          </p>
-          <p className="text-gray-400 text-[0.75rem]">
-            Data terakhir diambil: {latestDateNextWeek.slice(0, 10)}
-          </p>
-        </section>
-        <h1 className="text-black text-xl font-semibold">
-          Silakan klik untuk mengetahui rincian data per sektor
-        </h1>
-        <ul className="my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {trendsDataSorted.map((k, index) => {
-            return (
-              <>
-                <li key={index}>
-                  <DetailCard
-                    type="Sector"
-                    href={`/sector/${encodeURIComponent(k)}`}
-                    sector={trendsData[k]['name']}
-                    slug={trendsData[k]['slug']}
-                    trendsChange={trendsData[k]['combined_trends_mean_change']}
-                  />
-                </li>
-              </>
-            );
-          })}
-          {/* <li>
-            <DetailCard sector = "India"/>
-          </li>
-          <li>
-            <DetailCard />
-          </li>
-          <li>
-            <DetailCard />
-          </li>
-          <li>
-            <DetailCard />
-          </li>
-          <li>
-            <DetailCard />
-          </li>
-          <li>
-            <DetailCard />
-          </li>
-          <li>
-            <DetailCard />
-          </li>
-          <li>
-            <DetailCard />
-          </li> */}
-        </ul>
-        <section className="text-justify my-16">
-          <h1 className="text-black text-[2rem] font-bold">
-            <i>Sustainable Development Goals</i>
-          </h1>
-          <p className="text-black text-base my-2">
-            <i>Sustainable Development Goals</i> (SDGs) adalah agenda tahun 2030
-            yang merupakan kesepakatan pembangunan berkelanjutan berdasarkan hak
-            asasi manusia dan kesetaraan. Poin umum dari pembangunan
-            berkelanjutan, digunakan sebagai pedoman untuk melaksanakan
-            pembangunan yang menjaga peningkatan kesejahteraan ekonomi
-            masyarakat secara berkesinambungan, pembangunan yang menjaga
-            keberlanjutan kehidupan sosial masyarakat, pembangunan yang menjaga
-            kualitas lingkungan hidup serta pembangunan yang menjamin keadilan
-            dan terlaksananya tata kelola yang mampu menjaga peningkatan
-            kualitas hidup dari satu generasi ke generasi berikutnya. UniTrend
-            menyajikan <i>keyword-keyword</i> yang berelevansi tinggi terhadap
-            topik mengenai poin SDGs yang populer di Indonesia.
-          </p>
-          <ul className="my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {trendsDataSDGsSorted.map((k, index) => {
-              return (
-                <>
-                  <li key={index}>
-                    <DetailCard
-                      type="SDG"
-                      href={`/sdgs/${encodeURIComponent(k)}`}
-                      sector={trendsDataSDGs[k]['name']}
-                      slug={trendsDataSDGs[k]['slug']}
-                      trendsChange={
-                        trendsDataSDGs[k]['combined_trends_mean_change']
-                      }
-                    />
-                  </li>
-                </>
-              );
-            })}
-          </ul>
+            className="w-screen absolute h-[auto] contrast-[110%] brightness-[70%] saturate-0 hidden xl:block"
+          ></Image> */}
         </section>
         {/* <hr className="mt-10 border-[#555]" /> */}
       </div>

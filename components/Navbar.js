@@ -95,7 +95,7 @@ export default function Navbar() {
               <Link href="/about">About Us</Link>
             </div>
             <div className="mx-5 cursor-pointer hidden md:block">
-              <Link href="/">Economic & Development</Link>
+              <Link href="/google-trends">Economic & Development</Link>
             </div>
             <div className="mx-5 cursor-pointer hidden md:block">
               <Link href="/indonesian-election">Indonesian Election</Link>

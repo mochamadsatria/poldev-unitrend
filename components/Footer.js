@@ -9,7 +9,7 @@ export default function Footer() {
           {/* <h3 className="font-bold text-lg">Poldev UGM</h3> */}
           <Image src={PoldevImg} alt="Poldev UGM"></Image>
           <ul className="mt-3 font-light text-sm text-gray-300">
-            <li>
+            <li key="0">
               PolDev (<i>Institute for Policy Development</i>) merupakan{' '}
               <i>Research Center</i> di Universitas Gadjah Mada. PolDev turut
               berperan dalam mendukung perumusan kebijakan berbasis data.

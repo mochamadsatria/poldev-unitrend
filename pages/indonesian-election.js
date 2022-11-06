@@ -52,14 +52,26 @@ export default function Pemilu2024() {
 return (
   <>
     <div className="min-h-screen bg-white">
-      <div className="flex-1 max-w-7xl mx-auto p-10">
-        <section className="my-16">
+      <div className="flex-1">
+        <section className="flex flex-col justify-center items-center h-screen max-w-screen bg-[url('/hero-indonesian-election.png')] bg-cover shadow-[inset_0_0_0_1920px_rgba(0,0,0,0.75)]">
           <Link href="/">
-            <p className="text-black text-bold text-[1.0rem] hover:cursor-pointer">
-              &#60; Back
-            </p>
+              <p className="text-white text-bold text-[1.0rem] hover:cursor-pointer">
+                &#60; Back
+              </p>
           </Link>
+          <div>
+            <h1 className="text-white text-[4rem] text-center font-bold drop-shadow-[0_10px_10px_rgba(255,255,255,0.3)]">
+              Indonesian Election
+            </h1>
+          </div>
+          {/* <Image
+            src={heroImg}
+            alt="Futuristic city"
+            className="w-screen absolute h-[auto] contrast-[110%] brightness-[70%] saturate-0 hidden xl:block"
+          ></Image> */}
         </section>
+      </div>
+      <div className="flex-1 max-w-7xl mx-auto p-10">
         <section className="text-justify flex flex-col">
           <h1 className="text-black text-[3em] md:text-[4em] font-bold">
             Pemilu 2024
