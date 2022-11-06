@@ -98,6 +98,10 @@ export default function Home() {
     //   <h1>Hello World</h1>
     // </div>
     <div className="min-h-screen bg-white">
+      <Head>
+        <title>Economic Development | UniTrend by PolDev UGM</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       {/* <SectorDropDown /> */}
       {/* <Navbar /> */}
       <div className="flex-1">

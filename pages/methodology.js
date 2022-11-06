@@ -1,10 +1,15 @@
 import Link from 'next/link';
+import Head from 'next/head';
 import Image from 'next/future/image';
 import LogoPoldev from '../public/logo-poldev.png';
 
 export default function about() {
   return (
     <>
+      <Head>
+        <title>Methodology | UniTrend by PolDev UGM</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <div className="min-h-screen bg-white">
         <div className="flex-1 max-w-5xl mx-auto p-10">
           <section className="my-16">

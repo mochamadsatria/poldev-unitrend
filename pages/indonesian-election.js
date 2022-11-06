@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Head from 'next/head';
 import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import Image from 'next/future/image';
@@ -51,7 +52,12 @@ export default function Pemilu2024() {
 
 return (
   <>
+    <Head>
+      <title>Economic Development | UniTrend by PolDev UGM</title>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    </Head>
     <div className="min-h-screen bg-white">
+      
       <div className="flex-1">
         <section className="flex flex-col justify-center items-center h-screen max-w-screen bg-[url('/assets/images/hero/hero-indonesian-election.png')] bg-cover shadow-[inset_0_0_0_1920px_rgba(0,0,0,0.75)]">
           <Link href="/">

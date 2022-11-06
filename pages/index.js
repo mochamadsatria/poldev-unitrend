@@ -97,6 +97,10 @@ export default function Home() {
     //   <h1>Hello World</h1>
     // </div>
     <div className="min-h-screen">
+      <Head>
+        <title>UniTrend by PolDev UGM | Presenting Data for Better Policy</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       {/* <SectorDropDown /> */}
       {/* <Navbar /> */}
       <div className="flex-1">

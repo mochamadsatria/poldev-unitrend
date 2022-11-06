@@ -43,6 +43,10 @@ function Sector({
     //   <h1>Hello World</h1>
     // </div>
     <div className="min-h-screen bg-white">
+      <Head>
+        <title>{trendsData[slug]?.name} | UniTrend by PolDev UGM</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <div className="flex-1">
         <section
           className="flex flex-col justify-center items-center h-screen max-w-screen bg-cover shadow-[inset_0_0_0_1920px_rgba(0,0,0,0.75)]"
