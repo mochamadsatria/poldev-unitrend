@@ -3,54 +3,54 @@
         "name" : "Dr. Media Wahyudi Askar",
         "role" : "Project Advisor",
         "description" : "Media menyelesaikan pendidikan sarjana di Universitas Gadjah Mada dan meraih gelar master dan doktoral di University of Manchester, Inggris. Saat ini, Media menjadi pengajar di Departemen Manajemen dan Kebijakan Publik untuk mata kuliah Ekonomi Kebijakan Publik, Big Data, Data Analytics, dan Statistik. Selain sebagai Kepala Institute for Policy Development UGM, Media aktif melakukan riset dan advokasi kebijakan yang berkaitan dengan kebijakan fiskal, perpajakan, kemiskinan dan ketimpangan, ekonomi digital, dan usaha mikro, kecil dan menengah. Selain kegiatan profesional, Media juga melakukan kegiatan pemberdayaan masyarakat di berbagai daerah terpencil di Indonesia.",
-        "image" : "/teams-media.png"
+        "image" : "/assets/images/teams/teams-media.png"
     },
     {
         "name" : "Arindha Nityasari, MCyberSecAnalysis",
         "role" : "Data Analyst",
         "description" : "Arindha merupakan peneliti di Institute for Policy Development. Ia menyelesaikan pendidikan sarjana di Departemen Ilmu Hubungan Internasional, Fakultas Ilmu Sosial dan Ilmu Politik, Universitas Gadjah Mada, kemudian melanjutkan jenjang S2 di Macquarie University, Australia, untuk studi mengenai Analisis Keamanan Siber. Arindha memiliki ketertarikan pada bidang keamanan siber, kebijakan siber, dan isu-isu digitalisasi. Pengalamannya menjadi peneliti selama 3 tahun memberikannya kesempatan untuk melakukan berbagai penelitian dan penulisan artikel akademik, khususnya seputar topik yang berkaitan dengan digitalisasi ekonomi, diplomasi siber, dan keamanan siber pada lanskap internasional.",
-        "image" : "/teams-arindha.png"
+        "image" : "/assets/images/teams/teams-arindha.png"
     },
     {
         "name" : "Jefri Andika Pakpahan, S.IP",
         "role" : "Data Analyst",
         "description" : "Jefri merupakan peneliti di Institute for Policy Development. Jefri menyelesaikan pendidikan sarjana di Departemen Ilmu Hubungan Internasional Universitas Gadjah Masa tahun 2019. Jefri saat ini juga aktif bekerja sebagai konsultan bagi Kementerian terkait isu digitalisasi dan transfer data. Jefri memperoleh lebih dari 30 penghargaan nasional dan internasional, salah satunya menjadi pemenang utama  dalam Debat Transparansi dan Keterbukaan Informasi Publik oleh Komisi Informasi Pusat Republik Indonesia.",
-        "image" : "/teams-jefri.png"
+        "image" : "/assets/images/teams/teams-jefri.png"
     },
     {
         "name" : "Ignatius Ardhana R, S.IP",
         "role" : "Project Lead",
         "description" : "Ignatius Ardhana Reswara, S.IP merupakan lulusan S1 Departemen Manajemen dan Kebijakan Publik pada tahun 2022. Selama kuliah Ardha aktif dalam kegiatan akademik dan mendapatkan hibah penelitian big data analysis dari Afan Gaffar Awards. Ardha juga memiliki pengalaman kerja sebagai research assistant di Swasaba Research Initiative dan sempat pula mengikuti program magang di Institute for Policy Development Fisipol UGM.",
-        "image" : "/teams-ardha.png"
+        "image" : "/assets/images/teams/teams-ardha.png"
     },
     {
         "name" : "Sailatur Rizqi As S., S.IP",
         "role" : "Data Analyst",
         "description" : "Saila merupakan lulusan S1 Departemen Manajemen dan Kebijakan Publik Fakultas Ilmu Sosial dan Ilmu Politik UGM pada tahun 2022. Selama kuliah Saila memiliki beberapa pengalaman magang pada bidang social media specialist dan sempat pula mengikuti program magang di Institute for Policy Development Fisipol UGM. Saila juga memiliki pengalaman kerja sebagai research assistant pada beberapa project milik pemerintah dan BUMN.",
-        "image" : "/teams-saila.png"
+        "image" : "/assets/images/teams/teams-saila.png"
     },
     {
         "name" : "Nur Rima Russelina , S.IP",
         "role" : "Data Analyst",
         "description" : "Rima merupakan lulusan S1 Departemen Manajemen dan Kebijakan Publik Fisipol UGM pada tahun 2022. Rima beberapa kali terlibat dalam riset dan terlebih lagi ia juga menyelesaikan skripsinya terkait literasi keuangan dengan metode baru yaitu menggunakan Facebook Ads dan Instagram Ads untuk mengiklankan survey penelitiannya.",
-        "image" : "/teams-rima.png"
+        "image" : "/assets/images/teams/teams-rima.png"
     },
     {
         "name" : "Bara Muhammad Setiadi",
         "role" : "Research Assistant",
         "description" : "Bara adalah mahasiswa S-1 Departemen Politik dan Pemerintahan Universitas Gadjah Mada sekaligus magang asisten peneliti kuantitatif di Institute for Policy Development UGM. Ia sekarang juga menjadi Kepala Divisi Riset di Dewan Mahasiswa Fisipol UGM. Minat studi Bara termasuk politik energi, ekonomi politik, dan politik perkotaan.",
-        "image" : "/teams-bara.png"
+        "image" : "/assets/images/teams/teams-bara.png"
     },
     {
         "name" : "Ahmad Zidan",
         "role" : "Data Engineer",
         "description" : "Zidan sedang menempuh pendidikan sarjana Teknologi Informasi di Departemen Teknik Elektro dan Teknologi Informasi Universitas Gadjah Mada. Ia selama kuliah aktif mengikuti aktivitas akademik di bidang analisis sosial media dan information security. Zidan memiliki ketertarikan di bidang studi information security, web development, data engineering, dan data science.",
-        "image" : "/teams-zidan.png"
+        "image" : "/assets/images/teams/teams-zidan.png"
     },
     {
         "name" : "Ade Firmansyah",
         "role" : "Web Developer",
         "description" : "Ade sedang menempuh pendidikan sarjana Teknologi Informasi di Departemen Teknik Elektro dan Teknologi Informasi Universitas Gadjah Mada. Selama kuliah, Ade aktif mengikuti aktivitas akademik di bidang pengembangan web dan analisis data. Ade memiliki ketertarikan di bidang studi web development, software engineering, dan data science.",
-        "image" : "/teams-ade.png"
+        "image" : "/assets/images/teams/teams-ade.png"
     }
 ]

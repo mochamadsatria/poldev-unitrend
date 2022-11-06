@@ -6,13 +6,12 @@ import DetailCard from '../components/DetailCard';
 // import BarCharts from '../components/BarCharts';
 import Footer from '../components/Footer';
 import styles from '../styles/Home.module.css';
-import trendsData from '../data/Data_GT.json';
-import trendsDataSDGs from '../data/Data_SDGs.json';
+import trendsData from '../assets/data/Data_GT.json';
+import trendsDataSDGs from '../assets/data/Data_SDGs.json';
 import SearchBar from '../components/SearchBar';
 import Navbar from '../components/Navbar';
 import SectorDropDown from '../components/SectorDropDown';
 import SectorButton from '../components/SectorButton';
-import heroImg from '../public/hero.png';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 
 const BarCharts = dynamic(() => import('../components/BarCharts'), {
@@ -102,7 +101,7 @@ export default function Home() {
       {/* <SectorDropDown /> */}
       {/* <Navbar /> */}
       <div className="flex-1">
-        <section className="flex flex-col justify-center items-center h-screen max-w-screen bg-[url('/hero-google-trends.png')] bg-cover shadow-[inset_0_0_0_1920px_rgba(0,0,0,0.75)]">
+        <section className="flex flex-col justify-center items-center h-screen max-w-screen bg-[url('/assets/images/hero/hero-google-trends.png')] bg-cover shadow-[inset_0_0_0_1920px_rgba(0,0,0,0.75)]">
           <Link href="/">
               <p className="text-white text-bold text-[1.0rem] hover:cursor-pointer">
                 &#60; Back
@@ -110,7 +109,7 @@ export default function Home() {
           </Link>
           <div>
             <h1 className="text-white text-[4rem] text-center font-bold drop-shadow-[0_10px_10px_rgba(255,255,255,0.3)]">
-              Economic and Development
+              Economic Development
             </h1>
           </div>
           {/* <Image

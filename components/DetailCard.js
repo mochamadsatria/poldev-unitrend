@@ -4,19 +4,17 @@ import arrowUp2 from '../public/arrow-up-2.svg';
 import arrowDown from '../public/arrow-down.svg';
 import arrowDown2 from '../public/arrow-down-2.svg';
 import Image from 'next/future/image';
-import DataGT from '../data/Data_GT.json';
-import DataSDGS from '../data/Data_SDGs.json';
+import DataGT from '../assets/data/Data_GT.json';
+import DataSDGS from '../assets/data/Data_SDGs.json';
 
 export default function DetailCard(props) {
   return (
     <Link href={props.href}>
       <div
-        className="border-black border-2 h-[10rem] hover:cursor-pointer flex flex-col justify-center items-center bg-cover shadow-[inset_0_0_0_1000px_rgba(0,0,0,0.65)]"
+        className="rounded-xl h-[10rem] hover:cursor-pointer flex flex-col justify-center items-center bg-cover shadow-[inset_0_0_0_1000px_rgba(0,0,0,0.65)]"
         style={{
           backgroundImage:
-            props.type == 'Sector'
-              ? `url(${DataGT[props.slug]?.image || ''})`
-              : `url(${DataSDGS[props.slug]?.image || ''})`,
+              `url(/assets/images/sectors/${props.slug}.jpg)`
         }}
       >
         <div className="text-center text-white text-base">

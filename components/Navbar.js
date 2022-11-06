@@ -5,7 +5,7 @@ import Link from 'next/link';
 // import PoldevImg from '../public/logo-poldev.png';
 import PoldevImg from '../public/poldev-img.png';
 import Image from 'next/image';
-import trendsData from '../data/Data_GT.json';
+import trendsData from '../assets/data/Data_GT.json';
 
 export default function Navbar() {
   const useOutsideClick = (callback) => {
@@ -95,7 +95,7 @@ export default function Navbar() {
               <Link href="/about">About Us</Link>
             </div>
             <div className="mx-5 cursor-pointer hidden md:block">
-              <Link href="/google-trends">Economic & Development</Link>
+              <Link href="/economic-development">Economic Development</Link>
             </div>
             <div className="mx-5 cursor-pointer hidden md:block">
               <Link href="/indonesian-election">Indonesian Election</Link>

@@ -6,8 +6,8 @@ import DetailCard from '../../components/DetailCard';
 // import BarCharts from '../components/BarCharts';
 import Footer from '../../components/Footer';
 import styles from '../../styles/Home.module.css';
-import trendsData from '../../data/Data_SDGs.json';
-import deskripsiData from '../../data/Deskripsi_SDGs.json';
+import trendsData from '../../assets/data/Data_SDGs.json';
+import deskripsiData from '../../assets/data/Deskripsi_SDGs.json';
 import Link from 'next/link';
 
 const BarCharts = dynamic(() => import('../../components/BarCharts'), {

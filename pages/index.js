@@ -5,13 +5,12 @@ import DetailCard from '../components/DetailCard';
 // import BarCharts from '../components/BarCharts';
 import Footer from '../components/Footer';
 import styles from '../styles/Home.module.css';
-import trendsData from '../data/Data_GT.json';
-import trendsDataSDGs from '../data/Data_SDGs.json';
+import trendsData from '../assets/data/Data_GT.json';
+import trendsDataSDGs from '../assets/data/Data_SDGs.json';
 import SearchBar from '../components/SearchBar';
 import Navbar from '../components/Navbar';
 import SectorDropDown from '../components/SectorDropDown';
 import SectorButton from '../components/SectorButton';
-import heroImg from '../public/hero.png';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 
 const BarCharts = dynamic(() => import('../components/BarCharts'), {
@@ -126,20 +125,20 @@ export default function Home() {
           </div>
         </section> */}
 
-        <section className="flex justify-center items-center h-screen max-w-screen bg-[url('/hero.png')] bg-cover shadow-[inset_0_0_0_1920px_rgba(0,0,0,0.65)]">
-          <div className="w-[100%] xl:w-[50%] ">
-            <h1 className="text-white text-[4rem] font-bold drop-shadow-[0_10px_15px_rgba(255,255,255,0.3)]">
-              UniTrend
-            </h1>
-            <p className="text-white text-[1.75rem] my-2 drop-shadow-[0_10px_15px_rgba(255,255,255,0.3)]">
-              Presenting Data for Better Policy
-            </p>
-          </div>
-          {/* <Image
-            src={heroImg}
-            alt="Futuristic city"
-            className="w-screen absolute h-[auto] contrast-[110%] brightness-[70%] saturate-0 hidden xl:block"
-          ></Image> */}
+        <section className="flex justify-center items-center h-screen max-w-screen bg-[url('/assets/images/hero/hero.png')] bg-cover shadow-[inset_0_0_0_1920px_rgba(0,0,0,0.65)]">
+            <div className='w-[50%]'>
+              <h1 className="text-white text-[4rem] font-bold drop-shadow-[0_10px_15px_rgba(255,255,255,0.3)]">
+                UniTrend
+              </h1>
+              <p className="text-white text-[1.75rem] my-2 drop-shadow-[0_10px_15px_rgba(255,255,255,0.3)]">
+                Presenting Data for Better Policy
+              </p>
+            {/* <Image
+              src={heroImg}
+              alt="Futuristic city"
+              className="w-screen absolute h-[auto] contrast-[110%] brightness-[70%] saturate-0 hidden xl:block"
+            ></Image> */}
+            </div>
         </section>
         {/* <hr className="mt-10 border-[#555]" /> */}
       </div>

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import Image from 'next/future/image';
-import pemiluData from '../data/Data_Pemilu.json'
+import pemiluData from '../assets/data/Data_Pemilu.json'
 import { embedDashboard } from "@superset-ui/embedded-sdk";
 import axios from "axios";
 import getConfig from "next/config";
@@ -53,7 +53,7 @@ return (
   <>
     <div className="min-h-screen bg-white">
       <div className="flex-1">
-        <section className="flex flex-col justify-center items-center h-screen max-w-screen bg-[url('/hero-indonesian-election.png')] bg-cover shadow-[inset_0_0_0_1920px_rgba(0,0,0,0.75)]">
+        <section className="flex flex-col justify-center items-center h-screen max-w-screen bg-[url('/assets/images/hero/hero-indonesian-election.png')] bg-cover shadow-[inset_0_0_0_1920px_rgba(0,0,0,0.75)]">
           <Link href="/">
               <p className="text-white text-bold text-[1.0rem] hover:cursor-pointer">
                 &#60; Back

@@ -6,8 +6,8 @@ import DetailCard from '../../components/DetailCard';
 // import BarCharts from '../components/BarCharts';
 import Footer from '../../components/Footer';
 import styles from '../../styles/Home.module.css';
-import trendsData from '../../data/Data_GT.json';
-import deskripsiData from '../../data/Deskripsi_GT.json';
+import trendsData from '../../assets/data/Data_GT.json';
+import deskripsiData from '../../assets/data/Deskripsi_GT.json';
 import Link from 'next/link';
 
 const BarCharts = dynamic(() => import('../../components/BarCharts'), {
@@ -113,8 +113,7 @@ function Sector({
             <section className="text-justify my-16">
               <h1 className="text-black text-[3rem] font-bold">Merek</h1>
               <h1 className="text-black text-[1.875rem] font-medium">
-                Sektor {trendsData[slug]?.name.toLowerCase()} didominasi oleh
-                merek berikut ini
+                Merek-merek pada sektor {trendsData[slug]?.name.toLowerCase()} yang mengalami peningkatan
               </h1>
               {
                 positiveBrandTrendSorted.length > 0 ? (
