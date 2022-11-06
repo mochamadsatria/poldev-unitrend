@@ -60,7 +60,7 @@ return (
               </p>
           </Link>
           <div>
-            <h1 className="text-white text-[4rem] text-center font-bold drop-shadow-[0_10px_10px_rgba(255,255,255,0.3)]">
+            <h1 className="text-white text-[4rem] text-center font-bold drop-shadow-[0_5px_5px_rgba(255,255,255,0.25)]">
               Indonesian Election
             </h1>
           </div>

@@ -39,18 +39,40 @@ function Sector({
     //   <h1>Hello World</h1>
     // </div>
     <div className="min-h-screen bg-white">
+      <div className="flex-1">
+        <section
+          className="flex flex-col justify-center items-center h-screen max-w-screen bg-cover shadow-[inset_0_0_0_1920px_rgba(0,0,0,0.75)]"
+          style={{backgroundImage: `url('/assets/images/sectors/${encodeURIComponent(slug)}.jpg')`}}
+          >
+          <Link href="/economic-development">
+              <p className="text-white text-bold text-[1.0rem] hover:cursor-pointer">
+                &#60; Back
+              </p>
+          </Link>
+          <div>
+            <h1 className="text-white text-[4rem] text-center font-bold drop-shadow-[0_5px_5px_rgba(255,255,255,0.25)]">
+              {trendsData[slug]?.name}
+            </h1>
+          </div>
+          {/* <Image
+            src={heroImg}
+            alt="Futuristic city"
+            className="w-screen absolute h-[auto] contrast-[110%] brightness-[70%] saturate-0 hidden xl:block"
+          ></Image> */}
+        </section>
+      </div>
       <div className="flex-1 max-w-7xl mx-auto p-10">
-        <section className="my-16">
+        {/* <section className="my-16">
           <Link href="/">
             <p className="text-black text-[1.0rem] hover:cursor-pointer">
               &#60; Back
             </p>
           </Link>
-        </section>
+        </section> */}
         <section className="text-justify">
-          <h1 className="text-black text-[3em] md:text-[4em] font-bold">
+          {/* <h1 className="text-black text-left text-[3em] md:text-[4em] font-bold">
             {trendsData[slug]?.name}
-          </h1>
+          </h1> */}
           <p className="text-black text-base">{deskripsiData[slug]}</p>
         </section>
         <section className="text-justify my-16">
@@ -74,7 +96,7 @@ function Sector({
           />
           <p className="text-gray-400 text-[0.75rem]">
             Data ini berasal dari Google Trends, dan menunjukkan tren rata-rata
-            untuk semua kata kunci, dan topik umum terkait{' '}
+            untuk semua kata kunci dan topik umum terkait{' '}
             {trendsData[slug]?.name.toLowerCase()}
           </p>
         </section>
@@ -92,7 +114,7 @@ function Sector({
           {/* <h1 className="text-black text-[3rem] font-bold">Topik Umum</h1> */}
           <h1 className="text-black text-[2rem] font-bold">
             Isu tentang {trendsData[slug]?.name.toLowerCase()} yang mengalami
-            kenaikan pencarian adalah
+            kenaikan pencarian
           </h1>
           <p className="text-black text-base my-2">
             Data ini diambil dari Google Trends, menunjukkan persentase
@@ -123,7 +145,7 @@ function Sector({
         <section className="text-justify my-16">
           <h1 className="text-black text-[2rem] font-bold">
             Isu tentang {trendsData[slug]?.name.toLowerCase()} yang mengalami
-            penurunan adalah
+            penurunan
           </h1>
           {/* <p className="text-black text-base my-2">
             Data ini diambil dari Google Trends, menunjukkan persentase

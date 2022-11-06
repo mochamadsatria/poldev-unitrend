@@ -11,7 +11,7 @@ export default function DetailCard(props) {
   return (
     <Link href={props.href}>
       <div
-        className="rounded-xl h-[10rem] hover:cursor-pointer flex flex-col justify-center items-center bg-cover shadow-[inset_0_0_0_1000px_rgba(0,0,0,0.65)]"
+        className="rounded-xl h-[10rem] hover:cursor-pointer flex flex-col justify-center items-center bg-cover drop-shadow-lg shadow-[inset_0_0_0_1000px_rgba(0,0,0,0.65)]"
         style={{
           backgroundImage:
               `url(/assets/images/sectors/${props.slug}.jpg)`

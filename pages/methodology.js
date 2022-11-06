@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/future/image';
-import PoldevImg from '../public/logo-poldev.png';
+import LogoPoldev from '../public/logo-poldev.png';
 
 export default function about() {
   return (

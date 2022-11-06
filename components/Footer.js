@@ -1,5 +1,5 @@
-import PoldevImg from '../public/poldev-img.png';
-import Image from 'next/image';
+import LogoPoldev from '../public/logo-poldev.png';
+import Image from 'next/future/image';
 
 export default function Footer() {
   return (
@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-2 mx-[5%]">
         <div className="p-4">
           {/* <h3 className="font-bold text-lg">Poldev UGM</h3> */}
-          <Image src={PoldevImg} alt="Poldev UGM"></Image>
+          <Image src={LogoPoldev} alt="Poldev UGM" className="h-[60px] w-auto"></Image>
           <ul className="mt-3 font-light text-sm text-gray-300">
             <li key="0">
               PolDev (<i>Institute for Policy Development</i>) merupakan{' '}

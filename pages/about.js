@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/future/image';
-import PoldevImg from '../public/logo-poldev.png';
+import LogoPoldev from '../public/logo-poldev.png';
 
 export default function about() {
   return (
@@ -19,7 +19,7 @@ export default function about() {
               About Us
             </h1>
             <Image
-              src={PoldevImg}
+              src={LogoPoldev}
               alt="Poldev UGM"
               className="my-6 self-center"
             ></Image>

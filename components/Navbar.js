@@ -2,9 +2,9 @@ import { useState, useRef, Fragment, useEffect } from 'react';
 import { Transition } from '@headlessui/react';
 import SectorButton from './SectorButton';
 import Link from 'next/link';
-// import PoldevImg from '../public/logo-poldev.png';
-import PoldevImg from '../public/poldev-img.png';
-import Image from 'next/image';
+// import LogoPoldev from '../public/logo-poldev.png';
+import LogoPoldev from '../public/logo-poldev.png';
+import Image from 'next/future/image';
 import trendsData from '../assets/data/Data_GT.json';
 
 export default function Navbar() {
@@ -82,12 +82,9 @@ export default function Navbar() {
         <div className="flex bg-[#DFF6FF] h-[60px] items-center justify-between font-medium px-[10%]">
           <Link href={'/'}>
             <Image
-              src={PoldevImg}
+              src={LogoPoldev}
               alt="Poldev UGM"
-              className="hover:cursor-pointer"
-              layout="intrinsic"
-              // width={160}
-              // height={50}
+              className="hover:cursor-pointer h-[40px] w-auto"
             />
           </Link>
           <div className="flex">
