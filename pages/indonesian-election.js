@@ -139,7 +139,7 @@ return (
           </h1>
           <div className='my-4'>
             <h2 className="text-black text-xl font-semibold">
-              Minat penelusuran pada kandidat presiden yang paling banyak ditelusuri seminggu kebelakang
+              Minat penelusuran pada kandidat presiden yang paling banyak ditelusuri seminggu terakhir
             </h2>
             <ul className='list-none my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
               {calculatedCapresDataSortedNormalized.map((element, index) => {
@@ -199,7 +199,7 @@ return (
           </h1>
           <div className='my-4'>
             <h2 className="text-black text-xl font-semibold">
-              Minat penelusuran pada partai politik yang paling banyak ditelusuri seminggu kebelakang
+              Minat penelusuran pada partai politik yang paling banyak ditelusuri seminggu terakhir
             </h2>
             <ul className='list-none my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
               {calculatedPartaiDataSortedNormalized.map((element, index) => {
