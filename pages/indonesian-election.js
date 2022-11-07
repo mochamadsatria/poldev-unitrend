@@ -58,8 +58,14 @@ export default function Pemilu2024() {
 
 
   const getDate = (s) => {
-    return new Date(s);
+    var date = new Date(s);
+    date.setDate(date.getDate() + 4);
+    return date;
   };
+
+  const capresLatestUpdateDate = getDate(Object.entries(pemiluData["capres"]["trends"]["3m"][Object.keys(pemiluData["capres"]["trends"]["3m"])[0]]).pop()[0]);
+
+  const partaiLatestUpdateDate = getDate(Object.entries(pemiluData["partai"]["trends"]["3m"][Object.keys(pemiluData["partai"]["trends"]["3m"])[0]]).pop()[0]);
 
   const fetchGuestTokenFromBackend = async () => {
     const { data } = await axios.get(
@@ -181,7 +187,7 @@ return (
             />
           </div>
           <p className="text-gray-400 text-[0.875rem]">
-            Data terakhir diambil: 2 November 2022
+            Data terakhir diambil: {capresLatestUpdateDate.toISOString().slice(0, 10)}
           </p>
           <p className="text-gray-400 text-[0.875rem]">
             Data ini berasal dari Google Trends, dan menunjukkan hasil tren
@@ -194,7 +200,7 @@ return (
           </h1>
           <div className='my-4'>
             <h2 className="text-black text-xl font-semibold">
-              Minat penelusuran pada kandidat presiden yang paling banyak ditelusuri seminggu kebelakang
+              Minat penelusuran pada partai politik yang paling banyak ditelusuri seminggu kebelakang
             </h2>
             <ul className='list-none my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
               {calculatedPartaiDataSortedNormalized.map((element, index) => {
@@ -223,7 +229,7 @@ return (
           </div>
           <div className='mt-8'>
             <h2 className="text-black text-xl font-semibold">
-              Minat penelusuran pada kandidat presiden tiga bulan terakhir
+              Minat penelusuran pada partai politik tiga bulan terakhir
             </h2>
             <LineChartsPemilu
               seriesData={
@@ -242,7 +248,7 @@ return (
             />
           </div>
           <p className="text-gray-400 text-[0.875rem]">
-            Data terakhir diambil: 2022/10/02
+            Data terakhir diambil: {partaiLatestUpdateDate.toISOString().slice(0, 10)}
           </p>
           <p className="text-gray-400 text-[0.875rem]">
             Data ini berasal dari Google Trends, dan menunjukkan hasil tren

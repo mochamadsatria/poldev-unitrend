@@ -80,6 +80,7 @@ export default function Home() {
   );
   const latestDate = _latestDate.toISOString();
   const latestDateNextWeek = getNextWeekDate(_latestDate).toISOString();
+  const latestDate2NextWeek = getNextWeekDate(getNextWeekDate(_latestDate)).toISOString();
   const _lastYearDate = getDateOfWeek(
     Object.keys(_selectedTrendsData['biannually_combined_trends_mean']['2022'])
       .length,
@@ -212,7 +213,7 @@ export default function Home() {
             )}`}
           </p>
           <p className="text-gray-400 text-[0.75rem]">
-            Data terakhir diambil: {latestDateNextWeek.slice(0, 10)}
+            Data terakhir diambil: {latestDate2NextWeek.slice(0, 10)}
           </p>
         </section>
         <section className="text-justify my-16">
@@ -245,7 +246,7 @@ export default function Home() {
             )}`}
           </p>
           <p className="text-gray-400 text-[0.75rem]">
-            Data terakhir diambil: {latestDateNextWeek.slice(0, 10)}
+            Data terakhir diambil: {latestDate2NextWeek.slice(0, 10)}
           </p>
         </section>
         <h1 className="text-black text-xl font-semibold">

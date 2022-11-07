@@ -28,6 +28,7 @@ function Sector({
   lastYearDateNextWeek,
   latestDate,
   latestDateNextWeek,
+  latestDate2NextWeek,
 }) {
   return (
     // <div>
@@ -143,7 +144,7 @@ function Sector({
             )}`}
           </p>
           <p className="text-gray-400 text-[0.75rem]">
-            Data terakhir diambil: {latestDateNextWeek.slice(0, 10)}
+            Data terakhir diambil: {latestDate2NextWeek.slice(0, 10)}
           </p>
         </section>
         <section className="text-justify my-16">
@@ -174,7 +175,7 @@ function Sector({
             )}`}
           </p>
           <p className="text-gray-400 text-[0.75rem]">
-            Data terakhir diambil: {latestDateNextWeek.slice(0, 10)}
+            Data terakhir diambil: {latestDate2NextWeek.slice(0, 10)}
           </p>
         </section>
         {/* <hr className="mt-10 border-[#555]" /> */}
@@ -239,6 +240,7 @@ export async function getStaticProps({ params }) {
   );
   const latestDate = _latestDate.toISOString();
   const latestDateNextWeek = getNextWeekDate(_latestDate).toISOString();
+  const latestDate2NextWeek = getNextWeekDate(getNextWeekDate(_latestDate)).toISOString();
   const _lastYearDate = getDateOfWeek(
     Object.keys(selectedTrendsData['biannually_combined_trends_mean']['2022'])
       .length,
@@ -261,6 +263,7 @@ export async function getStaticProps({ params }) {
       lastYearDateNextWeek,
       latestDate,
       latestDateNextWeek,
+      latestDate2NextWeek,
     },
   };
 }
