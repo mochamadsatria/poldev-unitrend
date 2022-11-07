@@ -16,6 +16,47 @@ const LineChartsPemilu = dynamic(() => import('../components/LineChartsPemilu'),
 });
 
 export default function Pemilu2024() {
+  const average = array => array.reduce((a, b) => a + b) / array.length;
+
+  const calculatedCapresData = Object.entries(pemiluData["capres"]["trends"]["3m"]).map(([k, v], _i) => (
+    {
+      name: k,
+      value: average(Object.values(v).slice(-7)),
+      // value: 100.0 * ((average(Object.values(v).slice(-7)) - average(Object.values(v).slice(-14,-7))) / (average(Object.values(v).slice(-14,-7)))),
+    }
+  ));
+
+  const calculatedCapresDataSorted = calculatedCapresData.sort(
+    (a, b) => -(a.value - b.value)
+  )
+
+  const calculatedCapresDataSum = calculatedCapresDataSorted.reduce((a, b) => a+b.value, 0)
+
+  const calculatedCapresDataSortedNormalized = calculatedCapresData.map((element, index) => ({
+    name: element.name,
+    value: Number(100 * (element.value / calculatedCapresDataSum)).toFixed(2),
+  }));
+
+  const calculatedPartaiData = Object.entries(pemiluData["partai"]["trends"]["3m"]).map(([k, v], _i) => (
+    {
+      name: k,
+      value: average(Object.values(v).slice(-7)),
+      // value: 100.0 * ((average(Object.values(v).slice(-7)) - average(Object.values(v).slice(-14,-7))) / (average(Object.values(v).slice(-14,-7)))),
+    }
+  ));
+
+  const calculatedPartaiDataSorted = calculatedPartaiData.sort(
+    (a, b) => -(a.value - b.value)
+  )
+
+  const calculatedPartaiDataSum = calculatedPartaiDataSorted.reduce((a, b) => a+b.value, 0)
+
+  const calculatedPartaiDataSortedNormalized = calculatedPartaiData.map((element, index) => ({
+    name: element.name,
+    value: Number(100 * (element.value / calculatedPartaiDataSum)).toFixed(2),
+  }));
+
+
   const getDate = (s) => {
     return new Date(s);
   };
@@ -53,7 +94,7 @@ export default function Pemilu2024() {
 return (
   <>
     <Head>
-      <title>Economic Development | UniTrend by PolDev UGM</title>
+      <title>Indonesian Election | UniTrend by PolDev UGM</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <div className="min-h-screen bg-white">
@@ -90,21 +131,55 @@ return (
           <h1 className="text-black text-[2rem] font-bold">
             Tren Bakal Calon Presiden 2024
           </h1>
-          <LineChartsPemilu
-            seriesData={
-              Object.entries(pemiluData["capres"]["trends"]["3m"]).map(([k, v], _i) => (
-                {
-                  name: k,
-                  data: Object.entries(v).map(([_k, _v], _j) => (
-                    {
-                      x: _k,
-                      y: _v
-                    }
-                  ))
-                }
-              )
-              )}
-          />
+          <div className='my-4'>
+            <h2 className="text-black text-xl font-semibold">
+              Minat penelusuran pada kandidat presiden yang paling banyak ditelusuri seminggu kebelakang
+            </h2>
+            <ul className='list-none my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
+              {calculatedCapresDataSortedNormalized.map((element, index) => {
+                return (
+                  <>
+                    <li key={index}>
+                      <div className='rounded-xl h-[12rem] border flex flex-col justify-center items-center drop-shadow-lg'>
+                        <Image src={`/assets/images/pemilu/capres/${encodeURIComponent(element.name)}.jpg`}
+                          className="h-[4.5rem] w-[4.5rem] rounded-full mb-2 object-cover"
+                          alt={element.name}
+                          width="100"
+                          height="100"
+                          layout="fill"/>
+                        <div className="text-center text-black text-lg font-semibold">
+                          {element.name}
+                        </div>
+                        <div className="text-center text-black text-base">
+                          {element.value}%
+                        </div>
+                      </div>
+                    </li>
+                  </>
+                )
+              } ) }
+            </ul>
+          </div>
+          <div className='mt-8'>
+            <h2 className="text-black text-xl font-semibold">
+              Minat penelusuran pada kandidat presiden tiga bulan terakhir
+            </h2>
+            <LineChartsPemilu
+              seriesData={
+                Object.entries(pemiluData["capres"]["trends"]["3m"]).map(([k, v], _i) => (
+                  {
+                    name: k,
+                    data: Object.entries(v).map(([_k, _v], _j) => (
+                      {
+                        x: _k,
+                        y: _v
+                      }
+                    ))
+                  }
+                )
+                )}
+            />
+          </div>
           <p className="text-gray-400 text-[0.875rem]">
             Data terakhir diambil: 2 November 2022
           </p>
@@ -117,21 +192,55 @@ return (
           <h1 className="text-black text-[2rem] font-bold">
             Tren Partai Politik Menuju Pemilu 2024
           </h1>
-          <LineChartsPemilu
-            seriesData={
-              Object.entries(pemiluData["partai"]["trends"]["3m"]).map(([k, v], _i) => (
-                {
-                  name: k,
-                  data: Object.entries(v).map(([_k, _v], _j) => (
-                    {
-                      x: _k,
-                      y: _v
-                    }
-                  ))
-                }
-              )
-              )}
-          />
+          <div className='my-4'>
+            <h2 className="text-black text-xl font-semibold">
+              Minat penelusuran pada kandidat presiden yang paling banyak ditelusuri seminggu kebelakang
+            </h2>
+            <ul className='list-none my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
+              {calculatedPartaiDataSortedNormalized.map((element, index) => {
+                return (
+                  <>
+                    <li key={index}>
+                      <div className='rounded-xl h-[12rem] border flex flex-col justify-center items-center drop-shadow-lg'>
+                        <Image src={`/assets/images/pemilu/partai/${encodeURIComponent(element.name)}.png`}
+                          className="h-[4.5rem] w-[4.5rem] mb-2 object-contain"
+                          alt={element.name}
+                          width="100"
+                          height="100"
+                          layout="fill"/>
+                        <div className="text-center text-black text-lg font-semibold">
+                          {element.name}
+                        </div>
+                        <div className="text-center text-black text-base">
+                          {element.value}%
+                        </div>
+                      </div>
+                    </li>
+                  </>
+                )
+              } ) }
+            </ul>
+          </div>
+          <div className='mt-8'>
+            <h2 className="text-black text-xl font-semibold">
+              Minat penelusuran pada kandidat presiden tiga bulan terakhir
+            </h2>
+            <LineChartsPemilu
+              seriesData={
+                Object.entries(pemiluData["partai"]["trends"]["3m"]).map(([k, v], _i) => (
+                  {
+                    name: k,
+                    data: Object.entries(v).map(([_k, _v], _j) => (
+                      {
+                        x: _k,
+                        y: _v
+                      }
+                    ))
+                  }
+                )
+                )}
+            />
+          </div>
           <p className="text-gray-400 text-[0.875rem]">
             Data terakhir diambil: 2022/10/02
           </p>

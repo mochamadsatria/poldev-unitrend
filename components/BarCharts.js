@@ -4,8 +4,14 @@ import React, { Component } from 'react';
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
 class BarCharts extends Component {
+  
   constructor(props) {
     super(props);
+
+    const getPercentHeight = (w, n, x) => {
+      const percentWidth = Math.round((x / (w / n)) * 100)
+      return `${percentWidth}%`
+    }
 
     this.state = {
       options: {
@@ -15,6 +21,7 @@ class BarCharts extends Component {
         plotOptions: {
           bar: {
             horizontal: true,
+            barHeight: getPercentHeight(props.sector.length * 50, props.sector.length, 25),
           },
         },
         grid: {
@@ -94,7 +101,7 @@ class BarCharts extends Component {
           options={this.state.options}
           series={this.state.series}
           type="bar"
-          height={Math.max(100, this.state.options.xaxis.categories.length * 50)}
+          height={100 + this.state.options.xaxis.categories.length * 30}
         />
       </div>
     );

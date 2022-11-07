@@ -9,6 +9,7 @@ class LineCharts extends Component {
       options: {
         stroke: {
           curve: 'smooth',
+          width: 3.0,
         },
         markers: {
           size: 0,
@@ -39,6 +40,10 @@ class LineCharts extends Component {
         },
 
         yaxis: {
+          // logarithmic: true,
+          // logBase: 2,
+          max: 99.99,
+          forceNiceScale: true,
           labels: {
             formatter: (value) => {
               return Number(value).toFixed(2);
@@ -53,6 +58,11 @@ class LineCharts extends Component {
             colors: '#000000',
           },
         },
+        // chart: {
+        //   toolbar: {
+        //     show: false,
+        //   },
+        // },
         colors: ['#db5f57', '#dba157', '#d3db57', '#91db57', '#57db5f', '#57dba1', '#57d3db', '#5791db', '#5f57db', '#a157db', '#db57d3', '#db5791']
       },
       series: props.seriesData,
@@ -66,7 +76,8 @@ class LineCharts extends Component {
           options={this.state.options}
           series={this.state.series}
           type="line"
-          height={600}
+          // height={600}
+          className="min-h-screen"
         />
       </div>
     );
