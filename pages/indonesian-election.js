@@ -190,8 +190,7 @@ return (
             Data terakhir diambil: {capresLatestUpdateDate.toISOString().slice(0, 10)}
           </p>
           <p className="text-gray-400 text-[0.875rem]">
-            Data ini berasal dari Google Trends, dan menunjukkan hasil tren
-            rata-rata seluruh kata kunci bakal calon presiden 2024 yang kami lacak.
+            Data ini berasal dari Google Trends, dan menunjukkan hasil tren pencarian seluruh kata kunci calon presiden 2024 yang kami lacak. Data pencarian merupakan indikasi keingintahuan pada subjek atau kandidat dan tidak memunjukkan indikasi niat pilihan pemberi suara.
           </p>
         </section>
         <section className="text-justify my-16">
@@ -251,8 +250,7 @@ return (
             Data terakhir diambil: {partaiLatestUpdateDate.toISOString().slice(0, 10)}
           </p>
           <p className="text-gray-400 text-[0.875rem]">
-            Data ini berasal dari Google Trends, dan menunjukkan hasil tren
-            rata-rata seluruh kata kunci partai politik yang kami lacak.
+            Data ini berasal dari Google Trends, dan menunjukkan hasil tren pencarian seluruh kata kunci partai politik yang kami lacak. Data pencarian merupakan indikasi keingintahuan pada subjek atau kandidat dan tidak memunjukkan indikasi niat pilihan pemberi suara.
           </p>
 
         </section>
