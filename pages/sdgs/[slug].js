@@ -121,16 +121,29 @@ function Sector({
             Isu tentang {trendsData[slug]?.name.toLowerCase()} yang mengalami
             kenaikan pencarian
           </h1>
-          <p className="text-black text-base my-2">
+          {/* <p className="text-black text-base my-2">
             Data ini diambil dari Google Trends, menunjukkan persentase
             peningkatan dibandingkan periode yang sama pada tahun sebelumnya
-          </p>
-
-          <BarCharts
-            sector={positiveWordTrendSorted}
-            series={positiveWordTrendSortedData}
-            fillColor="#07B0F8"
-          />
+          </p> */}
+          {
+            positiveWordTrendSorted.length > 0 ? 
+            (
+              <>
+                <BarCharts
+                  sector={positiveWordTrendSorted}
+                  series={positiveWordTrendSortedData}
+                  fillColor="#07B0F8"
+                />
+              </>
+            )
+            :
+            (
+              <>
+              <p className="text-black text-base my-2">Tidak ada isu tentang {trendsData[slug]?.name.toLowerCase()}{' '}
+              yang mengalami kenaikan pencarian.</p>
+              </>
+            )
+          }
           <p className="text-gray-400 text-[0.75rem]">
             Membandingkan :{' '}
             {`${lastYearDate.slice(0, 10)} hingga ${lastYearDateNextWeek.slice(
@@ -156,12 +169,25 @@ function Sector({
             Data ini diambil dari Google Trends, menunjukkan persentase
             penurunan dibandingkan periode yang sama pada tahun lalu.
           </p> */}
-
-          <BarCharts
-            sector={negativeWordTrendSorted}
-            series={negativeWordTrendSortedData}
-            fillColor="#F84F07"
-          />
+          {
+            negativeWordTrendSorted.length > 0 ?
+            (
+              <>
+                <BarCharts
+                  sector={negativeWordTrendSorted}
+                  series={negativeWordTrendSortedData}
+                  fillColor="#F84F07"
+                />
+              </>
+            )
+            :
+            (
+              <>
+              <p className="text-black text-base my-2">Tidak ada isu tentang {trendsData[slug]?.name.toLowerCase()}{' '}
+              yang mengalami penurunan.</p>
+              </>
+            )
+          }
           <p className="text-gray-400 text-[0.75rem]">
             Membandingkan :{' '}
             {`${lastYearDate.slice(0, 10)} hingga ${lastYearDateNextWeek.slice(
