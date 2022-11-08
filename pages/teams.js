@@ -11,7 +11,7 @@ export default function about() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className="min-h-screen bg-white">
-        <div className="flex-1 max-w-5xl mx-auto p-10">
+        <div className="flex-1 max-w-7xl mx-auto p-10">
           <section className="my-16">
             <Link href="/">
               <p className="text-black text-[1.0rem] hover:cursor-pointer">
@@ -23,22 +23,20 @@ export default function about() {
             <h1 className="text-black text-[3em] md:text-[4em] font-bold">
               Our Teams
             </h1>
-            <div className="flex justify-center xsm:justify-between flex-wrap">
+            <ul className="list-none grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
               {TeamData.map((member, index) => {
                 return (
                   <>
-                    <div className="max-w-[250px] overflow-hidden my-5">
-                      <div className="flex justify-center">
-                        <Image
-                          src={member.image}
-                          width={250}
-                          height={250}
-                          className="h-[250px] w-[250px] object-cover object-top"
-                          alt={member.name}
-                        />
-                      </div>
+                    <li className="flex flex-col items-center p-2">
+                      <Image
+                        src={member.image}
+                        width={250}
+                        height={250}
+                        className="h-[250px] w-[250px] object-cover object-top"
+                        alt={member.name}
+                      />
                       <div className="py-4">
-                        <h2 className="font-medium text-lg mb-1">
+                        <h2 className="font-medium text-lg">
                           {member.name}
                         </h2>
                         <p className="text-gray-700 text-base italic">
@@ -48,11 +46,11 @@ export default function about() {
                           {member.description}
                         </p>
                       </div>
-                    </div>
+                    </li>
                   </>
                 );
               })}
-            </div>
+            </ul>
           </section>
         </div>
       </div>

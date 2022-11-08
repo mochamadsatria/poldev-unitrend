@@ -141,25 +141,23 @@ return (
             <h2 className="text-black text-xl font-semibold">
               Minat penelusuran pada kandidat presiden yang paling banyak ditelusuri seminggu terakhir
             </h2>
-            <ul className='list-none my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
+            <ul className='list-none my-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4'>
               {calculatedCapresDataSortedNormalized.map((element, index) => {
                 return (
                   <>
-                    <li key={index}>
-                      <div className='rounded-xl h-[12rem] border flex flex-col justify-center items-center drop-shadow-lg'>
-                        <Image src={`/assets/images/pemilu/capres/${encodeURIComponent(element.name)}.jpg`}
-                          className="h-[4.5rem] w-[4.5rem] rounded-full mb-2 object-cover"
-                          alt={element.name}
-                          width="100"
-                          height="100"
-                          layout="fill"/>
-                        <div className="text-center text-black text-lg font-semibold">
-                          {element.name}
-                        </div>
-                        <div className="text-center text-black text-base">
-                          {element.value}%
-                        </div>
-                      </div>
+                    <li key={index} className='rounded-xl h-[14rem] border flex flex-col justify-center items-center drop-shadow-lg p-2'>
+                      <Image src={`/assets/images/pemilu/capres/${encodeURIComponent(element.name)}.jpg`}
+                        className="h-[6.5rem] w-[6.5rem] rounded-full mb-2 object-cover"
+                        alt={element.name}
+                        width="100"
+                        height="100"
+                        layout="fill"/>
+                      <p className="text-center text-black text-lg font-semibold">
+                        {element.name}
+                      </p>
+                      <p className="text-center text-black text-lg">
+                        {element.value}%
+                      </p>
                     </li>
                   </>
                 )
@@ -201,25 +199,23 @@ return (
             <h2 className="text-black text-xl font-semibold">
               Minat penelusuran pada partai politik yang paling banyak ditelusuri seminggu terakhir
             </h2>
-            <ul className='list-none my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
+            <ul className='list-none my-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4'>
               {calculatedPartaiDataSortedNormalized.map((element, index) => {
                 return (
                   <>
-                    <li key={index}>
-                      <div className='rounded-xl h-[12rem] border flex flex-col justify-center items-center drop-shadow-lg'>
-                        <Image src={`/assets/images/pemilu/partai/${encodeURIComponent(element.name)}.png`}
-                          className="h-[4.5rem] w-[4.5rem] mb-2 object-contain"
-                          alt={element.name}
-                          width="100"
-                          height="100"
-                          layout="fill"/>
-                        <div className="text-center text-black text-lg font-semibold">
-                          {element.name}
-                        </div>
-                        <div className="text-center text-black text-base">
-                          {element.value}%
-                        </div>
-                      </div>
+                    <li key={index} className='rounded-xl h-[14rem] border flex flex-col justify-center items-center drop-shadow-lg p-2'>
+                      <Image src={`/assets/images/pemilu/partai/${encodeURIComponent(element.name)}.png`}
+                        className="h-[6.5rem] w-[6.5rem] mb-2 object-contain"
+                        alt={element.name}
+                        width="100"
+                        height="100"
+                        layout="fill"/>
+                      <p className="text-center text-black text-lg font-semibold">
+                        {element.name}
+                      </p>
+                      <p className="text-center text-black text-lg">
+                        {element.value}%
+                      </p>
                     </li>
                   </>
                 )
