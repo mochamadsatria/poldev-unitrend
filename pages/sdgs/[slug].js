@@ -78,7 +78,14 @@ function Sector({
           {/* <h1 className="text-black text-left text-[3em] md:text-[4em] font-bold">
             {trendsData[slug]?.name}
           </h1> */}
-          <p className="text-black text-base">{deskripsiData[slug]}</p>
+          {
+            deskripsiData[slug].map((content, index) => (
+              <>
+                <p className="text-black text-base my-2">{content}</p>
+              </>
+            ))
+          }
+          {/* <p className="text-black text-base">{deskripsiData[slug]}</p> */}
         </section>
         <section className="text-justify my-16">
           <h1 className="text-black text-[2rem] font-bold">

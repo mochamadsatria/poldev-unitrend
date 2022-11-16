@@ -21,7 +21,8 @@ export default function Pemilu2024() {
   const calculatedCapresData = Object.entries(pemiluData["capres"]["trends"]["3m"]).map(([k, v], _i) => (
     {
       name: k,
-      value: average(Object.values(v).slice(-7)),
+      value: average(Object.values(v)),
+      // value: average(Object.values(v).slice(-7)),
       // value: 100.0 * ((average(Object.values(v).slice(-7)) - average(Object.values(v).slice(-14,-7))) / (average(Object.values(v).slice(-14,-7)))),
     }
   ));
@@ -40,7 +41,8 @@ export default function Pemilu2024() {
   const calculatedPartaiData = Object.entries(pemiluData["partai"]["trends"]["3m"]).map(([k, v], _i) => (
     {
       name: k,
-      value: average(Object.values(v).slice(-7)),
+      value: average(Object.values(v)),
+      // value: average(Object.values(v).slice(-7)),
       // value: 100.0 * ((average(Object.values(v).slice(-7)) - average(Object.values(v).slice(-14,-7))) / (average(Object.values(v).slice(-14,-7)))),
     }
   ));
@@ -129,7 +131,7 @@ return (
           <h1 className="text-black text-[3em] md:text-[4em] font-bold">
             Pemilu 2024
           </h1>
-          <p className="text-black text-base">
+          <p className="text-black text-base my-2">
             Memasuki awal tahun politik, berbagai lembaga survei telah mengeluarkan hasil survei elektabilitas yang semakin mengerucutkan nama-nama kandidat calon presiden. Fenomena politik menjelang pemilu selalu menarik untuk diikuti perkembangannya, khususnya dari sudut pandang perilaku politik masyarakat. Oleh karena itu, data mengenai perilaku politik masyarakat merupakan “emas” yang akan senantiasa dicari dan dipahami. Dengan memahami perilaku politik masyarakat, aktor politik dapat menyusun kampanye, komunikasi publik, branding partai dan calon presiden, bahkan mencari kriteria calon presiden yang diinginkan masyarakat. UniTrend mencoba untuk berkontribusi menyediakan informasi alternatif mengenai perilaku politik masyarakat melalui data Google Trends. Data Google Trends sebelumnya pernah dipakai untuk memprediksi hasil pemilu di Amerika Serikat dan Kanada. Melalui website ini, secara khusus UniTrend ingin mengawal dan memprediksi Pemilu 2024 di Indonesia.
           </p>
         </section>
@@ -139,7 +141,7 @@ return (
           </h1>
           <div className='my-4'>
             <h2 className="text-black text-xl font-semibold">
-              Minat penelusuran pada kandidat presiden yang paling banyak ditelusuri seminggu terakhir
+              Tren penelusuran dan atensi publik pada kandidat presiden 3 bulan terakhir
             </h2>
             <ul className='list-none my-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4'>
               {calculatedCapresDataSortedNormalized.map((element, index) => {
@@ -163,10 +165,13 @@ return (
                 )
               } ) }
             </ul>
+            <p className="text-gray-400 text-[0.875rem]">
+              Tren penelusuran dihitung berdasarkan perbedaan tren penelusuran di google trends selama 3 bulan terakhir. 
+            </p>
           </div>
           <div className='mt-8'>
             <h2 className="text-black text-xl font-semibold">
-              Minat penelusuran pada kandidat presiden tiga bulan terakhir
+              Tren penelusuran dan atensi publik pada calon presiden 
             </h2>
             <LineChartsPemilu
               seriesData={
@@ -188,8 +193,11 @@ return (
             Data terakhir diambil: {capresLatestUpdateDate.toISOString().slice(0, 10)}
           </p>
           <p className="text-gray-400 text-[0.875rem]">
-            Data ini berasal dari Google Trends, dan menunjukkan hasil tren pencarian seluruh kata kunci calon presiden 2024 yang kami lacak. Data pencarian merupakan indikasi keingintahuan pada subjek atau kandidat dan tidak menunjukkan indikasi niat pilihan pemberi suara.
+            Data ini berasal dari Google Trends, dan menunjukkan hasil tren pencarian terhadap setiap calon presiden.
           </p>
+          {/* <p className="text-gray-400 text-[0.875rem]">
+            Data ini berasal dari Google Trends, dan menunjukkan hasil tren pencarian seluruh kata kunci calon presiden 2024 yang kami lacak. Data pencarian merupakan indikasi keingintahuan pada subjek atau kandidat dan tidak menunjukkan indikasi niat pilihan pemberi suara.
+          </p> */}
         </section>
         <section className="text-justify my-16">
           <h1 className="text-black text-[2rem] font-bold">
@@ -197,7 +205,7 @@ return (
           </h1>
           <div className='my-4'>
             <h2 className="text-black text-xl font-semibold">
-              Minat penelusuran pada partai politik yang paling banyak ditelusuri seminggu terakhir
+              Tren penelusuran dan atensi publik pada partai politik 3 bulan terakhir
             </h2>
             <ul className='list-none my-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4'>
               {calculatedPartaiDataSortedNormalized.map((element, index) => {
@@ -221,10 +229,13 @@ return (
                 )
               } ) }
             </ul>
+            <p className="text-gray-400 text-[0.875rem]">
+              Tren penelusuran dihitung berdasarkan perbedaan tren penelusuran di google trends selama 3 bulan terakhir.
+            </p>
           </div>
           <div className='mt-8'>
             <h2 className="text-black text-xl font-semibold">
-              Minat penelusuran pada partai politik tiga bulan terakhir
+              Tren penelusuran dan atensi publik pada partai politik
             </h2>
             <LineChartsPemilu
               seriesData={
@@ -246,9 +257,11 @@ return (
             Data terakhir diambil: {partaiLatestUpdateDate.toISOString().slice(0, 10)}
           </p>
           <p className="text-gray-400 text-[0.875rem]">
-            Data ini berasal dari Google Trends, dan menunjukkan hasil tren pencarian seluruh kata kunci partai politik yang kami lacak. Data pencarian merupakan indikasi keingintahuan pada subjek atau kandidat dan tidak menunjukkan indikasi niat pilihan pemberi suara.
+            Data ini berasal dari Google Trends, dan menunjukkan hasil tren pencarian terhadap setiap partai politik. 
           </p>
-
+          {/* <p className="text-gray-400 text-[0.875rem]">
+            Data ini berasal dari Google Trends, dan menunjukkan hasil tren pencarian seluruh kata kunci partai politik yang kami lacak. Data pencarian merupakan indikasi keingintahuan pada subjek atau kandidat dan tidak menunjukkan indikasi niat pilihan pemberi suara.
+          </p> */}
         </section>
         <section className="text-justify my-16">
           <h1 className="text-black text-[2rem] font-bold">
