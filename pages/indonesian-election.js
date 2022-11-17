@@ -141,7 +141,7 @@ return (
           </h1>
           <div className='my-4'>
             <h2 className="text-black text-xl font-semibold">
-              Tren penelusuran dan atensi publik pada kandidat presiden 3 bulan terakhir
+              Tren penelusuran dan atensi publik pada kandidat presiden
             </h2>
             <ul className='list-none my-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4'>
               {calculatedCapresDataSortedNormalized.map((element, index) => {
@@ -151,8 +151,8 @@ return (
                       <Image src={`/assets/images/pemilu/capres/${encodeURIComponent(element.name)}.jpg`}
                         className="h-[6.5rem] w-[6.5rem] rounded-full mb-2 object-cover"
                         alt={element.name}
-                        width="100"
-                        height="100"
+                        width="300"
+                        height="300"
                         layout="fill"/>
                       <p className="text-center text-black text-lg font-semibold">
                         {element.name}
@@ -205,7 +205,7 @@ return (
           </h1>
           <div className='my-4'>
             <h2 className="text-black text-xl font-semibold">
-              Tren penelusuran dan atensi publik pada partai politik 3 bulan terakhir
+              Tren penelusuran dan atensi publik pada partai politik
             </h2>
             <ul className='list-none my-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4'>
               {calculatedPartaiDataSortedNormalized.map((element, index) => {
@@ -215,8 +215,8 @@ return (
                       <Image src={`/assets/images/pemilu/partai/${encodeURIComponent(element.name)}.png`}
                         className="h-[6.5rem] w-[6.5rem] mb-2 object-contain"
                         alt={element.name}
-                        width="100"
-                        height="100"
+                        width="300"
+                        height="300"
                         layout="fill"/>
                       <p className="text-center text-black text-lg font-semibold">
                         {element.name}
