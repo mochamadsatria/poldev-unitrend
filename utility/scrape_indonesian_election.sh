@@ -22,7 +22,7 @@ fi
 cd $ROOT/utility
 gdown --folder https://drive.google.com/drive/folders/1KBz0MBHf7BcK9EQCNK4szh1tYG_Z7GXf
 python scrape_indonesian_election.py
-if [ $UPDATE_OTHER = 1]; then
+if [ $UPDATE_OTHER = 1 ]; then
     python scrape_economic_development.py
 fi
 
