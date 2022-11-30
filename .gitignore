@@ -32,3 +32,9 @@ yarn-error.log*
 .vercel
 
 config/**
+utility/__pycache__
+utility/__pycache__/**
+utility/Dataset/**
+utility/Dataset
+utility/Keywords/**
+utility/Keywords
