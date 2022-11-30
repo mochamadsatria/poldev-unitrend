@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # https://crontab.guru/#0_12_*_*_1
-# At 13:00 on every day.
-# 0 13 * * * /PATH/TO/scrape_indonesian_election.sh
+# At 07:30 on every day.
+# 30 7 * * * /PATH/TO/scrape_indonesian_election.sh
 
 # Edit crontab
 # crontab -e
