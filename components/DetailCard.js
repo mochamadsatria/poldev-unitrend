@@ -30,7 +30,7 @@ export default function DetailCard(props) {
             />
           ) : (
             <Image
-              src={arrowDown}
+              src={props.type == 'Sector' ? arrowDown : arrowDown2}
               className="h-[3.2rem] w-[3.2rem] mx-1"
               alt="arrow up"
               layout="fill"
