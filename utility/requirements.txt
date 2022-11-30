@@ -1,0 +1,9 @@
+pytrends
+numpy
+pandas
+seaborn
+matplotlib
+python-slugify
+openpyxl
+gdown
+python-telegram-bot
