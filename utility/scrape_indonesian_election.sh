@@ -15,10 +15,10 @@ python scrape_indonesian_election.py
 
 cd ../
 
-git add .
-git commit -m "update election data"
-git pull
-git push
+# git add .
+# git commit -m "update election data"
+# git pull
+# git push
 
 docker compose down
 docker compose up --build -d
