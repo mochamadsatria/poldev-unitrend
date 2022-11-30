@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/future/image';
-import TeamData from '../assets/data/Teams.json';
+import TeamData from '../assets/statics/Teams.json';
 
 export default function about() {
   return (

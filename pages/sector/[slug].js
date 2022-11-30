@@ -7,7 +7,7 @@ import DetailCard from '../../components/DetailCard';
 import Footer from '../../components/Footer';
 import styles from '../../styles/Home.module.css';
 import trendsData from '../../assets/data/Data_GT.json';
-import deskripsiData from '../../assets/data/Deskripsi_GT.json';
+import deskripsiData from '../../assets/statics/Deskripsi_GT.json';
 import Link from 'next/link';
 
 const BarCharts = dynamic(() => import('../../components/BarCharts'), {
