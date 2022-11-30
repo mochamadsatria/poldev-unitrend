@@ -62,6 +62,8 @@ export default function Home() {
       )
   );
 
+  const selectedTrendsData = trendsData[Object.keys(trendsData)[0]];
+
   const getDateOfWeek = (w, y) => {
     var sunday = new Date(y, 0, 1 + w * 7);
     while (sunday.getDay() !== 0) {
@@ -69,7 +71,7 @@ export default function Home() {
     }
     return sunday;
   };
-  const _selectedTrendsData = trendsData[Object.keys(trendsData)[0]];
+  
   const getNextWeekDate = (dt) =>
     new Date(dt.getTime() + 7 * 24 * 60 * 60 * 1000);
   
@@ -77,7 +79,7 @@ export default function Home() {
     new Date(dt.getTime() + 1 * 24 * 60 * 60 * 1000);
 
   const _latestDate = getDateOfWeek(
-    Object.keys(_selectedTrendsData['biannually_combined_trends_mean']['2022'])
+    Object.keys(selectedTrendsData['biannually_combined_trends_mean']['2022'])
       .length,
     2022
   );
@@ -86,7 +88,7 @@ export default function Home() {
   const latestDateNextWeek = getNextDayDate(getNextWeekDate(_latestDate)).toISOString();
   const latestDate2NextWeek = getNextWeekDate(getNextWeekDate(_latestDate)).toISOString();
   const _lastYearDate = getDateOfWeek(
-    Object.keys(_selectedTrendsData['biannually_combined_trends_mean']['2022'])
+    Object.keys(selectedTrendsData['biannually_combined_trends_mean']['2022'])
       .length,
     2021
   );

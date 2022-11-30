@@ -258,10 +258,10 @@ export async function getStaticProps({ params }) {
     }
     return sunday;
   };
-
+  
   const getNextWeekDate = (dt) =>
     new Date(dt.getTime() + 7 * 24 * 60 * 60 * 1000);
-
+  
   const getNextDayDate = (dt) =>
     new Date(dt.getTime() + 1 * 24 * 60 * 60 * 1000);
 
