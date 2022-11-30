@@ -15,8 +15,7 @@ UPDATE_OTHER=0
 
 cd $ROOT
 mkdir -p assets/data
-if [[ ! -f assets/data/Data_Pemilu.json ]]
-then
+if [[ ! -f assets/data/Data_Pemilu.json ]]; then
     UPDATE_OTHER=1
 fi
 
