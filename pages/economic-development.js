@@ -72,6 +72,9 @@ export default function Home() {
   const _selectedTrendsData = trendsData[Object.keys(trendsData)[0]];
   const getNextWeekDate = (dt) =>
     new Date(dt.getTime() + 7 * 24 * 60 * 60 * 1000);
+  
+  const getNextDayDate = (dt) =>
+    new Date(dt.getTime() + 1 * 24 * 60 * 60 * 1000);
 
   const _latestDate = getDateOfWeek(
     Object.keys(_selectedTrendsData['biannually_combined_trends_mean']['2022'])
@@ -79,6 +82,7 @@ export default function Home() {
     2022
   );
   const latestDate = _latestDate.toISOString();
+  const latestDateNextDay = getNextDayDate(_latestDate).toISOString();
   const latestDateNextWeek = getNextWeekDate(_latestDate).toISOString();
   const latestDate2NextWeek = getNextWeekDate(getNextWeekDate(_latestDate)).toISOString();
   const _lastYearDate = getDateOfWeek(
@@ -88,6 +92,7 @@ export default function Home() {
   );
   const lastYearDate = _lastYearDate.toISOString();
   const lastYearDateNextWeek = getNextWeekDate(_lastYearDate).toISOString();
+  const lastYearDate2NextWeek = getNextWeekDate(getNextWeekDate(_lastYearDate)).toISOString();
 
   return (
     // <div>
@@ -202,18 +207,15 @@ export default function Home() {
           />
           <p className="text-gray-400 text-[0.75rem]">
             Membandingkan :{' '}
-            {`${lastYearDate.slice(0, 10)} hingga ${lastYearDateNextWeek.slice(
-              0,
-              10
-            )}`}{' '}
+            {`${lastYearDateNextWeek.slice(0, 10)} hingga ${lastYearDate2NextWeek.slice(0, 10)}`}{' '}
             dengan{' '}
-            {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
+            {`${latestDateNextWeek.slice(0, 10)} hingga ${latestDate2NextWeek.slice(
               0,
               10
             )}`}
           </p>
           <p className="text-gray-400 text-[0.75rem]">
-            Data terakhir diambil: {latestDate2NextWeek.slice(0, 10)}
+            Data terakhir diambil: {latestDateNextDay.slice(0, 10)}
           </p>
         </section>
         <section className="text-justify my-16">
@@ -235,18 +237,15 @@ export default function Home() {
           />
           <p className="text-gray-400 text-[0.75rem]">
             Membandingkan :{' '}
-            {`${lastYearDate.slice(0, 10)} hingga ${lastYearDateNextWeek.slice(
-              0,
-              10
-            )}`}{' '}
+            {`${lastYearDateNextWeek.slice(0, 10)} hingga ${lastYearDate2NextWeek.slice(0, 10)}`}{' '}
             dengan{' '}
-            {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
+            {`${latestDateNextWeek.slice(0, 10)} hingga ${latestDate2NextWeek.slice(
               0,
               10
             )}`}
           </p>
           <p className="text-gray-400 text-[0.75rem]">
-            Data terakhir diambil: {latestDate2NextWeek.slice(0, 10)}
+            Data terakhir diambil: {latestDateNextDay.slice(0, 10)}
           </p>
         </section>
         <h1 className="text-black text-xl font-semibold">

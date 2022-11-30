@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # https://crontab.guru/#0_12_*_*_1
-# At 08:00 on Monday.
-# 0 8 * * 1 /PATH/TO/scrape_economic_development.sh
+# At 08:00 on Sunday.
+# 0 8 * * 0 /PATH/TO/scrape_economic_development.sh
 
 # Edit crontab
 # crontab -e

@@ -26,7 +26,9 @@ function Sector({
   negativeWordTrendSortedData,
   lastYearDate,
   lastYearDateNextWeek,
+  lastYearDate2NextWeek,
   latestDate,
+  latestDateNextDay,
   latestDateNextWeek,
   latestDate2NextWeek,
 }) {
@@ -153,18 +155,15 @@ function Sector({
           }
           <p className="text-gray-400 text-[0.75rem]">
             Membandingkan :{' '}
-            {`${lastYearDate.slice(0, 10)} hingga ${lastYearDateNextWeek.slice(
-              0,
-              10
-            )}`}{' '}
+            {`${lastYearDateNextWeek.slice(0, 10)} hingga ${lastYearDate2NextWeek.slice(0, 10)}`}{' '}
             dengan{' '}
-            {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
+            {`${latestDateNextWeek.slice(0, 10)} hingga ${latestDate2NextWeek.slice(
               0,
               10
             )}`}
           </p>
           <p className="text-gray-400 text-[0.75rem]">
-            Data terakhir diambil: {latestDate2NextWeek.slice(0, 10)}
+            Data terakhir diambil: {latestDateNextDay.slice(0, 10)}
           </p>
         </section>
         <section className="text-justify my-16">
@@ -197,18 +196,15 @@ function Sector({
           }
           <p className="text-gray-400 text-[0.75rem]">
             Membandingkan :{' '}
-            {`${lastYearDate.slice(0, 10)} hingga ${lastYearDateNextWeek.slice(
-              0,
-              10
-            )}`}{' '}
+            {`${lastYearDateNextWeek.slice(0, 10)} hingga ${lastYearDate2NextWeek.slice(0, 10)}`}{' '}
             dengan{' '}
-            {`${latestDate.slice(0, 10)} hingga ${latestDateNextWeek.slice(
+            {`${latestDateNextWeek.slice(0, 10)} hingga ${latestDate2NextWeek.slice(
               0,
               10
             )}`}
           </p>
           <p className="text-gray-400 text-[0.75rem]">
-            Data terakhir diambil: {latestDate2NextWeek.slice(0, 10)}
+            Data terakhir diambil: {latestDateNextDay.slice(0, 10)}
           </p>
         </section>
         {/* <hr className="mt-10 border-[#555]" /> */}
@@ -265,22 +261,27 @@ export async function getStaticProps({ params }) {
 
   const getNextWeekDate = (dt) =>
     new Date(dt.getTime() + 7 * 24 * 60 * 60 * 1000);
+  
+  const getNextDayDate = (dt) =>
+    new Date(dt.getTime() + 1 * 24 * 60 * 60 * 1000);
 
   const _latestDate = getDateOfWeek(
-    Object.keys(selectedTrendsData['biannually_combined_trends_mean']['2022'])
+    Object.keys(_selectedTrendsData['biannually_combined_trends_mean']['2022'])
       .length,
     2022
   );
   const latestDate = _latestDate.toISOString();
+  const latestDateNextDay = getNextDayDate(_latestDate).toISOString();
   const latestDateNextWeek = getNextWeekDate(_latestDate).toISOString();
   const latestDate2NextWeek = getNextWeekDate(getNextWeekDate(_latestDate)).toISOString();
   const _lastYearDate = getDateOfWeek(
-    Object.keys(selectedTrendsData['biannually_combined_trends_mean']['2022'])
+    Object.keys(_selectedTrendsData['biannually_combined_trends_mean']['2022'])
       .length,
     2021
   );
   const lastYearDate = _lastYearDate.toISOString();
   const lastYearDateNextWeek = getNextWeekDate(_lastYearDate).toISOString();
+  const lastYearDate2NextWeek = getNextWeekDate(getNextWeekDate(_lastYearDate)).toISOString();
 
   // By returning { props: { posts } }, the Blog component
   // will receive `posts` as a prop at build time
@@ -294,7 +295,9 @@ export async function getStaticProps({ params }) {
       negativeWordTrendSortedData,
       lastYearDate,
       lastYearDateNextWeek,
+      lastYearDate2NextWeek,
       latestDate,
+      latestDateNextDay,
       latestDateNextWeek,
       latestDate2NextWeek,
     },
