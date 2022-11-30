@@ -101,7 +101,7 @@ def scrape_sdgs(scraper):
         data_combined_sdgs_slugged[v["slug"]]['name'] = k
 
     if not os.path.isdir('../assets/data'):
-        os.mkdir('Dataset')
+        os.mkdir('../assets/data')
 
     with open('../assets/data/Data_SDGs.json', 'w') as fp:
         json.dump(data_combined_sdgs_slugged, fp, indent = 4)
