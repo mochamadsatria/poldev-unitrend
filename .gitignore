@@ -38,3 +38,6 @@ utility/Dataset/**
 utility/Dataset
 utility/Keywords/**
 utility/Keywords
+
+assets/data
+assets/data/**
