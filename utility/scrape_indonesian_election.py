@@ -69,9 +69,6 @@ def scrape_indonesia_election(scraper):
     df_partai_region_3m = df_partai_region_3m.rename(columns=partai_keywords_inverse)
     data_pemilu["partai"]["region"]["3m"] = df_partai_region_3m.to_dict()
 
-    if not os.path.isdir('../assets/data'):
-        os.mkdir('../assets/data')
-
     with open('../assets/data/Data_Pemilu.json', 'w') as fp:
         json.dump(data_pemilu, fp, indent = 4)
 

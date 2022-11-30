@@ -58,9 +58,6 @@ def scrape_google_trends(scraper):
     for k, v in data_combined.items():
         data_combined_slugged[v["slug"]] = v
         data_combined_slugged[v["slug"]]['name'] = k
-    
-    if not os.path.isdir('Dataset'):
-        os.mkdir('Dataset')
 
     with open('../assets/data/Data_GT.json', 'w') as fp:
         json.dump(data_combined_slugged, fp, indent = 4)
@@ -99,9 +96,6 @@ def scrape_sdgs(scraper):
     for k, v in data_combined_sdgs.items():
         data_combined_sdgs_slugged[v["slug"]] = v
         data_combined_sdgs_slugged[v["slug"]]['name'] = k
-
-    if not os.path.isdir('../assets/data'):
-        os.mkdir('../assets/data')
 
     with open('../assets/data/Data_SDGs.json', 'w') as fp:
         json.dump(data_combined_sdgs_slugged, fp, indent = 4)

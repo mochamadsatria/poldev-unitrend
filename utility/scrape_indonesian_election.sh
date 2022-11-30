@@ -10,10 +10,16 @@
 # restart the cron service
 # systemctl restart cron
 
+ROOT="/home/poldev/work/poldev-unitrend"
+
+cd $ROOT
+mkdir -p assets/data
+
+cd $ROOT/utility
 gdown --folder https://drive.google.com/drive/folders/1KBz0MBHf7BcK9EQCNK4szh1tYG_Z7GXf
 python scrape_indonesian_election.py
 
-cd ../
+cd $ROOT
 
 # git add .
 # git commit -m "update election data"
