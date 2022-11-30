@@ -82,8 +82,8 @@ export default function Home() {
     2022
   );
   const latestDate = _latestDate.toISOString();
-  const latestDateNextDay = getNextDayDate(_latestDate).toISOString();
-  const latestDateNextWeek = getNextWeekDate(_latestDate).toISOString();
+  const latestDateNextDay = getNextDayDate(getNextWeekDate(getNextWeekDate(_latestDate))).toISOString();
+  const latestDateNextWeek = getNextDayDate(getNextWeekDate(_latestDate)).toISOString();
   const latestDate2NextWeek = getNextWeekDate(getNextWeekDate(_latestDate)).toISOString();
   const _lastYearDate = getDateOfWeek(
     Object.keys(_selectedTrendsData['biannually_combined_trends_mean']['2022'])
@@ -91,7 +91,7 @@ export default function Home() {
     2021
   );
   const lastYearDate = _lastYearDate.toISOString();
-  const lastYearDateNextWeek = getNextWeekDate(_lastYearDate).toISOString();
+  const lastYearDateNextWeek = getNextDayDate(getNextWeekDate(_lastYearDate)).toISOString();
   const lastYearDate2NextWeek = getNextWeekDate(getNextWeekDate(_lastYearDate)).toISOString();
 
   return (
