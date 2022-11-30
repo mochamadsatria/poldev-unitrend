@@ -386,7 +386,7 @@ export async function getStaticProps({ params }) {
     new Date(dt.getTime() + 1 * 24 * 60 * 60 * 1000);
 
   const _latestDate = getDateOfWeek(
-    Object.keys(_selectedTrendsData['biannually_combined_trends_mean']['2022'])
+    Object.keys(selectedTrendsData['biannually_combined_trends_mean']['2022'])
       .length,
     2022
   );
@@ -395,7 +395,7 @@ export async function getStaticProps({ params }) {
   const latestDateNextWeek = getNextDayDate(getNextWeekDate(_latestDate)).toISOString();
   const latestDate2NextWeek = getNextWeekDate(getNextWeekDate(_latestDate)).toISOString();
   const _lastYearDate = getDateOfWeek(
-    Object.keys(_selectedTrendsData['biannually_combined_trends_mean']['2022'])
+    Object.keys(selectedTrendsData['biannually_combined_trends_mean']['2022'])
       .length,
     2021
   );
