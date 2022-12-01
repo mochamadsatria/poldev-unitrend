@@ -13,6 +13,7 @@
 ROOT="/home/poldev/work/poldev-unitrend"
 UPDATE_OTHER=0
 
+source /home/poldev/miniconda3/bin/activate
 conda activate poldev
 
 cd $ROOT
