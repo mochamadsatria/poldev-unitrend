@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# https://crontab.guru/#0_12_*_*_1
+# https://crontab.guru/
 # At 07:30 on every day.
 # 30 7 * * * /PATH/TO/scrape_indonesian_election.sh
 
@@ -19,7 +19,7 @@ if [[ ! -f assets/data/Data_GT.json ]]; then
     UPDATE_OTHER=1
 fi
 
-cd $ROOT/utility
+cd $ROOT/utils
 gdown --folder https://drive.google.com/drive/folders/1KBz0MBHf7BcK9EQCNK4szh1tYG_Z7GXf
 python scrape_indonesian_election.py
 if [ $UPDATE_OTHER = 1 ]; then

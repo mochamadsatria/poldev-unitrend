@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# https://crontab.guru/#0_12_*_*_1
+# https://crontab.guru/
 # At 08:00 on Sunday.
 # 0 8 * * 0 /PATH/TO/scrape_economic_development.sh
 
@@ -19,7 +19,7 @@ if [[ ! -f assets/data/Data_Pemilu.json ]]; then
     UPDATE_OTHER=1
 fi
 
-cd $ROOT/utility
+cd $ROOT/utils
 gdown --folder https://drive.google.com/drive/folders/1KBz0MBHf7BcK9EQCNK4szh1tYG_Z7GXf
 python scrape_economic_development.py
 if [ $UPDATE_OTHER = 1 ]; then

@@ -12,7 +12,7 @@ from pytrends.request import TrendReq
 
 class UnitrendScraper(object):
     """
-    Unitrend Scraper utility class.
+    Unitrend Scraper utils class.
     """
 
     def __init__(self, hl='id-ID', retries=12, backoff_factor=1.0):
