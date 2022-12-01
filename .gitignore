@@ -30,3 +30,14 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+config/**
+utils/__pycache__
+utils/__pycache__/**
+utils/Dataset/**
+utils/Dataset
+utils/Keywords/**
+utils/Keywords
+
+assets/data
+assets/data/**
