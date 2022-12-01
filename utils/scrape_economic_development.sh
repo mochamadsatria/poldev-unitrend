@@ -13,6 +13,8 @@
 ROOT="/home/poldev/work/poldev-unitrend"
 UPDATE_OTHER=0
 
+conda activate poldev
+
 cd $ROOT
 mkdir -p assets/data
 if [[ ! -f assets/data/Data_Pemilu.json ]]; then
