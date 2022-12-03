@@ -215,6 +215,7 @@ class UnitrendScraper(object):
         region_trends_container = region_trends_container.drop(columns=["geoCode"])
         
         region_trends_container = region_trends_container.div(region_trends_container.sum(axis=1), axis=0).reset_index()
+        region_trends_container[region_trends_container.select_dtypes(include=['number']).columns].fillna(0)
         region_trends_container[region_trends_container.select_dtypes(include=['number']).columns] *= 100
         region_trends_container["geoCode"] = region_trends_container["geoName"].map(geocode_map)
         # region_trends_container = region_trends_container.set_index('geoName')
