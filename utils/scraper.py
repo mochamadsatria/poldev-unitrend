@@ -64,6 +64,7 @@ class UnitrendScraper(object):
                 trends_container = trends_container.join(df_trends.drop(columns=["isPartial", pivot]).multiply(pivot_ratio))
 
         # print(trends_container)
+        trends_container[trends_container.select_dtypes(include=['number']).columns].fillna(0)
         trends_container.index = pd.to_datetime(trends_container.index).astype(str)
         return trends_container
         # self.pytrends.build_payload(keywords, cat=0, timeframe='now 7-d', geo='', gprop='')
@@ -93,6 +94,7 @@ class UnitrendScraper(object):
                 trends_container = trends_container.join(df_trends.drop(columns=["isPartial"]))
 
         # print(trends_container)
+        trends_container[trends_container.select_dtypes(include=['number']).columns].fillna(0)
         return trends_container
         # self.pytrends.build_payload(keywords, cat=0, timeframe='now 7-d', geo='', gprop='')
         # return ""
@@ -215,7 +217,7 @@ class UnitrendScraper(object):
         region_trends_container = region_trends_container.drop(columns=["geoCode"])
         
         region_trends_container = region_trends_container.div(region_trends_container.sum(axis=1), axis=0).reset_index()
-        region_trends_container.fillna(0)
+        region_trends_container[region_trends_container.select_dtypes(include=['number']).columns].fillna(0)
         region_trends_container[region_trends_container.select_dtypes(include=['number']).columns] *= 100
         region_trends_container["geoCode"] = region_trends_container["geoName"].map(geocode_map)
         # region_trends_container = region_trends_container.set_index('geoName')
