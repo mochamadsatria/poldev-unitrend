@@ -10,7 +10,7 @@
 # restart the cron service
 # systemctl restart cron
 
-ROOT="/home/poldev/work/poldev-unitrend"
+ROOT="/_/poldev-old/poldev-unitrend/"
 UPDATE_OTHER=0
 
 source /home/poldev/miniconda3/bin/activate
@@ -24,9 +24,9 @@ fi
 
 cd $ROOT/utils
 gdown --folder https://drive.google.com/drive/folders/1KBz0MBHf7BcK9EQCNK4szh1tYG_Z7GXf
-python scrape_economic_development.py
+python3 scrape_economic_development.py
 if [ $UPDATE_OTHER = 1 ]; then
-    python scrape_indonesian_election.py
+    python3 scrape_indonesian_election.py
 fi
 
 cd $ROOT
@@ -35,5 +35,5 @@ cd $ROOT
 # git pull
 # git push
 
-docker compose down
-docker compose up --build -d
+#docker compose down
+#docker compose up --build -d
