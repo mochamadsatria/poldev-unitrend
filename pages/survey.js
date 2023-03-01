@@ -12,7 +12,7 @@ const Survei = () => {
   return (
     <>
       <Head>
-        <title>Survei | UniTrend by PolDev UGM</title>
+        <title>Survey | UniTrend by PolDev UGM</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className="min-h-screen bg-white" id="view">
@@ -25,7 +25,7 @@ const Survei = () => {
             </Link>
             <div>
               <h1 className="text-white text-[4rem] text-center font-bold drop-shadow-[0_5px_5px_rgba(255,255,255,0.25)]">
-                Survei
+                Survey
               </h1>
             </div>
           </section>
