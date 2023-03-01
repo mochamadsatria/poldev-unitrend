@@ -12,7 +12,7 @@ const Survei = () => {
   return (
     <>
       <Head>
-        <title>Suvei | UniTrend by PolDev UGM</title>
+        <title>Survei | UniTrend by PolDev UGM</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className="min-h-screen bg-white" id="view">
