@@ -6,6 +6,7 @@ import Link from 'next/link';
 import LogoPoldev from '../public/logo-poldev.png';
 import Image from 'next/future/image';
 import trendsData from '../assets/data/Data_GT.json';
+import surveyData from '../assets/data/Data_Survey.json'
 
 export default function Navbar() {
   const useOutsideClick = (callback) => {
@@ -65,6 +66,19 @@ export default function Navbar() {
           <hr className="border-1 mb-2 mt-1"></hr>
 
           <div className="flex flex-wrap">
+            {Object.keys(surveyData).map((survey, index) => {
+              return (
+                <>
+                  <SectorButton
+                    href={`/survey/${survey}`}
+                    name={`${surveyData[survey]['name']}`}
+                  />
+                </>
+              );
+            })}
+          </div>
+
+          {/* <div className="flex flex-wrap">
             {Object.keys(trendsData).map((sector, index) => {
               return (
                 <>
@@ -75,7 +89,7 @@ export default function Navbar() {
                 </>
               );
             })}
-          </div>
+          </div> */}
         </div>
       </Transition>
       <div className="fixed top-0 left-0 right-0 z-[10]">
@@ -91,14 +105,26 @@ export default function Navbar() {
             <div className="mx-5 cursor-pointer hidden md:block">
               <Link href="/about">About Us</Link>
             </div>
+            <div className="mx-5 flex items-center">
+              <div  className="hover:cursor-pointer mr-1 flex flex-row items-center" onClick={() => setIsShown(!isShown)}>
+                <span className="mr-1">
+                Survey
+                </span>
+                <svg
+                  width={10}
+                  height={8}
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0l5 8 5-8H0z" fill="#06283D" />
+                </svg>
+              </div>
+            </div>
             <div className="mx-5 cursor-pointer hidden md:block">
               <Link href="/economic-development">Economic Development</Link>
             </div>
             <div className="mx-5 cursor-pointer hidden md:block">
               <Link href="/indonesian-election">Indonesian Election</Link>
-            </div>
-            <div className="mx-5 cursor-pointer hidden md:block">
-              <Link href="/survey">Survey</Link>
             </div>
             {/* <div className="mx-5 flex items-center">
               <div  className="hover:cursor-pointer mr-1 flex flex-row items-center" onClick={() => setIsShown(!isShown)}>
